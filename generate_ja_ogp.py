@@ -34,8 +34,10 @@ def make(code,lang="ja"):
     dr.rounded_rectangle([LX,44,LX+ew+48,96],26,fill=PILL_BG);dr.text((LX+24,70),et,font=ef,fill=PINK,anchor="lm")
     y=124;dr.text((LX,y),"私の恋愛にゃんこは",font=fr(34),fill=INK_SOFT,anchor="lm");y+=54
     bs=84
-    while bs>40 and dr.textlength(d["breed"],font=fb(bs))>LW:bs-=4
-    dr.text((LX,y),d["breed"],font=fb(bs),fill=PINK,anchor="lm");y+=bs//2+34
+    while bs>44 and dr.textlength(d["breed"],font=fb(bs))>LW:bs-=4
+    breed_lines=wrap(dr,d["breed"],fb(bs),LW)[:2]
+    for ln in breed_lines:dr.text((LX,y),ln,font=fb(bs),fill=PINK,anchor="lm");y+=bs+6
+    y+=6
     dr.text((LX,y),f"({code})",font=fb(34),fill=INK_SOFT,anchor="lm");y+=54
     for ln in wrap(dr,d["name"],fb(38),LW)[:2]:dr.text((LX,y),ln,font=fb(38),fill=INK,anchor="lm");y+=48
     y+=6

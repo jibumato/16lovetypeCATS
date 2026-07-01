@@ -41,7 +41,7 @@ FONTS = {
 }
 
 LABEL   = {"en": "My love-cat is", "zh": "我的恋爱猫是", "ko": "내 연애묘은", "tw": "我的戀愛貓是"}
-EYEBROW = {"en": "16 TYPES  ×  LOVE  ×  DOG", "zh": "16类型  ×  恋爱  ×  犬种", "ko": "16유형  ×  연애  ×  강아지", "tw": "16類型  ×  戀愛  ×  猫種"}
+EYEBROW = {"en": "16 TYPES  ×  LOVE  ×  CAT", "zh": "16类型  ×  恋爱  ×  猫种", "ko": "16유형  ×  연애  ×  고양이", "tw": "16類型  ×  戀愛  ×  貓種"}
 RESULT  = {"en": "16 Love-Type Cats  result", "zh": "16恋爱猫测验  结果", "ko": "16 연애묘 진단  결과", "tw": "16戀愛貓測驗  結果"}
 SITE    = "16lovetypedogs.com"
 
@@ -99,7 +99,7 @@ def make_card(lang, code):
     y = 124
     lf = fnt(lang, "regular", 34)
     dr.text((LX, y), LABEL[lang], font=lf, fill=INK_SOFT, anchor="lm")
-    y += 44
+    y += 64
 
     # breed (big pink) – shrink to fit one line
     bsize = 92
