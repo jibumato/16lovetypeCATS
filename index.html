@@ -774,6 +774,40 @@ footer{text-align:center;font-size:11px;color:var(--ink-faint);padding:28px 0 8p
 .rv-av{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:11px;font-style:normal;line-height:1;flex-shrink:0}
 .rv-av-f{background:rgba(242,120,160,.15);color:#d2628f}
 .rv-av-m{background:rgba(91,130,184,.12);color:#5b82b8}
+/* ===== 案B: フラット厚塗りシャドウ（ポップ・ステッカー風） ===== */
+:root{
+  --bg:#fdf2fa; --ink:#2c1b3d; --ink-soft:#8b7a97;
+  --primary:#b98af0; --accentb:#c9a0f0; --pinkb:#f584bb; --yellow:#ffe27a;
+}
+body{background:var(--bg)!important;color:var(--ink)!important}
+h1,h2,h3,.res-head,.reviews-head,.sec-head,#t-title{color:var(--ink)!important}
+/* --- pills / small chips --- */
+.eyebrow,.assure span,.chip,.diag-count{
+  background:#fff!important;color:var(--ink)!important;border:2.5px solid var(--ink)!important;
+  box-shadow:3px 3px 0 var(--ink)!important;border-radius:999px!important;font-weight:800!important}
+.sns-buzz{background:var(--yellow)!important;color:var(--ink)!important;border:2.5px solid var(--ink)!important;
+  box-shadow:3px 3px 0 var(--ink)!important;border-radius:999px!important}
+/* --- primary button --- */
+.btn{background:var(--primary)!important;color:var(--ink)!important;border:3px solid var(--ink)!important;
+  box-shadow:6px 6px 0 var(--ink)!important;border-radius:22px!important;font-weight:800!important}
+.btn:hover{transform:translate(-1px,-1px)!important;box-shadow:7px 7px 0 var(--ink)!important}
+.btn:active{transform:translate(3px,3px)!important;box-shadow:2px 2px 0 var(--ink)!important}
+.btn.sub,.btn.ghost{background:#fff!important;color:var(--ink)!important;border:3px solid var(--ink)!important;
+  box-shadow:5px 5px 0 var(--accentb)!important}
+.btn.sub:active,.btn.ghost:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 var(--accentb)!important}
+/* --- cards / panels --- */
+.sec,.rt-card,.bonus,.result-next,.result-more,.qcard,.ura-card,.shareblock{
+  background:#fff!important;border:2.75px solid var(--ink)!important;
+  box-shadow:8px 8px 0 var(--accentb)!important;border-radius:22px!important;backdrop-filter:none!important}
+.rt-card{box-shadow:6px 6px 0 var(--accentb)!important;border-width:2.5px!important;border-radius:18px!important}
+.ura-card{box-shadow:5px 5px 0 var(--accentb)!important;border-radius:16px!important}
+/* --- badges --- */
+.rarity-chip{background:var(--yellow)!important;color:var(--ink)!important;border:2.5px solid var(--ink)!important;
+  box-shadow:3px 3px 0 var(--ink)!important}
+/* --- bottom nav --- */
+.tabbar{background:#fff!important;border-top:3px solid var(--ink)!important}
+/* --- language button --- */
+.lang-dd-btn{border:2.5px solid var(--ink)!important;box-shadow:2px 2px 0 var(--ink)!important;color:var(--ink)!important;border-radius:999px!important}
 </style>
 
 
