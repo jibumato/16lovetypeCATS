@@ -3,7 +3,7 @@
 
 import os
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 NEW_TITLE = "MBTI Types That Act Cold When They Like You"
 NEW_TITLE_LONG = "MBTI Types That Act Cold When They Like You: Why & How to Reach Them"

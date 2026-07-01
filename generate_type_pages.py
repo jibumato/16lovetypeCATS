@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate 15 missing MBTI type pages for 16わんこ恋愛診断."""
+"""Generate 15 missing MBTI type pages for 16にゃんこ恋愛診断."""
 
 import json
 import re
 import os
 
 # Read LOC data from index.html
-with open('/home/user/16lovetypedogs/index.html', 'r', encoding='utf-8') as f:
+with open('/home/user/16lovetypecats/index.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Extract the LOC JSON
@@ -182,7 +182,7 @@ def generate_page(mbti):
     breadcrumb_label = f'{breed}（{mbti}）'
 
     # Page title and descriptions
-    page_title = f'{name}（{mbti}/{breed}）｜16わんこ恋愛診断'
+    page_title = f'{name}（{mbti}/{breed}）｜16にゃんこ恋愛診断'
     og_desc = f'{tag}　{hook}'
     # Trim og_desc to reasonable length for OGP
     meta_desc = f'{tag}　{hook}'
@@ -264,7 +264,7 @@ footer a{{color:var(--ink-soft)}}
 <body>
 <header>
   <div class="hinner">
-    <a class="site-logo" href="/">🐾 16わんこ恋愛診断</a>
+    <a class="site-logo" href="/">🐾 16にゃんこ恋愛診断</a>
     <nav>
       <a href="/">診断する</a>
       <a href="/types.html">タイプ一覧</a>
@@ -283,7 +283,7 @@ footer a{{color:var(--ink-soft)}}
     <img class="dogimg" decoding="async" width="640" height="640" src="/{mbti_lower}.webp" alt="{breed}の恋愛タイプ" onerror="this.style.display='none'">
     <p style="font-size:12px;font-weight:800;color:{color};letter-spacing:.1em;margin-bottom:4px">🐾 恋愛血統書 / {mbti} · {role}</p>
     <h1 style="font-size:clamp(18px,5vw,24px);font-weight:800;margin-bottom:4px">{name}</h1>
-    <p style="font-size:17px;font-weight:700;color:#6b5648;margin-bottom:10px">犬種：{breed}</p>
+    <p style="font-size:17px;font-weight:700;color:#6b5648;margin-bottom:10px">猫種：{breed}</p>
     <p style="background:#fff6ee;border-left:4px solid {color};padding:10px 12px;border-radius:0 10px 10px 0;font-size:14.5px;line-height:1.85">{hook}</p>
   </div>
 
@@ -325,7 +325,7 @@ footer a{{color:var(--ink-soft)}}
   </div>
 
   <div class="card">
-    <h2>同じグループのわんこ</h2>
+    <h2>同じグループのにゃんこ</h2>
     {group_html}
   </div>
 
@@ -335,7 +335,7 @@ footer a{{color:var(--ink-soft)}}
     <a class="btn-back" href="/type-{next_mbti.lower()}.html">{next_breed} →</a>
   </div>
   <div style="text-align:center;margin-top:16px">
-    <a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">🐶 診断してみる</a>
+    <a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">🐱 診断してみる</a>
   </div>
 
   <div class="notice" style="margin-top:24px">
@@ -355,7 +355,7 @@ footer a{{color:var(--ink-soft)}}
       "url": "{page_url}",
       "datePublished": "2025-01-01",
       "dateModified": "2026-06-19",
-      "publisher": {{"@type":"Organization","name":"16わんこ恋愛診断","url":"https://16lovetypedogs.com"}},
+      "publisher": {{"@type":"Organization","name":"16にゃんこ恋愛診断","url":"https://16lovetypedogs.com"}},
       "mainEntityOfPage": "{page_url}"
     }},
     {{
@@ -376,7 +376,7 @@ footer a{{color:var(--ink-soft)}}
     <a href="/contact.html">お問い合わせ</a>
   </div>
   ※当サイトはアフィリエイト広告（Amazonアソシエイト含む）・Google AdSenseを利用しています。<br>
-  © 2025 16わんこ恋愛診断 / Mymatrix (jbmt-22)
+  © 2025 16にゃんこ恋愛診断 / Mymatrix (jbmt-22)
 </footer>
 </body></html>'''
     return html
@@ -385,7 +385,7 @@ footer a{{color:var(--ink-soft)}}
 MISSING = ['INTJ', 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP',
            'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP']
 
-output_dir = '/home/user/16lovetypedogs'
+output_dir = '/home/user/16lovetypecats'
 
 for mbti in MISSING:
     html = generate_page(mbti)

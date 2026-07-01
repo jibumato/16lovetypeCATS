@@ -131,11 +131,11 @@ TX={
  },
 }
 
-CHROME={"htmllang":"zh-CN","locale":"zh_CN","suffix":"｜16恋爱犬测验","site":"🐾 16恋爱犬测验",
-  "quiz":"开始测验","types":"类型一览","privacy":"隐私政策","cta":"🐶 开始测验","ranking":"排行榜",
-  "related":"相关文章","reference":"仅供参考。基于「16恋爱犬测验」的恋爱属性，仅作娱乐用途。",
+CHROME={"htmllang":"zh-CN","locale":"zh_CN","suffix":"｜16恋爱猫测验","site":"🐾 16恋爱猫测验",
+  "quiz":"开始测验","types":"类型一览","privacy":"隐私政策","cta":"🐱 开始测验","ranking":"排行榜",
+  "related":"相关文章","reference":"仅供参考。基于「16恋爱猫测验」的恋爱属性，仅作娱乐用途。",
   "types_href":"/types-zh.html","privacy_href":"/privacy.html","profile":"查看完整档案",
-  "disc":"※排行榜与诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix"}
+  "disc":"※排行榜与诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix"}
 REL_LABEL={"loyalty":"最专一的MBTI排行榜TOP16","marriage":"最适合结婚的MBTI排行榜TOP16",
   "jealousy":"最爱吃醋的MBTI排行榜TOP16","devotion":"最会付出的MBTI排行榜TOP16","dokidoki":"最让人心动的MBTI排行榜TOP16"}
 ALL=["loyalty","marriage","jealousy","devotion","dokidoki"]
@@ -228,7 +228,7 @@ TEMPLATE="""<!DOCTYPE html>
   <div class="hero"><h1 style="font-size:clamp(18px,4.5vw,24px);font-weight:800;color:var(--pink-deep);line-height:1.5">{title}</h1><p class="sub">{sub}</p></div>
   <div class="card"><p>{intro}</p><p style="font-size:12.5px;color:var(--ink-soft)">{reference}</p></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--beige)">{ranking}</h2>{items}</div>
-  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Dogs</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">{cta}</a></div>
+  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Cats</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">{cta}</a></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--beige)">{related_h}</h2>{related}</div>
 </div>
 <script type="application/ld+json">{ldjson}</script>
@@ -244,7 +244,7 @@ def build(metric):
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],
         "description":M["sub"],"inLanguage":CHROME["htmllang"],
         "url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,style=STYLE,site=CHROME["site"],quiz=CHROME["quiz"],
         types=CHROME["types"],types_href=CHROME["types_href"],privacy=CHROME["privacy"],privacy_href=CHROME["privacy_href"],

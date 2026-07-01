@@ -22,7 +22,7 @@ ALL=zh.ALL
 CHROME={k:(t(v) if isinstance(v,str) and k not in ("htmllang","locale","types_href","privacy_href") else v)
         for k,v in zh.CHROME.items()}
 CHROME["htmllang"]="zh-TW"; CHROME["locale"]="zh_TW"; CHROME["types_href"]="/types-tw.html"
-CHROME["site"]="🐾 16戀愛犬測驗"
+CHROME["site"]="🐾 16戀愛貓測驗"
 SELF_LABEL="繁體中文"
 OTHER_LANGS=[("ja","日本語","ranking-{m}.html"),("en","English","ranking-{m}-en.html"),
              ("zh","简体中文","ranking-{m}-zh.html"),("ko","한국어","ranking-{m}-ko.html")]
@@ -69,7 +69,7 @@ def build(metric):
     M=META[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],"description":M["sub"],
         "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
     # zh.TEMPLATE has fixed hreflang lines for ja/en/zh; replace that block via our own by formatting then swapping
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,style=STYLE,site=CHROME["site"],quiz=CHROME["quiz"],

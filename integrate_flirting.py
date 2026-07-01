@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re
 
-D = '/home/user/16lovetypedogs'
+D = '/home/user/16lovetypecats'
 NEW = 'mbti-flirting-en.html'
 TITLE = 'How Each MBTI Type Flirts: Obvious & Subtle Signs'
 

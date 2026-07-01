@@ -3,7 +3,7 @@
 
 import os, re
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 NEW_SLUG = "mbti-relationship-style-en"
 NEW_TITLE = "MBTI Types as Partners: What Each Type Is Like in a Relationship"
 NEW_SHORT = "MBTI Types as Partners: What Each Type Is Like in a Relationship"

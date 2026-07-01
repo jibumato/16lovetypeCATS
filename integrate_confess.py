@@ -3,7 +3,7 @@
 
 import os
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 # ─── 1. Ranking pages ────────────────────────────────────────────────────────
 RANKING_FILES = [

@@ -4,7 +4,7 @@
 import re
 import os
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 NEW_SLUG = "ideal-date"
 NEW_TITLE = "Perfect Date Ideas for Every MBTI Type"

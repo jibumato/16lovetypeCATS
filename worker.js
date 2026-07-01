@@ -1,5 +1,5 @@
 /**
- * 16lovetypedogs — Cloudflare Worker (Static Assets + 診断数カウンタ + 感想コメント)
+ * 16lovetypecats — Cloudflare Worker (Static Assets + 診断数カウンタ + 感想コメント)
  *
  * 静的アセットは従来どおり自動配信され、Workerは /api/* のルートだけを処理します。
  *
@@ -210,8 +210,8 @@ export default {
         const isUnsub = await env.COUNTER.get("unsub:" + email);
         if (env.RESEND_API_KEY && email && !isUnsub) {
           const T = {
-            ja: { subject:`あなたの恋愛わんこは ${breed}（${type}）🐾`, header:"恋愛血統書", rare:"希少タイプ", common:"人気タイプ", pct:(p)=>`約${p}%`, cta:"サイトで詳しい結果を見る", share:"📸 結果カードを保存して友だちにもシェア🐾", note:"このメールは16lovetypedogs.comの診断結果保存機能からお送りしています。", brand:"16わんこ恋愛診断", unsub:"配信を停止する" },
-            en: { subject:`Your Love Dog: ${breed} (${type}) 🐾`, header:"Pedigree of Love", rare:"RARE type", common:"Popular type", pct:(p)=>`~${p}%`, cta:"See your full result", share:"📸 Save your card and share it with friends 🐾", note:"This email was sent from the result-save feature at 16lovetypedogs.com.", brand:"16 Love Type Dogs", unsub:"Unsubscribe" },
+            ja: { subject:`あなたの恋愛にゃんこは ${breed}（${type}）🐾`, header:"恋愛血統書", rare:"希少タイプ", common:"人気タイプ", pct:(p)=>`約${p}%`, cta:"サイトで詳しい結果を見る", share:"📸 結果カードを保存して友だちにもシェア🐾", note:"このメールは16lovetypedogs.comの診断結果保存機能からお送りしています。", brand:"16にゃんこ恋愛診断", unsub:"配信を停止する" },
+            en: { subject:`Your Love Dog: ${breed} (${type}) 🐾`, header:"Pedigree of Love", rare:"RARE type", common:"Popular type", pct:(p)=>`~${p}%`, cta:"See your full result", share:"📸 Save your card and share it with friends 🐾", note:"This email was sent from the result-save feature at 16lovetypedogs.com.", brand:"16 Love Type Cats", unsub:"Unsubscribe" },
             ko: { subject:`나의 연애 강아지는 ${breed}（${type}）🐾`, header:"연애 혈통서", rare:"희귀 타입", common:"인기 타입", pct:(p)=>`약${p}%`, cta:"사이트에서 자세한 결과 보기", share:"📸 결과 카드를 저장해서 친구에게도 공유해요 🐾", note:"이 이메일은 16lovetypedogs.com의 결과 저장 기능에서 발송되었습니다.", brand:"16 연애 강아지 진단", unsub:"수신 거부" },
             zh: { subject:`你的恋爱汪汪是 ${breed}（${type}）🐾`, header:"恋爱血统书", rare:"稀有类型", common:"人气类型", pct:(p)=>`约${p}%`, cta:"在网站查看详细结果", share:"📸 保存结果卡片，分享给朋友吧 🐾", note:"此邮件由 16lovetypedogs.com 的结果保存功能发送。", brand:"16汪汪恋爱诊断", unsub:"退订" },
             tw: { subject:`你的戀愛汪汪是 ${breed}（${type}）🐾`, header:"戀愛血統書", rare:"稀有類型", common:"人氣類型", pct:(p)=>`約${p}%`, cta:"在網站查看詳細結果", share:"📸 儲存結果卡片，分享給朋友吧 🐾", note:"此郵件由 16lovetypedogs.com 的結果儲存功能發送。", brand:"16汪汪戀愛診斷", unsub:"取消訂閱" },
@@ -263,7 +263,7 @@ ${tagLine}
               "Authorization": "Bearer " + env.RESEND_API_KEY,
             },
             body: JSON.stringify({
-              from: "16わんこ恋愛診断 <noreply@16lovetypedogs.com>",
+              from: "16にゃんこ恋愛診断 <noreply@16lovetypedogs.com>",
               to: [email],
               subject,
               html,

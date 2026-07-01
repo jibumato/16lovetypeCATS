@@ -4,7 +4,7 @@
 import os
 import re
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 NAYAMI_LINK = '<li><a href="/mbti-nayami.html">MBTI×恋愛の悩み解決ガイド（シチュエーション別まとめ）</a></li>'
 MANNERISM_LINK = '<li><a href="/mbti-mannerism.html">MBTIタイプ別「マンネリ・倦怠期の原因と乗り越え方」</a></li>'

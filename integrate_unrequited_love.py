@@ -3,7 +3,7 @@
 
 import os, re
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 NEW_SLUG = "mbti-unrequited-love-en"
 NEW_TITLE = "MBTI & Unrequited Love: How Each Type Handles a One-Sided Crush"
 NEW_SHORT = "MBTI & Unrequited Love: How Each Type Handles a One-Sided Crush"
