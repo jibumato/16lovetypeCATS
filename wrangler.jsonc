@@ -1,0 +1,12 @@
+{
+  "name": "16lovetypedogs",
+  "compatibility_date": "2026-06-17",
+  "main": "worker.js",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+  // 診断数カウンタ・感想コメント・メールリード保存に使うKV
+  "kv_namespaces": [{ "binding": "COUNTER", "id": "bc0214b4bef04bf081931cef357e168b" }]
+}

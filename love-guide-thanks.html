@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ご購入ありがとうございます ｜ 16わんこ恋愛診断</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3W7FBQRCD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C3W7FBQRCD');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#f4b8cb;--pink-deep:#e58aa0;--ink:#3a2e28;--ink-soft:#7a6258;--bg:#fff9f5;--shadow:0 4px 18px rgba(100,60,40,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Zen Maru Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:440px;width:100%;background:#fff;border:1.5px solid var(--pink);border-radius:24px;padding:34px 26px;text-align:center;box-shadow:var(--shadow)}
+  .mark{font-size:46px;line-height:1}
+  h1{font-size:20px;font-weight:700;margin:14px 0 8px}
+  p{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+  .note{font-size:12.5px;color:var(--ink-soft);background:var(--bg);border-radius:12px;padding:12px 14px;margin:14px 0}
+  .btn{display:inline-block;margin-top:6px;padding:13px 22px;border-radius:13px;font-size:15px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,#e0779a,#d35d85);box-shadow:0 6px 18px rgba(211,93,133,.32)}
+  .btn.dl{background:linear-gradient(135deg,#dcab57,#caa04a);box-shadow:0 6px 18px rgba(180,140,60,.4);margin-bottom:10px}
+  .sub{display:block;margin-top:14px;font-size:12px}
+  .sub a{color:var(--pink-deep)}
+  .fb{margin-top:22px;padding-top:20px;border-top:1px dashed var(--pink);text-align:center}
+  .fb-q{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:10px}
+  .stars{display:flex;justify-content:center;gap:4px;margin-bottom:12px}
+  .stars button{background:none;border:none;font-size:30px;line-height:1;cursor:pointer;color:#e6d3c4;padding:0 2px;-webkit-tap-highlight-color:transparent}
+  .stars button.on{color:#f5b301}
+  .fb textarea,.fb input{width:100%;border:1.5px solid var(--pink);border-radius:12px;padding:10px 12px;font-family:inherit;font-size:13px;margin-bottom:10px;resize:vertical;background:#fff}
+  .fb textarea{min-height:70px}
+  .fb-send{width:100%;padding:12px;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(135deg,#e0779a,#d35d85);cursor:pointer}
+  .fb-send:disabled{opacity:.5}
+  .fb-consent{font-size:10.5px;color:var(--ink-soft);margin:10px 0 0;line-height:1.6}
+  .fb-done{margin-top:22px;padding-top:20px;border-top:1px dashed var(--pink);font-size:14px;font-weight:700;color:var(--pink-deep)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark">🐾💌</div>
+    <h1 id="t-h1">ご購入ありがとうございます！</h1>
+    <p id="t-lead">あなたのタイプ専用のプレミアムレポートをお届けします。</p>
+    <div id="dlBox"></div>
+    <div class="note" id="t-note">
+      ご登録のメールアドレスに、Stripeからの決済確認メールをお送りしています。
+      プレミアムレポート（PDF）のご案内もあわせてご確認ください。
+    </div>
+    <a class="btn" id="t-home" href="/">🐶 診断トップにもどる</a>
+    <span class="sub"><a href="/ranking-index.html" id="t-more">恋愛ランキングまとめを見る →</a></span>
+
+    <div class="fb" id="fbBox">
+      <div class="fb-q" id="t-fbq">よかったら、ひとこと感想を聞かせてください 🙏</div>
+      <div class="stars" id="stars" role="radiogroup" aria-label="満足度">
+        <button type="button" data-v="1" aria-label="星1">★</button>
+        <button type="button" data-v="2" aria-label="星2">★</button>
+        <button type="button" data-v="3" aria-label="星3">★</button>
+        <button type="button" data-v="4" aria-label="星4">★</button>
+        <button type="button" data-v="5" aria-label="星5">★</button>
+      </div>
+      <textarea id="fbComment" maxlength="1000" placeholder="使ってみた感想（任意）"></textarea>
+      <input id="fbName" type="text" maxlength="40" placeholder="ニックネーム（任意）">
+      <button class="fb-send" id="fbSend">感想を送る</button>
+      <p class="fb-consent" id="t-consent">※いただいた感想は、ニックネームとともにサイトでご紹介する場合があります。</p>
+    </div>
+    <div class="fb-done" id="fbDone" hidden>感想をありがとうございました！🐾</div>
+  </div>
+<script>
+/* タイプ別・言語別PDFダウンロードURL（Cloudflare R2の公開URL）
+   購入時のリダイレクトURLに ?type=<CODE>&lang=<LANG> を付ける想定。
+   session_id が無い（＝Stripeを通らず直接開いた）場合はダウンロードボタンを出さない簡易ガード。 */
+const PDF_URLS = {
+  en: {
+    INTJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/intj_love_guide_en.pdf',
+    INTP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/intp_love_guide_en.pdf',
+    ENTJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/entj_love_guide_en.pdf',
+    ENTP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/entp_love_guide_en.pdf',
+    INFJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/infj_love_guide_en.pdf',
+    INFP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/infp_love_guide_en.pdf',
+    ENFJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/enfj_love_guide_en.pdf',
+    ENFP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/enfp_love_guide_en.pdf',
+    ISTJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/istj_love_guide_en.pdf',
+    ISFJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/isfj_love_guide_en.pdf',
+    ESTJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/estj_love_guide_en.pdf',
+    ESFJ:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/esfj_love_guide_en.pdf',
+    ISTP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/istp_love_guide_en.pdf',
+    ISFP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/isfp_love_guide_en.pdf',
+    ESTP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/estp_love_guide_en.pdf',
+    ESFP:'https://pub-d5412a34058e4a6c8d4228caef565f68.r2.dev/esfp_love_guide_en.pdf'
+  }
+};
+const T = {
+  ja: { h1:'ご購入ありがとうございます！', lead:'あなたのタイプ専用のプレミアムレポートをお届けします。',
+    note:'ご登録のメールアドレスに、Stripeからの決済確認メールをお送りしています。プレミアムレポート（PDF）のご案内もあわせてご確認ください。',
+    dl:'📄 PDFをダウンロード', home:'🐶 診断トップにもどる', more:'恋愛ランキングまとめを見る →',
+    fbq:'よかったら、ひとこと感想を聞かせてください 🙏', consent:'※いただいた感想は、ニックネームとともにサイトでご紹介する場合があります。',
+    ph_c:'使ってみた感想（任意）', ph_n:'ニックネーム（任意）', send:'感想を送る', thanks:'感想をありがとうございました！🐾' },
+  en: { h1:'Thank you for your purchase!', lead:'Your type-only Premium Report is ready.',
+    note:"We've sent a payment confirmation email from Stripe to your registered address.",
+    dl:'📄 Download your PDF', home:'🐶 Back to the quiz', more:'See all love rankings →',
+    fbq:"We'd love a quick word about your experience 🙏", consent:'Your comment may be shown on the site along with your nickname.',
+    ph_c:'How was it? (optional)', ph_n:'Nickname (optional)', send:'Send feedback', thanks:'Thanks for your feedback! 🐾' }
+};
+(function(){
+  try{
+    var p = new URLSearchParams(location.search);
+    var type = (p.get('type')||'').toUpperCase();
+    var lang = (p.get('lang')||'ja').toLowerCase();
+    var t = T[lang] || T.ja;
+    document.documentElement.lang = lang;
+    document.title = t.h1 + ' | 16lovetypedogs';
+    ['h1','lead','note','home','more','fbq','consent'].forEach(function(k){
+      var el = document.getElementById('t-'+k); if(el) el.textContent = t[k];
+    });
+    document.getElementById('fbComment').placeholder = t.ph_c;
+    document.getElementById('fbName').placeholder = t.ph_n;
+    document.getElementById('fbSend').textContent = t.send;
+
+    /* Stripe Payment Link はリダイレクト時に session_id を自動付与。
+       これが無い（直接URLを開いた等）場合はダウンロードリンクを出さない簡易ガード。 */
+    var tx = p.get('session_id') || p.get('transaction_id') || '';
+    var pdfUrl = tx ? ((PDF_URLS[lang]||{})[type]) : null;
+    if (pdfUrl) {
+      var box = document.getElementById('dlBox');
+      box.innerHTML = '<a class="btn dl" href="'+pdfUrl+'" target="_blank" rel="noopener">'+t.dl+'</a><br>';
+    }
+
+    var value = Number(p.get('value')) || (lang==='en' ? 7.99 : 1180);
+    var currency = (p.get('currency')||(lang==='en'?'USD':'JPY')).toUpperCase();
+    var txid = tx || ('tx-'+Date.now());
+    /* リロードによる二重計上を防止（同一取引IDは1回のみ） */
+    var key = 'purchase_'+txid;
+    if(!sessionStorage.getItem(key)){
+      sessionStorage.setItem(key,'1');
+      if(window.gtag) gtag('event','purchase',{
+        transaction_id: txid,
+        currency: currency,
+        value: value,
+        items:[{item_id: type||'love-guide', item_name:'love-guide', price:value, quantity:1}]
+      });
+    }
+  }catch(e){}
+})();
+</script>
+<script>
+(function(){
+  var rating = 0;
+  var stars = document.getElementById('stars');
+  if (stars) stars.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    rating = parseInt(b.dataset.v, 10) || 0;
+    Array.prototype.forEach.call(stars.children, function(el,i){ el.classList.toggle('on', i < rating); });
+  });
+  var send = document.getElementById('fbSend');
+  if (send) send.addEventListener('click', function(){
+    var p = new URLSearchParams(location.search);
+    var lang = (p.get('lang')||'ja').toLowerCase();
+    var t = T[lang] || T.ja;
+    var comment = (document.getElementById('fbComment') || {}).value || '';
+    var name = (document.getElementById('fbName') || {}).value || '';
+    if (!rating && !comment.trim()) { alert(lang==='en' ? 'Please add a rating or comment' : '星または感想を入力してください'); return; }
+    send.disabled = true;
+    var type = (p.get('type') || '').toUpperCase();
+    var finish = function(){
+      var box = document.getElementById('fbBox'); if (box) box.hidden = true;
+      var d = document.getElementById('fbDone'); if (d) { d.hidden = false; d.textContent = t.thanks; }
+      try { if (window.gtag) gtag('event','submit_review',{ rating: rating }); } catch(e){}
+    };
+    fetch('/api/feedback', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ rating: rating, comment: comment, name: name, type: type })
+    }).then(finish).catch(finish);
+  });
+})();
+</script>
+</body>
+</html>
