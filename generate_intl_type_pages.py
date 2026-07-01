@@ -236,7 +236,7 @@ def build(lang, code):
     tag=esc(d["tag"]); hook=esc(d["hook"])
     title=f'{name}（{code}/{breed}）{C["suffix"]}'
     pros="".join(f'<span class="tag">💗 {esc(p)}</span>' for p in d["pros"])
-    cons="".join(f'<span class="tag con">🦴 {esc(c)}</span>' for c in d["cons"])
+    cons="".join(f'<span class="tag con">🐟 {esc(c)}</span>' for c in d["cons"])
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article",
         "headline":f'{d["name"]}（{code}/{d["breed"]}）',"description":d["tag"],
         "inLanguage":C["htmllang"],

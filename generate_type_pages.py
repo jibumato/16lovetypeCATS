@@ -175,7 +175,7 @@ def generate_page(mbti):
 
     # Tags HTML
     pros_tags = ''.join(f'<span class="tag">💗 {p}</span>' for p in pros)
-    cons_tags = ''.join(f'<span class="tag con">🦴 {c}</span>' for c in cons)
+    cons_tags = ''.join(f'<span class="tag con">🐟 {c}</span>' for c in cons)
 
     # Group section
     group_html = get_group_members_html(mbti)
