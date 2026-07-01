@@ -6,7 +6,7 @@ import re
 import os
 
 # Read LOC data from index.html
-with open('/home/user/16lovetypecats/index.html', 'r', encoding='utf-8') as f:
+with open('/home/user/16lovetypeCATS/index.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Extract the LOC JSON
@@ -108,6 +108,10 @@ for grp_code, grp_data in GROUPS.items():
         BREED_LOOKUP[mbti] = breed
         GROUP_LOOKUP[mbti] = grp_code
 
+# Override hardcoded (dog) breeds with the current cat breeds from LOC
+for mbti in NAV_ORDER:
+    BREED_LOOKUP[mbti] = ja_data[mbti]['breed']
+
 def get_group_color(mbti):
     grp = GROUP_LOOKUP[mbti]
     return GROUPS[grp]['color']
@@ -118,9 +122,10 @@ def get_group_members_html(mbti):
     color = GROUPS[grp]['color']
     members = GROUPS[grp]['members']
     cards = []
-    for m_mbti, m_breed in members:
+    for m_mbti, _ in members:
         if m_mbti == mbti:
             continue
+        m_breed = BREED_LOOKUP[m_mbti]
         img_src = f'/{m_mbti.lower()}.webp'
         href = f'/type-{m_mbti.lower()}.html'
         card = (
@@ -381,11 +386,11 @@ footer a{{color:var(--ink-soft)}}
 </body></html>'''
     return html
 
-# Generate all 15 missing pages
+# Regenerate all 16 type pages from the current (cat) LOC
 MISSING = ['INTJ', 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP',
-           'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP']
+           'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP']
 
-output_dir = '/home/user/16lovetypecats'
+output_dir = '/home/user/16lovetypeCATS'
 
 for mbti in MISSING:
     html = generate_page(mbti)

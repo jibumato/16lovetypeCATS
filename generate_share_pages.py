@@ -40,7 +40,7 @@ FONTS = {
     "tw_bold": "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 }
 
-LABEL   = {"en": "My love-dog is", "zh": "我的恋爱猫是", "ko": "내 연애묘은", "tw": "我的戀愛貓是"}
+LABEL   = {"en": "My love-cat is", "zh": "我的恋爱猫是", "ko": "내 연애묘은", "tw": "我的戀愛貓是"}
 EYEBROW = {"en": "16 TYPES  ×  LOVE  ×  DOG", "zh": "16类型  ×  恋爱  ×  犬种", "ko": "16유형  ×  연애  ×  강아지", "tw": "16類型  ×  戀愛  ×  猫種"}
 RESULT  = {"en": "16 Love-Type Cats  result", "zh": "16恋爱猫测验  结果", "ko": "16 연애묘 진단  결과", "tw": "16戀愛貓測驗  結果"}
 SITE    = "16lovetypedogs.com"
@@ -196,7 +196,7 @@ REDIRECT = """<!DOCTYPE html>
 """
 
 LOCALE = {"en": "en_US", "zh": "zh_CN", "tw": "zh_TW"}
-OGTITLE = {"en": "My love-dog is {breed} ({code})", "zh": "我的恋爱猫是{breed}（{code}）", "tw": "我的戀愛貓是{breed}（{code}）"}
+OGTITLE = {"en": "My love-cat is {breed} ({code})", "zh": "我的恋爱猫是{breed}（{code}）", "tw": "我的戀愛貓是{breed}（{code}）"}
 CTA = {"en": "See your 16 Love-Type Cats result", "zh": "查看16恋爱猫测验结果", "tw": "查看16戀愛貓測驗結果"}
 
 
