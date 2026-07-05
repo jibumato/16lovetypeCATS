@@ -21,8 +21,8 @@
 MBTI×猫種で占う「16にゃんこ恋愛診断」💘
 たった12問であなたの恋愛タイプがわかる！
 
-一途なチワワさん？尽くすゴールデンさん？
-それとも自由なプードルさん？🐱
+一途なノルウェージャンフォレストキャットさん？尽くすサイベリアンさん？
+それとも自由なソマリさん？🐱
 
 ▼診断はプロフィールのリンクから（無料）
 @（アカウント名）
@@ -31,7 +31,7 @@ MBTI×猫種で占う「16にゃんこ恋愛診断」💘
 結果をストーリーでシェアしてね！
 
 #MBTI #MBTI診断 #恋愛診断 #16にゃんこ恋愛診断
-#MBTI恋愛 #犬好きさんと繋がりたい #性格診断
+#MBTI恋愛 #猫好きさんと繋がりたい #性格診断
 #恋愛あるある #相性診断 #無料診断 #診断メーカー
 #にゃんこ #恋活 #INFP #ENFP
 ```
@@ -54,7 +54,7 @@ MBTI×猫種で恋愛タイプ診断💘
 MBTI×猫種で占う「16にゃんこ恋愛診断」💘
 12問であなたの恋愛タイプ＆相性がわかる！
 
-一途なチワワ？尽くすゴールデン？自由なプードル？🐱
+一途なノルウェージャンフォレストキャット？尽くすサイベリアン？自由なソマリ？🐱
 
 ▼診断はこちら（無料）
 https://16lovetypedogs.com/
@@ -82,7 +82,7 @@ MBTI×猫種の恋愛タイプ診断、やってみて💘
 
 **ニッチ（濃いファン）**
 ```
-#16にゃんこ恋愛診断 #MBTI恋愛 #犬好きさんと繋がりたい #恋活 #相性診断
+#16にゃんこ恋愛診断 #MBTI恋愛 #猫好きさんと繋がりたい #恋活 #相性診断
 ```
 
 **タイプ別（投稿に合わせて1〜2個）**
@@ -113,9 +113,9 @@ MBTI×猫種の恋愛タイプ診断、やってみて💘
 
 ### English caption (Instagram)
 ```
-Which dog are you? 🐾
+Which cat are you? 🐾
 
-A love-style quiz based on MBTI x dog breeds 💘
+A love-style quiz based on MBTI x cat breeds 💘
 Just 12 questions reveal your love personality!
 
 Loyal Chihuahua? Devoted Golden? Free-spirited Poodle? 🐱
@@ -126,7 +126,7 @@ Loyal Chihuahua? Devoted Golden? Free-spirited Poodle? 🐱
 Check compatibility with your crush too 💌
 
 #MBTI #MBTItest #lovequiz #personalitytest #MBTIlove
-#dogsofinstagram #quiz #relationships #INFP #ENFP
+#catsofinstagram #quiz #relationships #INFP #ENFP
 ```
 
 ### 한국어 캡션 (Instagram)
@@ -156,16 +156,16 @@ MBTI×견종으로 보는 연애 유형 진단 💘
 
 | ファイル例 | タイプ |
 |---|---|
-| `ad-aruaru-infp.png` | INFP（マルチーズ） |
-| `ad-aruaru-enfp.png` | ENFP（プードル） |
-| `ad-aruaru-intj.png` | INTJ（チワワ） |
+| `ad-aruaru-infp.png` | INFP（ペルシャ） |
+| `ad-aruaru-enfp.png` | ENFP（ソマリ） |
+| `ad-aruaru-intj.png` | INTJ（ノルウェージャンフォレストキャット） |
 | …（全16タイプ ad-aruaru-〔型小文字〕.png） | |
 
 `ad-types-chart.png`（1080×1350）— 16タイプ一覧。「自分のを見つけてシェア」を促す保存版。
 
 ### 「あるある」投稿キャプション例（INFPの場合）
 ```
-【INFP・マルチーズタイプ 恋愛あるある】🐾
+【INFP・ペルシャタイプ 恋愛あるある】🐾
 
 ・妄想の中で恋がすでに完結
 ・好きすぎて逆に避けてしまう
@@ -176,7 +176,7 @@ MBTI×견종으로 보는 연애 유형 진단 💘
 あなたのタイプは診断でチェック→プロフのリンクから（無料）
 
 #MBTI #MBTI診断 #INFP #恋愛あるある #16にゃんこ恋愛診断
-#マルチーズ #性格診断 #無料診断 #恋愛 #あるある
+#ペルシャ #性格診断 #無料診断 #恋愛 #あるある
 ```
 
 ### 運用アイデア
@@ -194,18 +194,18 @@ MBTI×견종으로 보는 연애 유형 진단 💘
 
 | ファイル | ペア |
 |---|---|
-| `ad-aisho-intj-enfp.png` | INTJ×ENFP（チワワ×プードル） |
-| `ad-aisho-infj-entp.png` | INFJ×ENTP（キャバリア×ジャックラッセル） |
-| `ad-aisho-infp-enfj.png` | INFP×ENFJ（マルチーズ×ゴールデン） |
-| `ad-aisho-intp-entj.png` | INTP×ENTJ（シュナウザー×コーギー） |
-| `ad-aisho-istj-esfp.png` | ISTJ×ESFP（柴犬×ポメ） |
-| `ad-aisho-isfj-estp.png` | ISFJ×ESTP（シーズー×ビーグル） |
+| `ad-aisho-intj-enfp.png` | INTJ×ENFP（ノルウェージャンフォレストキャット×ソマリ） |
+| `ad-aisho-infj-entp.png` | INFJ×ENTP（ロシアンブルー×デボンレックス） |
+| `ad-aisho-infp-enfj.png` | INFP×ENFJ（ペルシャ×サイベリアン） |
+| `ad-aisho-intp-entj.png` | INTP×ENTJ（シャルトリュー×シャム） |
+| `ad-aisho-istj-esfp.png` | ISTJ×ESFP（ブリティッシュショートヘア×アビシニアン） |
+| `ad-aisho-isfj-estp.png` | ISFJ×ESTP（ラグドール×ベンガル） |
 
 ### 相性投稿キャプション例（INTJ×ENFP）
 ```
 【神相性カップル】INTJ × ENFP 💘🐾
 
-クールな策士チワワを、明るい情熱家プードルが溶かす。
+クールな策士ノルウェージャンフォレストキャットを、明るい情熱家ソマリが溶かす。
 足りない部分を完璧に補い合う王道ペア🐱
 
 あなたとあの人の相性は？気になる人をタグ付け👀
@@ -232,11 +232,11 @@ MBTI×견종으로 보는 연애 유형 진단 💘
 
 ## English "Love Quirks" cards (overseas reach)
 
-`ad-aruaru-en-{type}.png` (1080×1350, all 16 types) — English version of the relatable "love quirks" cards with each type's dog.
+`ad-aruaru-en-{type}.png` (1080×1350, all 16 types) — English version of the relatable "love quirks" cards with each type's cat.
 
 ### English caption example (INFP)
 ```
-INFP in Love 🐾 (Maltese type)
+INFP in Love 🐾 (Persian type)
 
 ・The whole romance plays out in their head
 ・Likes you so much they avoid you
@@ -244,10 +244,10 @@ INFP in Love 🐾 (Maltese type)
 ・Loves deeply and for a long time
 
 Tag an INFP who needs to see this 🥹
-Find your love-dog type → link in bio (free quiz)
+Find your love-cat type → link in bio (free quiz)
 
 #MBTI #INFP #MBTImemes #personalitytype #lovequiz
-#16lovetypecats #MBTIlove #relatable #dogsofinstagram
+#16lovetypecats #MBTIlove #relatable #catsofinstagram
 ```
 
 ---
@@ -520,7 +520,7 @@ them: "statistically, relationships last longer when we—"
 > シリーズ化しやすい。毎週1タイプずつ投稿すれば16週分のネタに。
 
 ```
-【INFP（マルチーズ）の脳内劇場】
+【INFP（ペルシャ）の脳内劇場】
 
 「おはよう」の一言が来た
 ↓
@@ -537,11 +537,11 @@ them: "statistically, relationships last longer when we—"
 INFPのあなた、当たってた？🥹
 コメントで教えて→ 診断はプロフから（無料）
 
-#INFP #MBTI #恋愛あるある #マルチーズ
+#INFP #MBTI #恋愛あるある #ペルシャ
 ```
 
 ```
-【ENFJ（ゴールデン）の脳内劇場】
+【ENFJ（サイベリアン）の脳内劇場】
 
 友達の恋愛相談に4時間付き合う
 ↓
@@ -556,11 +556,11 @@ INFPのあなた、当たってた？🥹
 ENFJのあなた、あるある？🐾
 コメントで「わかる」って教えて
 
-#ENFJ #MBTI #恋愛あるある #ゴールデン
+#ENFJ #MBTI #恋愛あるある #サイベリアン
 ```
 
 ```
-【INTJ（チワワ）の脳内劇場】
+【INTJ（ノルウェージャンフォレストキャット）の脳内劇場】
 
 気になる人ができた
 ↓
@@ -575,7 +575,7 @@ ENFJのあなた、あるある？🐾
 まだ一言も話しかけていない
 
 INTJのあなた…完全に同じでは？😂
-#INTJ #MBTI #恋愛あるある #チワワ
+#INTJ #MBTI #恋愛あるある #ノルウェージャンフォレストキャット
 ```
 
 ---
@@ -772,10 +772,10 @@ INFP분들 아닌가요😭
 ```
 【本当に一途なMBTIランキング🐾】
 
-1位 ISFJ（シーズー）— 別れた後も相手の幸せを願える
-2位 INFJ（キャバリア）— 心を許した人には一生レベルで尽くす
-3位 INFP（マルチーズ）— 一度好きになると長く深く
-4位 ISTJ（柴犬）— 義理と誠実さで愛を表す
+1位 ISFJ（ラグドール）— 別れた後も相手の幸せを願える
+2位 INFJ（ロシアンブルー）— 心を許した人には一生レベルで尽くす
+3位 INFP（ペルシャ）— 一度好きになると長く深く
+4位 ISTJ（ブリティッシュショートヘア）— 義理と誠実さで愛を表す
 
 5〜16位は→ プロフのランキングページから🔗
 
@@ -788,10 +788,10 @@ INFP분들 아닌가요😭
 ```
 【感情表現が得意なMBTIランキング🐾】
 
-1位 ENFJ（ゴールデン）— 愛情を言葉と行動で両方出せる
-2位 ESFJ（ポメ）— 毎日言ってくれる「大好き」が本気
-3位 ENFP（プードル）— テンション高めに毎日愛を叫ぶ
-4位 ESFP（柴犬）— その場の感情を即座に表現
+1位 ENFJ（サイベリアン）— 愛情を言葉と行動で両方出せる
+2位 ESFJ（アビシニアン）— 毎日言ってくれる「大好き」が本気
+3位 ENFP（ソマリ）— テンション高めに毎日愛を叫ぶ
+4位 ESFP（ブリティッシュショートヘア）— その場の感情を即座に表現
 
 感情表現が苦手なタイプと付き合うの大変だよね…
 相性はプロフから診断できます🐾
