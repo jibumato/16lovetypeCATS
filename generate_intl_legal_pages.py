@@ -14,15 +14,15 @@ STYLE=__import__("re").search(r'<style>(.*?)</style>',
     open(os.path.join(ROOT,"types-en.html"),encoding="utf-8").read(), __import__("re").S).group(1)
 
 CH={
- "en":{"htmllang":"en","locale":"en_US","site":"🐾 16 Love-Type Dogs","quiz":"Take Quiz","types":"Type List",
-   "about":"About","contact":"Contact","privacy":"Privacy","home":"Home","types_href":"/types-en.html","suffix":" | 16 Love-Type Dogs",
-   "disc":"※Diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Dogs / Mymatrix"},
- "zh":{"htmllang":"zh-CN","locale":"zh_CN","site":"🐾 16恋爱犬测验","quiz":"开始测验","types":"类型一览",
-   "about":"关于本站","contact":"联系我们","privacy":"隐私政策","home":"首页","types_href":"/types-zh.html","suffix":"｜16恋爱犬测验",
-   "disc":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix"},
- "ko":{"htmllang":"ko","locale":"ko_KR","site":"🐾 16 연애견 진단","quiz":"진단하기","types":"유형 목록",
-   "about":"운영자 정보","contact":"문의하기","privacy":"개인정보처리방침","home":"홈","types_href":"/types-ko.html","suffix":"｜16 연애견 진단",
-   "disc":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Dogs / Mymatrix"},
+ "en":{"htmllang":"en","locale":"en_US","site":"🐾 16 Love-Type Cats","quiz":"Take Quiz","types":"Type List",
+   "about":"About","contact":"Contact","privacy":"Privacy","home":"Home","types_href":"/types-en.html","suffix":" | 16 Love-Type Cats",
+   "disc":"※Diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Cats / Mymatrix"},
+ "zh":{"htmllang":"zh-CN","locale":"zh_CN","site":"🐾 16恋爱猫测验","quiz":"开始测验","types":"类型一览",
+   "about":"关于本站","contact":"联系我们","privacy":"隐私政策","home":"首页","types_href":"/types-zh.html","suffix":"｜16恋爱猫测验",
+   "disc":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix"},
+ "ko":{"htmllang":"ko","locale":"ko_KR","site":"🐾 16 연애묘 진단","quiz":"진단하기","types":"유형 목록",
+   "about":"운영자 정보","contact":"문의하기","privacy":"개인정보처리방침","home":"홈","types_href":"/types-ko.html","suffix":"｜16 연애묘 진단",
+   "disc":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Cats / Mymatrix"},
 }
 LANG_LABEL={"ja":"日本語","en":"English","ko":"한국어","zh":"简体中文","tw":"繁體中文"}
 # native page slugs per page-type per lang
@@ -32,18 +32,18 @@ def slug(ptype,lang):
 
 # ---- content (en/zh/ko authored; tw via opencc from zh) ----
 ABOUT={
- "en":{"title":"About","sub":"About 16 Love-Type Dogs",
-   "sec":[("About this site","\"16 Love-Type Dogs\" is a site that, based on MBTI theory, likens 16 love styles to cute dog breeds. Answer just 12 questions to analyze your love style and get your most compatible types and daily love advice. Results are for entertainment only and are not psychological or medical assessments — please enjoy them lightly."),
+ "en":{"title":"About","sub":"About 16 Love-Type Cats",
+   "sec":[("About this site","\"16 Love-Type Cats\" is a site that, based on MBTI theory, likens 16 love styles to cute dog breeds. Answer just 12 questions to analyze your love style and get your most compatible types and daily love advice. Results are for entertainment only and are not psychological or medical assessments — please enjoy them lightly."),
      ("Operator","Trade name: Mymatrix<br>Representative: Private (individually operated)<br>Location: Nagoya, Aichi, Japan<br>Contact: <a href=\"/contact-en.html\">Contact form</a>"),
      ("Basis &amp; reference","The diagnosis axes reference the four MBTI (Myers–Briggs Type Indicator) axes (E/I, S/N, T/F, J/P). This site is not officially licensed by MBTI® and is original entertainment content built around the MBTI theme."),
      ("Ads &amp; affiliates","This site uses Google AdSense ads and affiliate links via the Amazon Associates Program. See our <a href=\"/privacy-en.html\">privacy policy</a> for details.")]},
- "zh":{"title":"关于本站","sub":"关于「16恋爱犬测验」",
-   "sec":[("关于本站","「16恋爱犬测验」是一个以MBTI理论为基础、把16种恋爱类型比作可爱犬种来诊断的网站。只需回答12道题，就能分析你的恋爱风格，并为你呈现契合的类型与今日恋爱建议。诊断结果仅供娱乐，并非心理学或医学诊断，请轻松享受。"),
+ "zh":{"title":"关于本站","sub":"关于「16恋爱猫测验」",
+   "sec":[("关于本站","「16恋爱猫测验」是一个以MBTI理论为基础、把16种恋爱类型比作可爱犬种来诊断的网站。只需回答12道题，就能分析你的恋爱风格，并为你呈现契合的类型与今日恋爱建议。诊断结果仅供娱乐，并非心理学或医学诊断，请轻松享受。"),
      ("运营者","商号：Mymatrix<br>负责人：不公开（个人运营）<br>所在地：日本爱知县名古屋市<br>联系方式：<a href=\"/contact-zh.html\">联系表单</a>"),
      ("依据与参考","诊断轴参考MBTI（Myers–Briggs Type Indicator）的四个维度（E/I・S/N・T/F・J/P）。本站并非MBTI®官方授权，而是以MBTI为题材的原创娱乐内容。"),
      ("广告与联盟","本站使用 Google AdSense 广告与 Amazon 联盟计划的推广链接。详情请见<a href=\"/privacy-zh.html\">隐私政策</a>。")]},
- "ko":{"title":"운영자 정보","sub":"「16 연애견 진단」 소개",
-   "sec":[("사이트 소개","「16 연애견 진단」은 MBTI 이론을 바탕으로 16가지 연애 유형을 귀여운 견종에 빗대어 진단하는 사이트입니다. 12개의 질문에 답하기만 하면 당신의 연애 스타일을 분석하고, 잘 맞는 유형과 오늘의 연애 조언을 알려드립니다. 진단 결과는 오락용이며 심리학적·의학적 진단이 아니니 가볍게 즐겨 주세요."),
+ "ko":{"title":"운영자 정보","sub":"「16 연애묘 진단」 소개",
+   "sec":[("사이트 소개","「16 연애묘 진단」은 MBTI 이론을 바탕으로 16가지 연애 유형을 귀여운 견종에 빗대어 진단하는 사이트입니다. 12개의 질문에 답하기만 하면 당신의 연애 스타일을 분석하고, 잘 맞는 유형과 오늘의 연애 조언을 알려드립니다. 진단 결과는 오락용이며 심리학적·의학적 진단이 아니니 가볍게 즐겨 주세요."),
      ("운영자","상호: Mymatrix<br>대표: 비공개(개인 운영)<br>소재지: 일본 아이치현 나고야시<br>문의: <a href=\"/contact-ko.html\">문의 양식</a>"),
      ("근거 및 참고","진단 축은 MBTI(Myers–Briggs Type Indicator)의 네 가지 축(E/I·S/N·T/F·J/P)을 참고합니다. 본 사이트는 MBTI® 공식 라이선스를 받지 않았으며, MBTI를 소재로 한 독자적인 오락 콘텐츠입니다."),
      ("광고 및 제휴","본 사이트는 Google AdSense 광고와 Amazon 어소시에이트 프로그램의 제휴 링크를 사용합니다. 자세한 내용은 <a href=\"/privacy-ko.html\">개인정보처리방침</a>을 참고하세요.")]},
@@ -62,7 +62,7 @@ CONTACT={
 # privacy: reuse English sections (from privacy-en) translated to zh/ko
 PRIVACY={
  "zh":{"title":"隐私政策","sub":"最后更新：2025",
-   "sec":[("1. 运营者",f"本站「16恋爱犬测验」由 Mymatrix 运营（联系方式：{EMAIL}）。"),
+   "sec":[("1. 运营者",f"本站「16恋爱猫测验」由 Mymatrix 运营（联系方式：{EMAIL}）。"),
      ("2. 访问分析","本站使用 Google Analytics，通过 cookie 收集匿名访问数据（页面浏览量、停留时间、设备类型等）。详情请见 <a href=\"https://policies.google.com/technologies/partner-sites\" target=\"_blank\" rel=\"noopener\">Google 隐私政策</a>。"),
      ("3. 本地存储","为提升使用体验，本站可能在你的浏览器本地存储中保存图鉴、每日运势等数据。这些数据不会发送到任何服务器，可随时在浏览器设置中删除。"),
      ("4. Google AdSense","本站通过 Google AdSense 显示广告。Google 可能使用 cookie，根据你的浏览记录展示个性化广告。你可在 <a href=\"https://adssettings.google.com/\" target=\"_blank\" rel=\"noopener\">Google 广告设置</a> 中关闭。详情见 <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google 广告政策</a>。"),
@@ -71,7 +71,7 @@ PRIVACY={
      ("7. 免责声明","本站内容仅供娱乐。诊断结果并非心理学或医学诊断。对于因使用本站而产生的任何损害，我们不承担责任。"),
      ("8. 联系","隐私相关咨询请通过<a href=\"/contact-zh.html\">联系页面</a>。")]},
  "ko":{"title":"개인정보처리방침","sub":"최종 업데이트: 2025",
-   "sec":[("1. 운영자",f"본 사이트 「16 연애견 진단」은 Mymatrix가 운영합니다(연락처: {EMAIL})."),
+   "sec":[("1. 운영자",f"본 사이트 「16 연애묘 진단」은 Mymatrix가 운영합니다(연락처: {EMAIL})."),
      ("2. 접속 분석","본 사이트는 Google Analytics를 사용하여 cookie를 통해 익명 접속 데이터(페이지뷰, 체류 시간, 기기 유형 등)를 수집합니다. 자세한 내용은 <a href=\"https://policies.google.com/technologies/partner-sites\" target=\"_blank\" rel=\"noopener\">Google 개인정보처리방침</a>을 참고하세요."),
      ("3. 로컬 스토리지","사용성 향상을 위해 본 사이트는 도감, 오늘의 운세 결과 등의 데이터를 브라우저 로컬 스토리지에 저장할 수 있습니다. 이 데이터는 서버로 전송되지 않으며 언제든 브라우저 설정에서 삭제할 수 있습니다."),
      ("4. Google AdSense","본 사이트는 Google AdSense를 통해 광고를 표시합니다. Google은 cookie를 사용하여 열람 기록을 바탕으로 맞춤 광고를 표시할 수 있습니다. <a href=\"https://adssettings.google.com/\" target=\"_blank\" rel=\"noopener\">Google 광고 설정</a>에서 해제할 수 있습니다. 자세한 내용은 <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google 광고 정책</a>을 참고하세요."),
@@ -94,7 +94,7 @@ def langbar(ptype, cur):
     return '<div class="langbar" style="display:flex;justify-content:center;gap:6px;padding:12px 0;flex-wrap:wrap">'+"".join(out)+'</div>'
 
 def hreflang(ptype):
-    b="https://16lovetypedogs.com/"
+    b="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{b}{slug(ptype,"ja")}">',
       f'<link rel="alternate" hreflang="en" href="{b}{slug(ptype,"en")}">',
@@ -115,11 +115,11 @@ TPL="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}{suffix}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,10 +167,10 @@ def tw_from_zh(data):
             "sec":[(cc.convert(h),cc.convert(b)) for h,b in data["sec"]]}
 
 # add tw chrome by converting zh chrome
-CH["tw"]=dict(CH["zh"]); CH["tw"].update({"htmllang":"zh-TW","locale":"zh_TW","site":"🐾 16戀愛犬測驗",
+CH["tw"]=dict(CH["zh"]); CH["tw"].update({"htmllang":"zh-TW","locale":"zh_TW","site":"🐾 16戀愛貓測驗",
   "quiz":cc.convert(CH["zh"]["quiz"]),"types":cc.convert(CH["zh"]["types"]),"about":cc.convert(CH["zh"]["about"]),
   "contact":cc.convert(CH["zh"]["contact"]),"privacy":cc.convert(CH["zh"]["privacy"]),"home":cc.convert(CH["zh"]["home"]),
-  "types_href":"/types-tw.html","suffix":"｜16戀愛犬測驗",
+  "types_href":"/types-tw.html","suffix":"｜16戀愛貓測驗",
   "disc":cc.convert(CH["zh"]["disc"])})
 
 if __name__=="__main__":

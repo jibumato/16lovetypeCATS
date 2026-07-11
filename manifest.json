@@ -1,7 +1,7 @@
 {
-  "name": "16わんこ恋愛診断",
-  "short_name": "わんこ診断",
-  "description": "MBTIをもとに、あなたの恋愛タイプをかわいい犬種で診断。相性チェック・恋愛おみくじも無料。",
+  "name": "16にゃんこ恋愛診断",
+  "short_name": "にゃんこ診断",
+  "description": "MBTIをもとに、あなたの恋愛タイプをかわいい猫種で診断。相性チェック・恋愛おみくじも無料。",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fcf4ef",

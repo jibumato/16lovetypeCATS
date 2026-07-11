@@ -3,7 +3,7 @@
 
 import os
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 # ─── 1. Ranking pages ────────────────────────────────────────────────────────
 RANKING_FILES = [
@@ -152,13 +152,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-approach-en" not in sitemap:
     LOVE_LANG_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-love-language-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-love-language-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     APPROACH_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-approach-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-approach-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

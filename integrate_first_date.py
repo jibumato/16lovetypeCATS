@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re
 
-D = '/home/user/16lovetypedogs'
+D = '/home/user/16lovetypecats'
 NEW = 'mbti-first-date-en.html'
 TITLE = 'Perfect First Date for Every MBTI Type: Ideas That Actually Work'
 FLIRT = 'mbti-flirting-en.html'
@@ -65,10 +65,10 @@ with open(sitemap_path) as f: sm = f.read()
 if NEW in sm:
     print(f'SKIP: sitemap.xml'); skip += 1
 else:
-    m = re.search(r'<url>\s*<loc>https://16lovetypedogs\.com/' + re.escape(FLIRT) + r'</loc>.*?</url>', sm, re.DOTALL)
+    m = re.search(r'<url>\s*<loc>https://16lovetypecats\.com/' + re.escape(FLIRT) + r'</loc>.*?</url>', sm, re.DOTALL)
     if m:
         entry = f'''  <url>
-    <loc>https://16lovetypedogs.com/{NEW}</loc>
+    <loc>https://16lovetypecats.com/{NEW}</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -98,16 +98,16 @@ else:
 with open(FD_PATH) as f: fc = f.read()
 OLD_FOOTER = '''<footer>
   <div>
-    <a href="/">🐾 16 Love Type Dogs</a> &nbsp;&middot;&nbsp;
+    <a href="/">🐾 16 Love Type Cats</a> &nbsp;&middot;&nbsp;
     <a href="/about-en.html">About</a> &nbsp;&middot;&nbsp;
     <a href="/privacy-en.html">Privacy</a> &nbsp;&middot;&nbsp;
     <a href="/contact-en.html">Contact</a>
   </div>
   <div style="margin-top:8px;color:#a09080;font-size:11.5px">
-    &copy; 2026 16 Love Type Dogs. All rights reserved.
+    &copy; 2026 16 Love Type Cats. All rights reserved.
   </div>
 </footer>'''
-NEW_FOOTER = '<footer><div><a href="/">16 Love Type Dogs</a> &nbsp;|&nbsp; <a href="/types-en.html">All 16 Types</a> &nbsp;|&nbsp; <a href="/privacy.html">Privacy</a></div><div style="margin-top:6px;color:#c4a0c8">© 2026 16 Love Type Dogs</div></footer>'
+NEW_FOOTER = '<footer><div><a href="/">16 Love Type Cats</a> &nbsp;|&nbsp; <a href="/types-en.html">All 16 Types</a> &nbsp;|&nbsp; <a href="/privacy.html">Privacy</a></div><div style="margin-top:6px;color:#c4a0c8">© 2026 16 Love Type Cats</div></footer>'
 if OLD_FOOTER in fc:
     fc2 = fc.replace(OLD_FOOTER, NEW_FOOTER)
     with open(FD_PATH, 'w') as f: f.write(fc2)

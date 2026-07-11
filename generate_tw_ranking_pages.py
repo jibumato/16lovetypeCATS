@@ -22,7 +22,7 @@ ALL=zh.ALL
 CHROME={k:(t(v) if isinstance(v,str) and k not in ("htmllang","locale","types_href","privacy_href") else v)
         for k,v in zh.CHROME.items()}
 CHROME["htmllang"]="zh-TW"; CHROME["locale"]="zh_TW"; CHROME["types_href"]="/types-tw.html"
-CHROME["site"]="🐾 16戀愛犬測驗"
+CHROME["site"]="🐾 16戀愛貓測驗"
 SELF_LABEL="繁體中文"
 OTHER_LANGS=[("ja","日本語","ranking-{m}.html"),("en","English","ranking-{m}-en.html"),
              ("zh","简体中文","ranking-{m}-zh.html"),("ko","한국어","ranking-{m}-ko.html")]
@@ -56,20 +56,20 @@ def langbar(metric):
     return '<div class="langbar" style="display:flex;justify-content:center;gap:6px;padding:12px 0;flex-wrap:wrap">'+"".join(parts)+'</div>'
 
 STYLE=re.search(r'<style>(.*?)</style>', open(os.path.join(ROOT,"ranking-loyalty-en.html"),encoding="utf-8").read(), re.DOTALL).group(1)
-HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/ranking-{metric}.html">\n'
- '<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/ranking-{metric}-en.html">\n'
- '<link rel="alternate" hreflang="ko" href="https://16lovetypedogs.com/ranking-{metric}-ko.html">\n'
- '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypedogs.com/ranking-{metric}-zh.html">\n'
- '<link rel="alternate" hreflang="zh-Hant" href="https://16lovetypedogs.com/ranking-{metric}-tw.html">\n'
- '<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/ranking-{metric}-en.html">')
+HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/ranking-{metric}.html">\n'
+ '<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/ranking-{metric}-en.html">\n'
+ '<link rel="alternate" hreflang="ko" href="https://16lovetypecats.com/ranking-{metric}-ko.html">\n'
+ '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypecats.com/ranking-{metric}-zh.html">\n'
+ '<link rel="alternate" hreflang="zh-Hant" href="https://16lovetypecats.com/ranking-{metric}-tw.html">\n'
+ '<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/ranking-{metric}-en.html">')
 
 TEMPLATE=zh.TEMPLATE  # identical structure
 
 def build(metric):
     M=META[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],"description":M["sub"],
-        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypecats.com/ranking-{metric}-{LANG}.html",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     # zh.TEMPLATE has fixed hreflang lines for ja/en/zh; replace that block via our own by formatting then swapping
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,style=STYLE,site=CHROME["site"],quiz=CHROME["quiz"],

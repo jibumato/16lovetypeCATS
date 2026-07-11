@@ -198,13 +198,13 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/ranking-{metric}-en.html">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/ranking-{metric}-en.html">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/ranking-{metric}-en.html">
-<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/ranking-{metric}.html">
-<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/ranking-{metric}-en.html">
-<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/ranking-{metric}-en.html">
+<link rel="canonical" href="https://16lovetypecats.com/ranking-{metric}-en.html">
+<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/ranking-{metric}.html">
+<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/ranking-{metric}-en.html">
+<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/ranking-{metric}-en.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Baloo+2:wght@500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
@@ -213,7 +213,7 @@ TEMPLATE = """<!DOCTYPE html>
 </head><body>
 <header>
   <div class="hinner">
-    <a class="site-logo" href="/">🐾 16 Love-Type Dogs</a>
+    <a class="site-logo" href="/">🐾 16 Love-Type Cats</a>
     <nav>
       <a href="/">Take Quiz</a>
       <a href="/types-en.html">Type List</a>
@@ -224,16 +224,16 @@ TEMPLATE = """<!DOCTYPE html>
   {langbar}
   <div class="breadcrumb"><a href="/">Take Quiz</a> › <a href="/types-en.html">Type List</a> › {short}</div>
   <div class="hero"><h1 style="font-size:clamp(18px,4.5vw,24px);font-weight:800;color:var(--pink-deep);line-height:1.5">{title}</h1><p class="sub">{sub}</p></div>
-  <div class="card"><p>{intro}</p><p style="font-size:12.5px;color:var(--ink-soft)">For reference only. Based on the love stats of 16 Love-Type Dogs, for entertainment.</p></div>
+  <div class="card"><p>{intro}</p><p style="font-size:12.5px;color:var(--ink-soft)">For reference only. Based on the love stats of 16 Love-Type Cats, for entertainment.</p></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--beige)">Ranking</h2>{items}</div>
-  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Dogs</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">🐶 Take the quiz</a></div>
+  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Cats</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">🐱 Take the quiz</a></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--beige)">Related articles</h2>{related}</div>
   <div class="notice">Rankings and diagnosis results are for entertainment only.</div>
 </div>
 <script type="application/ld+json">{ldjson}</script>
 <footer>
   <div style="margin-bottom:8px"><a href="/">Take Quiz</a> ｜ <a href="/types-en.html">Type List</a> ｜ <a href="/privacy-en.html">Privacy</a></div>
-  ※Rankings and diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Dogs / Mymatrix
+  ※Rankings and diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Cats / Mymatrix
 </footer>
 </body></html>
 """
@@ -243,8 +243,8 @@ def build(metric):
     short=REL_LABEL[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],
         "description":M["sub"],"inLanguage":"en",
-        "url":f"https://16lovetypedogs.com/ranking-{metric}-en.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},
+        "url":f"https://16lovetypecats.com/ranking-{metric}-en.html",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},
         ensure_ascii=False)
     out=TEMPLATE.format(title=esc(M["title"]), sub=esc(M["sub"]), intro=esc(M["intro"]),
         metric=metric, style=STYLE, extra_css=EXTRA_CSS, langbar=langbar(metric),

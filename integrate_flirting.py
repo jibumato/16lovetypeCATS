@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re
 
-D = '/home/user/16lovetypedogs'
+D = '/home/user/16lovetypecats'
 NEW = 'mbti-flirting-en.html'
 TITLE = 'How Each MBTI Type Flirts: Obvious & Subtle Signs'
 
@@ -62,11 +62,11 @@ with open(sitemap_path) as f: sm = f.read()
 if NEW in sm:
     print(f'SKIP: sitemap.xml'); skip += 1
 else:
-    SITEMAP_ANCHOR = '    <loc>https://16lovetypedogs.com/mbti-unrequited-love-en.html</loc>'
+    SITEMAP_ANCHOR = '    <loc>https://16lovetypecats.com/mbti-unrequited-love-en.html</loc>'
     m = re.search(r'<url>\s*' + re.escape(SITEMAP_ANCHOR[4:]) + r'.*?</url>', sm, re.DOTALL)
     if m:
         entry = f'''  <url>
-    <loc>https://16lovetypedogs.com/{NEW}</loc>
+    <loc>https://16lovetypecats.com/{NEW}</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

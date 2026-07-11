@@ -1,5 +1,5 @@
 {
-  "name": "16lovetypedogs",
+  "name": "16lovetypecats",
   "compatibility_date": "2026-06-17",
   "main": "worker.js",
   "assets": {
@@ -8,5 +8,5 @@
     "not_found_handling": "404-page"
   },
   // 診断数カウンタ・感想コメント・メールリード保存に使うKV
-  "kv_namespaces": [{ "binding": "COUNTER", "id": "bc0214b4bef04bf081931cef357e168b" }]
+  "kv_namespaces": [{ "binding": "COUNTER", "id": "cacac5e445044dd293708fb4ca4ded1c" }]
 }

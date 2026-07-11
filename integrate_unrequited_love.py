@@ -3,7 +3,7 @@
 
 import os, re
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 NEW_SLUG = "mbti-unrequited-love-en"
 NEW_TITLE = "MBTI & Unrequited Love: How Each Type Handles a One-Sided Crush"
 NEW_SHORT = "MBTI & Unrequited Love: How Each Type Handles a One-Sided Crush"
@@ -124,9 +124,9 @@ for fname in EN_GUIDE_PAGES:
 sitemap_path = os.path.join(BASE, "sitemap.xml")
 sitemap = open(sitemap_path, encoding="utf-8").read()
 if NEW_SLUG not in sitemap:
-    ANCHOR_SITEMAP = f"  <url>\n    <loc>https://16lovetypedogs.com/{ANCHOR_SLUG}.html</loc>"
+    ANCHOR_SITEMAP = f"  <url>\n    <loc>https://16lovetypecats.com/{ANCHOR_SLUG}.html</loc>"
     NEW_ENTRY = f"""  <url>
-    <loc>https://16lovetypedogs.com/{NEW_SLUG}.html</loc>
+    <loc>https://16lovetypecats.com/{NEW_SLUG}.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

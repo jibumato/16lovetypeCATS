@@ -3,7 +3,7 @@
 
 import os
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 NEW_TITLE = "MBTI Types That Act Cold When They Like You"
 NEW_TITLE_LONG = "MBTI Types That Act Cold When They Like You: Why & How to Reach Them"
@@ -155,12 +155,12 @@ src_path = os.path.join(BASE, "mbti-suki-noni-tsumeta.html")
 src_text = open(src_path, encoding="utf-8").read()
 
 if "hreflang" not in src_text:
-    CANONICAL = '<link rel="canonical" href="https://16lovetypedogs.com/mbti-suki-noni-tsumeta.html">'
+    CANONICAL = '<link rel="canonical" href="https://16lovetypecats.com/mbti-suki-noni-tsumeta.html">'
     HREFLANG_BLOCK = (
         CANONICAL + "\n"
-        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/mbti-suki-noni-tsumeta.html">\n'
-        + '  <link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/mbti-acts-cold-en.html">\n'
-        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/mbti-acts-cold-en.html">'
+        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/mbti-suki-noni-tsumeta.html">\n'
+        + '  <link rel="alternate" hreflang="en" href="https://16lovetypecats.com/mbti-acts-cold-en.html">\n'
+        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/mbti-acts-cold-en.html">'
     )
     src_text = src_text.replace(CANONICAL, HREFLANG_BLOCK, 1)
     print("OK hreflang: mbti-suki-noni-tsumeta.html")
@@ -191,13 +191,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-acts-cold-en" not in sitemap:
     IDEAL_DATE_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-ideal-date-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-ideal-date-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     ACTS_COLD_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-acts-cold-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-acts-cold-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

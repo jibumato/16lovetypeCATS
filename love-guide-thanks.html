@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>ご購入ありがとうございます ｜ 16わんこ恋愛診断</title>
+<title>ご購入ありがとうございます ｜ 16にゃんこ恋愛診断</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3W7FBQRCD"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C3W7FBQRCD');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
       ご登録のメールアドレスに、Stripeからの決済確認メールをお送りしています。
       プレミアムレポート（PDF）のご案内もあわせてご確認ください。
     </div>
-    <a class="btn" id="t-home" href="/">🐶 診断トップにもどる</a>
+    <a class="btn" id="t-home" href="/">🐱 診断トップにもどる</a>
     <span class="sub"><a href="/ranking-index.html" id="t-more">恋愛ランキングまとめを見る →</a></span>
 
     <div class="fb" id="fbBox">
@@ -91,12 +91,12 @@ const PDF_URLS = {
 const T = {
   ja: { h1:'ご購入ありがとうございます！', lead:'あなたのタイプ専用のプレミアムレポートをお届けします。',
     note:'ご登録のメールアドレスに、Stripeからの決済確認メールをお送りしています。プレミアムレポート（PDF）のご案内もあわせてご確認ください。',
-    dl:'📄 PDFをダウンロード', home:'🐶 診断トップにもどる', more:'恋愛ランキングまとめを見る →',
+    dl:'📄 PDFをダウンロード', home:'🐱 診断トップにもどる', more:'恋愛ランキングまとめを見る →',
     fbq:'よかったら、ひとこと感想を聞かせてください 🙏', consent:'※いただいた感想は、ニックネームとともにサイトでご紹介する場合があります。',
     ph_c:'使ってみた感想（任意）', ph_n:'ニックネーム（任意）', send:'感想を送る', thanks:'感想をありがとうございました！🐾' },
   en: { h1:'Thank you for your purchase!', lead:'Your type-only Premium Report is ready.',
     note:"We've sent a payment confirmation email from Stripe to your registered address.",
-    dl:'📄 Download your PDF', home:'🐶 Back to the quiz', more:'See all love rankings →',
+    dl:'📄 Download your PDF', home:'🐱 Back to the quiz', more:'See all love rankings →',
     fbq:"We'd love a quick word about your experience 🙏", consent:'Your comment may be shown on the site along with your nickname.',
     ph_c:'How was it? (optional)', ph_n:'Nickname (optional)', send:'Send feedback', thanks:'Thanks for your feedback! 🐾' }
 };
@@ -107,7 +107,7 @@ const T = {
     var lang = (p.get('lang')||'ja').toLowerCase();
     var t = T[lang] || T.ja;
     document.documentElement.lang = lang;
-    document.title = t.h1 + ' | 16lovetypedogs';
+    document.title = t.h1 + ' | 16lovetypecats';
     ['h1','lead','note','home','more','fbq','consent'].forEach(function(k){
       var el = document.getElementById('t-'+k); if(el) el.textContent = t[k];
     });

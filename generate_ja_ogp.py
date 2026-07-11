@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# JA OGPカード(ogp/ja/*.png)生成。長い犬種名は左カラム幅に縮小フィットさせ右カードへの被りを防ぐ。
+# JA OGPカード(ogp/ja/*.png)生成。長い猫種名は左カラム幅に縮小フィットさせ右カードへの被りを防ぐ。
 # 依存: M PLUS Rounded 1c (/tmp/MPLUSRounded1c-{Regular,ExtraBold}.ttf) と /tmp/LOC.json /tmp/I18N.json
 #   フォント: https://github.com/google/fonts/raw/main/ofl/mplusrounded1c/MPLUSRounded1c-{Regular,ExtraBold}.ttf
 #   データ: index.html の LOC / I18N を JSON ダンプしたもの
@@ -30,18 +30,20 @@ def make(code,lang="ja"):
     bd.ellipse([-140,-180,220,180],fill=BLOB+(120,));bd.ellipse([W-260,H-220,W+120,H+160],fill=BLOB+(110,))
     img=Image.alpha_composite(img.convert("RGBA"),blob).convert("RGB");dr=ImageDraw.Draw(img)
     LX=60;LW=540
-    ef=fb(26);et="16タイプ  ×  恋愛  ×  犬種";ew=dr.textlength(et,font=ef)
+    ef=fb(26);et="16タイプ  ×  恋愛  ×  猫種";ew=dr.textlength(et,font=ef)
     dr.rounded_rectangle([LX,44,LX+ew+48,96],26,fill=PILL_BG);dr.text((LX+24,70),et,font=ef,fill=PINK,anchor="lm")
-    y=124;dr.text((LX,y),"私の恋愛わんこは",font=fr(34),fill=INK_SOFT,anchor="lm");y+=54
+    y=124;dr.text((LX,y),"私の恋愛にゃんこは",font=fr(34),fill=INK_SOFT,anchor="lm");y+=54
     bs=84
-    while bs>40 and dr.textlength(d["breed"],font=fb(bs))>LW:bs-=4
-    dr.text((LX,y),d["breed"],font=fb(bs),fill=PINK,anchor="lm");y+=bs//2+34
+    while bs>44 and dr.textlength(d["breed"],font=fb(bs))>LW:bs-=4
+    breed_lines=wrap(dr,d["breed"],fb(bs),LW)[:2]
+    for ln in breed_lines:dr.text((LX,y),ln,font=fb(bs),fill=PINK,anchor="lm");y+=bs+6
+    y+=6
     dr.text((LX,y),f"({code})",font=fb(34),fill=INK_SOFT,anchor="lm");y+=54
     for ln in wrap(dr,d["name"],fb(38),LW)[:2]:dr.text((LX,y),ln,font=fb(38),fill=INK,anchor="lm");y+=48
     y+=6
     for ln in wrap(dr,d["tag"],fr(28),LW)[:3]:dr.text((LX,y),ln,font=fr(28),fill=INK_SOFT,anchor="lm");y+=38
     dr.line([LX,H-92,LX+LW,H-92],fill=PINK_BD,width=2)
-    dr.text((LX,H-58),f"16lovetypedogs.com    #{I18N[lang]['hashtag']}",font=fr(26),fill=INK_SOFT,anchor="lm")
+    dr.text((LX,H-58),f"16lovetypecats.com    #{I18N[lang]['hashtag']}",font=fr(26),fill=INK_SOFT,anchor="lm")
     CW,CH=410,478;CX,CY=W-CW-70,(H-CH)//2
     img.paste(Image.new("RGB",(CW,CH),WHITE),(CX,CY),rmask((CW,CH),34))
     dr.rounded_rectangle([CX,CY,CX+CW,CY+CH],34,outline=PINK_BD,width=4)
@@ -59,7 +61,7 @@ def make(code,lang="ja"):
     dr.text((tcx,CY+388),d["breed"],font=fb(bsz),fill=PINK,anchor="mm")
     dr.text((tcx,CY+422),d.get("role",""),font=fr(24),fill=INK_SOFT,anchor="mm")
     dr.line([CX+40,CY+444,CX+CW-40,CY+444],fill=PINK_BD,width=2)
-    dr.text((tcx,CY+462),"16わんこ恋愛診断  結果",font=fr(22),fill=INK_SOFT,anchor="mm")
+    dr.text((tcx,CY+462),"16にゃんこ恋愛診断  結果",font=fr(22),fill=INK_SOFT,anchor="mm")
     # 希少性バッジ（結果カード上端のタブ）
     p=RARITY.get(code)
     if p is not None:

@@ -38,45 +38,45 @@ def stars(n): return "★"*n + "☆"*(5-n)
 
 # per-language chrome
 LANGS = {
- "en": {"htmllang":"en","locale":"en_US","suffix":" | 16 Love-Type Dogs","site":"🐾 16 Love-Type Dogs",
+ "en": {"htmllang":"en","locale":"en_US","suffix":" | 16 Love-Type Cats","site":"🐾 16 Love-Type Cats",
    "pedigree":"Love Pedigree","stats":"Love Stats",
    "stat_labels":["Loyalty","Devotion","Marriage","Jealousy","Excitement"],
    "personality":"Personality","love":"In Love","date":"When You Date","fight":"When You Fight",
    "howto":"How to Get Closer","strengths":"Strengths","watch":"Watch out for","group":"Same-group dogs",
-   "all_types":"All types","cta":"🐶 Take the quiz","nav_quiz":"Take Quiz","nav_types":"Type List","privacy":"Privacy",
+   "all_types":"All types","cta":"🐱 Take the quiz","nav_quiz":"Take Quiz","nav_types":"Type List","privacy":"Privacy",
    "breed_label":"Breed",
    "types_href":"/types-en.html","privacy_href":"/privacy-en.html",
-   "disclaimer":"※Diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Dogs / Mymatrix",
+   "disclaimer":"※Diagnosis results are for entertainment only and are not psychological or medical assessments.<br>※This site uses affiliate links (Amazon Associates) and Google AdSense.<br>© 2025 16 Love-Type Cats / Mymatrix",
    "space":True},
- "zh": {"htmllang":"zh-CN","locale":"zh_CN","suffix":"｜16恋爱犬测验","site":"🐾 16恋爱犬测验",
+ "zh": {"htmllang":"zh-CN","locale":"zh_CN","suffix":"｜16恋爱猫测验","site":"🐾 16恋爱猫测验",
    "pedigree":"恋爱血统书","stats":"恋爱属性",
    "stat_labels":["专一度","奉献度","结婚倾向","嫉妒心","心动度"],
    "personality":"性格","love":"恋爱倾向","date":"成为恋人时","fight":"吵架时",
-   "howto":"拉近距离的方法","strengths":"优点","watch":"注意点","group":"同组的恋爱犬",
-   "all_types":"全部类型","cta":"🐶 开始测验","nav_quiz":"开始测验","nav_types":"类型一览","privacy":"隐私政策",
-   "breed_label":"犬种",
+   "howto":"拉近距离的方法","strengths":"优点","watch":"注意点","group":"同组的恋爱猫",
+   "all_types":"全部类型","cta":"🐱 开始测验","nav_quiz":"开始测验","nav_types":"类型一览","privacy":"隐私政策",
+   "breed_label":"猫种",
    "types_href":"/types-zh.html","privacy_href":"/privacy.html",
-   "disclaimer":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix",
+   "disclaimer":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix",
    "space":False},
- "ko": {"htmllang":"ko","locale":"ko_KR","suffix":"｜16 연애견 진단","site":"🐾 16 연애견 진단",
+ "ko": {"htmllang":"ko","locale":"ko_KR","suffix":"｜16 연애묘 진단","site":"🐾 16 연애묘 진단",
    "pedigree":"연애 혈통서","stats":"연애 스탯",
    "stat_labels":["일편단심","헌신도","결혼 적합도","질투심","설렘도"],
    "personality":"성격","love":"연애 성향","date":"연인이 되면","fight":"다툴 때",
-   "howto":"가까워지는 법","strengths":"장점","watch":"주의할 점","group":"같은 그룹의 연애견",
-   "all_types":"전체 유형","cta":"🐶 진단하기","nav_quiz":"진단하기","nav_types":"유형 목록","privacy":"개인정보처리방침",
-   "breed_label":"견종",
+   "howto":"가까워지는 법","strengths":"장점","watch":"주의할 점","group":"같은 그룹의 연애묘",
+   "all_types":"전체 유형","cta":"🐱 진단하기","nav_quiz":"진단하기","nav_types":"유형 목록","privacy":"개인정보처리방침",
+   "breed_label":"묘종",
    "types_href":"/types-ko.html","privacy_href":"/privacy.html",
-   "disclaimer":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Dogs / Mymatrix",
+   "disclaimer":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Cats / Mymatrix",
    "space":False},
- "tw": {"htmllang":"zh-TW","locale":"zh_TW","suffix":"｜16戀愛犬測驗","site":"🐾 16戀愛犬測驗",
+ "tw": {"htmllang":"zh-TW","locale":"zh_TW","suffix":"｜16戀愛貓測驗","site":"🐾 16戀愛貓測驗",
    "pedigree":"戀愛血統書","stats":"戀愛屬性",
    "stat_labels":["專一度","奉獻度","結婚傾向","嫉妒心","心動度"],
    "personality":"性格","love":"戀愛傾向","date":"成為戀人時","fight":"吵架時",
-   "howto":"拉近距離的方法","strengths":"優點","watch":"注意點","group":"同組的戀愛犬",
-   "all_types":"全部類型","cta":"🐶 開始測驗","nav_quiz":"開始測驗","nav_types":"類型一覽","privacy":"隱私政策",
-   "breed_label":"犬種",
+   "howto":"拉近距離的方法","strengths":"優點","watch":"注意點","group":"同組的戀愛貓",
+   "all_types":"全部類型","cta":"🐱 開始測驗","nav_quiz":"開始測驗","nav_types":"類型一覽","privacy":"隱私政策",
+   "breed_label":"猫種",
    "types_href":"/types-tw.html","privacy_href":"/privacy.html",
-   "disclaimer":"※診斷結果僅供娛樂，並非心理學或醫學診斷。<br>※本站使用聯盟連結（Amazon Associates）與 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix",
+   "disclaimer":"※診斷結果僅供娛樂，並非心理學或醫學診斷。<br>※本站使用聯盟連結（Amazon Associates）與 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix",
    "space":False},
 }
 LANG_LABEL = {"ja":"日本語","en":"English","ko":"한국어","zh":"简体中文","tw":"繁體中文"}
@@ -85,7 +85,7 @@ def page_path(lang, code):
     return f"type-{code.lower()}.html" if lang=="ja" else f"type-{code.lower()}-{lang}.html"
 
 def hreflang_block(code):
-    base="https://16lovetypedogs.com/"
+    base="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{base}{page_path("ja",code)}">',
       f'<link rel="alternate" hreflang="en" href="{base}{page_path("en",code)}">',
@@ -153,11 +153,11 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp/{lang}/{code_lower}.png?v=4">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp/{lang}/{code_lower}.png?v=4">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://16lovetypedogs.com/ogp/{lang}/{code_lower}.png?v=4">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<meta name="twitter:image" content="https://16lovetypecats.com/ogp/{lang}/{code_lower}.png?v=4">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,12 +236,12 @@ def build(lang, code):
     tag=esc(d["tag"]); hook=esc(d["hook"])
     title=f'{name}（{code}/{breed}）{C["suffix"]}'
     pros="".join(f'<span class="tag">💗 {esc(p)}</span>' for p in d["pros"])
-    cons="".join(f'<span class="tag con">🦴 {esc(c)}</span>' for c in d["cons"])
+    cons="".join(f'<span class="tag con">🐟 {esc(c)}</span>' for c in d["cons"])
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article",
         "headline":f'{d["name"]}（{code}/{d["breed"]}）',"description":d["tag"],
         "inLanguage":C["htmllang"],
-        "url":f'https://16lovetypedogs.com/{page_path(lang,code)}',
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},
+        "url":f'https://16lovetypecats.com/{page_path(lang,code)}',
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},
         ensure_ascii=False)
     out=TEMPLATE.format(
         htmllang=C["htmllang"], locale=C["locale"], lang=lang, code=code, code_lower=code.lower(),

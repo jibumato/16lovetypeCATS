@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re
 
-D = '/home/user/16lovetypedogs'
+D = '/home/user/16lovetypecats'
 NEW = 'mbti-kokuhaku-reaction.html'
 TITLE = 'MBTIタイプ別「告白されたときの反応」'
 TITLE_FULL = 'MBTIタイプ別「告白されたときの反応」｜OKしやすい・断りやすい・迷うタイプ'
@@ -67,10 +67,10 @@ with open(sitemap_path) as f: sm = f.read()
 if NEW in sm:
     print(f'SKIP: sitemap.xml'); skip += 1
 else:
-    m = re.search(r'<url>\s*<loc>https://16lovetypedogs\.com/mbti-kakekiki\.html</loc>.*?</url>', sm, re.DOTALL)
+    m = re.search(r'<url>\s*<loc>https://16lovetypecats\.com/mbti-kakekiki\.html</loc>.*?</url>', sm, re.DOTALL)
     if m:
         entry = f'''  <url>
-    <loc>https://16lovetypedogs.com/{NEW}</loc>
+    <loc>https://16lovetypecats.com/{NEW}</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

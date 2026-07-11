@@ -126,11 +126,11 @@ TX={
  },
 }
 
-CHROME={"htmllang":"ko","locale":"ko_KR","suffix":"｜16 연애견 진단","site":"🐾 16 연애견 진단",
-  "quiz":"진단하기","types":"유형 목록","privacy":"개인정보처리방침","cta":"🐶 진단하기","ranking":"순위",
-  "related":"관련 글","reference":"참고용입니다. 「16 연애견 진단」의 연애 스탯 기반, 오락용입니다.",
+CHROME={"htmllang":"ko","locale":"ko_KR","suffix":"｜16 연애묘 진단","site":"🐾 16 연애묘 진단",
+  "quiz":"진단하기","types":"유형 목록","privacy":"개인정보처리방침","cta":"🐱 진단하기","ranking":"순위",
+  "related":"관련 글","reference":"참고용입니다. 「16 연애묘 진단」의 연애 스탯 기반, 오락용입니다.",
   "types_href":"/types-ko.html","privacy_href":"/privacy.html","profile":"전체 프로필 보기",
-  "disc":"※순위와 진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Dogs / Mymatrix"}
+  "disc":"※순위와 진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Cats / Mymatrix"}
 REL_LABEL={"loyalty":"가장 일편단심인 MBTI 순위 TOP16","marriage":"결혼에 어울리는 MBTI 순위 TOP16",
   "jealousy":"가장 질투 많은 MBTI 순위 TOP16","devotion":"가장 헌신적인 MBTI 순위 TOP16","dokidoki":"가장 설레게 하는 MBTI 순위 TOP16"}
 ALL=["loyalty","marriage","jealousy","devotion","dokidoki"]
@@ -177,11 +177,11 @@ def langbar(metric):
     return '<div class="langbar" style="display:flex;justify-content:center;gap:6px;padding:12px 0;flex-wrap:wrap">'+"".join(parts)+'</div>'
 
 STYLE=re.search(r'<style>(.*?)</style>', open(os.path.join(ROOT,"ranking-loyalty-en.html"),encoding="utf-8").read(), re.DOTALL).group(1)
-HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/ranking-{metric}.html">\n'
- '<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/ranking-{metric}-en.html">\n'
- '<link rel="alternate" hreflang="ko" href="https://16lovetypedogs.com/ranking-{metric}-ko.html">\n'
- '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypedogs.com/ranking-{metric}-zh.html">\n'
- '<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/ranking-{metric}-en.html">')
+HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/ranking-{metric}.html">\n'
+ '<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/ranking-{metric}-en.html">\n'
+ '<link rel="alternate" hreflang="ko" href="https://16lovetypecats.com/ranking-{metric}-ko.html">\n'
+ '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypecats.com/ranking-{metric}-zh.html">\n'
+ '<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/ranking-{metric}-en.html">')
 
 TEMPLATE="""<!DOCTYPE html>
 <html lang="{htmllang}">
@@ -194,10 +194,10 @@ TEMPLATE="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
+<link rel="canonical" href="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
 {href}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -220,7 +220,7 @@ TEMPLATE="""<!DOCTYPE html>
   <div class="hero"><h1 style="font-size:clamp(18px,4.5vw,24px);font-weight:800;color:var(--pink-deep);line-height:1.5">{title}</h1><p class="sub">{sub}</p></div>
   <div class="card"><p>{intro}</p><p style="font-size:12.5px;color:var(--ink-soft)">{reference}</p></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--beige)">{ranking}</h2>{items}</div>
-  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Dogs</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">{cta}</a></div>
+  <div class="card" style="text-align:center"><p style="margin-bottom:12px;font-size:14.5px">🐾 16 Love-Type Cats</p><a class="btn-back" href="/" style="background:var(--pink-deep);color:#fff;border-color:var(--pink-deep)">{cta}</a></div>
   <div class="card"><h2 style="font-size:17px;font-weight:800;color:var(--pink-deep);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--beige)">{related_h}</h2>{related}</div>
 </div>
 <script type="application/ld+json">{ldjson}</script>
@@ -234,8 +234,8 @@ TEMPLATE="""<!DOCTYPE html>
 def build(metric):
     M=META[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],"description":M["sub"],
-        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypecats.com/ranking-{metric}-{LANG}.html",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,href=HREF.format(metric=metric),style=STYLE,site=CHROME["site"],
         quiz=CHROME["quiz"],types=CHROME["types"],types_href=CHROME["types_href"],privacy=CHROME["privacy"],

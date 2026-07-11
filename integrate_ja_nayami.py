@@ -4,7 +4,7 @@
 import os
 import re
 
-BASE = "/home/user/16lovetypedogs"
+BASE = "/home/user/16lovetypecats"
 
 NAYAMI_LINK = '<li><a href="/mbti-nayami.html">MBTI×恋愛の悩み解決ガイド（シチュエーション別まとめ）</a></li>'
 MANNERISM_LINK = '<li><a href="/mbti-mannerism.html">MBTIタイプ別「マンネリ・倦怠期の原因と乗り越え方」</a></li>'
@@ -108,16 +108,16 @@ if "mbti-nayami" not in sitemap:
     # Add after the last JA guide entry (before the EN entries or at end)
     # Use approach.html as anchor
     APPROACH_JA_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-approach.html</loc>"""
+    <loc>https://16lovetypecats.com/mbti-approach.html</loc>"""
     if APPROACH_JA_ENTRY in sitemap:
         NAYAMI_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-nayami.html</loc>
+    <loc>https://16lovetypecats.com/mbti-nayami.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://16lovetypedogs.com/mbti-mannerism.html</loc>
+    <loc>https://16lovetypecats.com/mbti-mannerism.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -128,13 +128,13 @@ if "mbti-nayami" not in sitemap:
     else:
         print("WARN sitemap: approach.html entry not found, appending before </urlset>")
         NAYAMI_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-nayami.html</loc>
+    <loc>https://16lovetypecats.com/mbti-nayami.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://16lovetypedogs.com/mbti-mannerism.html</loc>
+    <loc>https://16lovetypecats.com/mbti-mannerism.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

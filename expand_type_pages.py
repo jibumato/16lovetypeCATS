@@ -240,7 +240,7 @@ def build_compat_html(code):
     caution_text = desc["caution"].format(caution_breed=brc, caution_type=caution)
     return f'''
   <div class="card">
-    <h2>相性のいいわんこ・注意が必要なわんこ</h2>
+    <h2>相性のいいにゃんこ・注意が必要なにゃんこ</h2>
     <h3>💕 ベスト相性</h3>
     <p><strong>{b1}（{br1}）</strong>と<strong>{b2}（{br2}）</strong>が特に相性◎。{best_text}</p>
     <h3>⚠️ ちょっと注意</h3>
@@ -276,7 +276,7 @@ def build_faqpage_schema(code, type_url):
 ORDER = ["INTJ","INTP","ENTJ","ENTP","INFJ","INFP","ENFJ","ENFP","ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP"]
 
 for code in ORDER:
-    path = f'/home/user/16lovetypedogs/type-{code.lower()}.html'
+    path = f'/home/user/16lovetypecats/type-{code.lower()}.html'
     try:
         with open(path, encoding='utf-8') as f:
             html = f.read()
@@ -289,8 +289,8 @@ for code in ORDER:
     faq_html = build_faq_html(code)
     new_sections = compat_html + faq_html
 
-    # Insert before "同じグループのわんこ"
-    insert_marker = '  <div class="card">\n    <h2>同じグループのわんこ</h2>'
+    # Insert before "同じグループのにゃんこ"
+    insert_marker = '  <div class="card">\n    <h2>同じグループのにゃんこ</h2>'
     if insert_marker in html:
         html = html.replace(insert_marker, new_sections + insert_marker)
     else:
@@ -304,7 +304,7 @@ for code in ORDER:
             if '@graph' in data:
                 # Remove existing FAQPage if any
                 data['@graph'] = [x for x in data['@graph'] if x.get('@type') != 'FAQPage']
-                type_url = f'https://16lovetypedogs.com/type-{code.lower()}.html'
+                type_url = f'https://16lovetypecats.com/type-{code.lower()}.html'
                 data['@graph'].append(build_faqpage_schema(code, type_url))
             return '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=2) + '\n</script>'
         except Exception as e:

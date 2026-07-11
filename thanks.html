@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3W7FBQRCD"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C3W7FBQRCD');</script>
 <meta name="robots" content="noindex">
-<title>ご購入ありがとうございます | 16わんこ恋愛診断</title>
+<title>ご購入ありがとうございます | 16にゃんこ恋愛診断</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
@@ -106,12 +106,12 @@
     <div class="tagline" id="tagline"></div>
     <a class="dlbtn" id="dlbtn" href="#" download>📖 プレミアムレポートをダウンロード</a>
     <p class="note">ボタンが反応しない場合は、リンクを長押し（スマホ）または右クリック（PC）し、「リンク先を保存」をお試しください。<br>ダウンロードしたPDFは端末に保存しておくことをおすすめします。</p>
-    <a class="back" href="https://16lovetypedogs.com/">← 診断トップへ戻る</a>
+    <a class="back" href="https://16lovetypecats.com/">← 診断トップへ戻る</a>
   </div>
 
 <script>
   // ───────────────────────────────────────────────────────────
-  // R2公開バケットのベースURL（16wanko-pdf-ja の Public Development URL）
+  // R2公開バケットのベースURL（16nyanko-pdf-ja の Public Development URL）
   // 例: https://pub-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.r2.dev
   var R2_BASE = 'https://pub-700c1b66624d44ccaf9164ea9fbc57e4.r2.dev';
 
@@ -120,22 +120,22 @@
   var DOG_IMG_BASE = '';
 
   var TYPES = {
-    intj: {breed:'チワワ',        role:'建築家',        title:'本命にだけ甘える 一途な策士'},
-    intp: {breed:'シュナウザー',  role:'論理学者',      title:'沼ると一途な 恋の探究者'},
-    entj: {breed:'コーギー',      role:'指揮官',        title:'グイグイ引っ張る 恋のリーダー'},
-    entp: {breed:'ジャックラッセル', role:'討論者',      title:'退屈させない 刺激の自由人'},
-    infj: {breed:'キャバリア',    role:'提唱者',        title:'たった一人を 深く愛す理想主義者'},
-    infp: {breed:'マルチーズ',    role:'仲介者',        title:'理想の恋を守り抜く ロマンチスト'},
-    enfj: {breed:'ゴールデン',    role:'主人公',        title:'尽くして愛される みんなの太陽'},
-    enfp: {breed:'プードル',      role:'運動家',        title:'恋を全力で 楽しむ情熱家'},
-    istj: {breed:'柴犬',          role:'管理者',        title:'一度決めたら 一生の恋愛職人'},
-    isfj: {breed:'シーズー',      role:'擁護者',        title:'さりげなく尽くす 癒しの献身家'},
-    estj: {breed:'ボストン',      role:'幹部',          title:'着実に愛を育てる 誠実な紳士'},
-    esfj: {breed:'ラブラドール',  role:'領事',          title:'愛をたっぷり伝える 世話好き'},
-    istp: {breed:'ダックス',      role:'巨匠',          title:'多くは語らない 芯の熱いクール系'},
-    isfp: {breed:'フレブル',      role:'冒険家',        title:'自由気ままに 愛する癒し系'},
-    estp: {breed:'ビーグル',      role:'起業家',        title:'勢いで距離を詰める 行動派ハンター'},
-    esfp: {breed:'ポメ',          role:'エンターテイナー', title:'華やかに恋する 愛されたがりの主役'}
+    intj: {breed:'ノルウェージャンフォレストキャット',        role:'建築家',        title:'本命にだけ甘える 一途な策士'},
+    intp: {breed:'シャルトリュー',  role:'論理学者',      title:'沼ると一途な 恋の探究者'},
+    entj: {breed:'シャム',      role:'指揮官',        title:'グイグイ引っ張る 恋のリーダー'},
+    entp: {breed:'デボンレックス', role:'討論者',      title:'退屈させない 刺激の自由人'},
+    infj: {breed:'ロシアンブルー',    role:'提唱者',        title:'たった一人を 深く愛す理想主義者'},
+    infp: {breed:'ペルシャ',    role:'仲介者',        title:'理想の恋を守り抜く ロマンチスト'},
+    enfj: {breed:'サイベリアン',    role:'主人公',        title:'尽くして愛される みんなの太陽'},
+    enfp: {breed:'ソマリ',      role:'運動家',        title:'恋を全力で 楽しむ情熱家'},
+    istj: {breed:'ブリティッシュショートヘア',          role:'管理者',        title:'一度決めたら 一生の恋愛職人'},
+    isfj: {breed:'ラグドール',      role:'擁護者',        title:'さりげなく尽くす 癒しの献身家'},
+    estj: {breed:'メインクーン',      role:'幹部',          title:'着実に愛を育てる 誠実な紳士'},
+    esfj: {breed:'バーマン',  role:'領事',          title:'愛をたっぷり伝える 世話好き'},
+    istp: {breed:'アメリカンショートヘア',      role:'巨匠',          title:'多くは語らない 芯の熱いクール系'},
+    isfp: {breed:'スコティッシュフォールド',      role:'冒険家',        title:'自由気ままに 愛する癒し系'},
+    estp: {breed:'ベンガル',      role:'起業家',        title:'勢いで距離を詰める 行動派ハンター'},
+    esfp: {breed:'アビシニアン',          role:'エンターテイナー', title:'華やかに恋する 愛されたがりの主役'}
   };
 
   var params = new URLSearchParams(window.location.search);
@@ -163,7 +163,7 @@
       '<h1>ご購入ありがとうございます</h1>' +
       '<p>タイプ情報を確認できませんでした。<br>お手数ですが、購入時に届いた確認メールのリンクから再度アクセスしていただくか、' +
       '<a href="mailto:jbnmatrix@gmail.com" style="color:#e58aa0;">jbnmatrix@gmail.com</a> までお問い合わせください。</p>' +
-      '<a class="back" href="https://16lovetypedogs.com/">← 診断トップへ戻る</a>' +
+      '<a class="back" href="https://16lovetypecats.com/">← 診断トップへ戻る</a>' +
       '</div>';
   }
 </script>

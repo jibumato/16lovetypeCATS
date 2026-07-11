@@ -16,18 +16,18 @@ COLOR={"NT":"#b9a0d6","NF":"#e58aa0","SJ":"#6ec3a0","SP":"#eaa94e"}
 def grp(c): return ("N"+("T" if "T" in c else "F")) if "N" in c else ("S"+("J" if "J" in c else "P"))
 
 C={
- "zh":{"htmllang":"zh-CN","locale":"zh_CN","title":"16恋爱犬：全部类型一览","sub":"点击任一只狗狗，查看完整恋爱档案 🐾",
-   "site":"🐾 16恋爱犬测验","quiz":"开始测验","types":"类型一览","privacy":"隐私政策","cta":"🐶 开始测验",
+ "zh":{"htmllang":"zh-CN","locale":"zh_CN","title":"16恋爱猫：全部类型一览","sub":"点击任一只狗狗，查看完整恋爱档案 🐾",
+   "site":"🐾 16恋爱猫测验","quiz":"开始测验","types":"类型一览","privacy":"隐私政策","cta":"🐱 开始测验",
    "privacy_href":"/privacy.html",
-   "disc":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix"},
- "ko":{"htmllang":"ko","locale":"ko_KR","title":"16 연애견: 전체 유형 목록","sub":"강아지를 눌러 연애 프로필을 확인해 보세요 🐾",
-   "site":"🐾 16 연애견 진단","quiz":"진단하기","types":"유형 목록","privacy":"개인정보처리방침","cta":"🐶 진단하기",
+   "disc":"※诊断结果仅供娱乐，并非心理学或医学诊断。<br>※本站使用联盟链接（Amazon Associates）与 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix"},
+ "ko":{"htmllang":"ko","locale":"ko_KR","title":"16 연애묘: 전체 유형 목록","sub":"강아지를 눌러 연애 프로필을 확인해 보세요 🐾",
+   "site":"🐾 16 연애묘 진단","quiz":"진단하기","types":"유형 목록","privacy":"개인정보처리방침","cta":"🐱 진단하기",
    "privacy_href":"/privacy.html",
-   "disc":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Dogs / Mymatrix"},
- "tw":{"htmllang":"zh-TW","locale":"zh_TW","title":"16戀愛犬：全部類型一覽","sub":"點擊任一隻狗狗，查看完整戀愛檔案 🐾",
-   "site":"🐾 16戀愛犬測驗","quiz":"開始測驗","types":"類型一覽","privacy":"隱私政策","cta":"🐶 開始測驗",
+   "disc":"※진단 결과는 오락용이며 심리학적·의학적 진단이 아닙니다.<br>※본 사이트는 제휴 링크(Amazon Associates)와 Google AdSense를 사용합니다.<br>© 2025 16 Love-Type Cats / Mymatrix"},
+ "tw":{"htmllang":"zh-TW","locale":"zh_TW","title":"16戀愛貓：全部類型一覽","sub":"點擊任一隻狗狗，查看完整戀愛檔案 🐾",
+   "site":"🐾 16戀愛貓測驗","quiz":"開始測驗","types":"類型一覽","privacy":"隱私政策","cta":"🐱 開始測驗",
    "privacy_href":"/privacy.html",
-   "disc":"※診斷結果僅供娛樂，並非心理學或醫學診斷。<br>※本站使用聯盟連結（Amazon Associates）與 Google AdSense。<br>© 2025 16 Love-Type Dogs / Mymatrix"},
+   "disc":"※診斷結果僅供娛樂，並非心理學或醫學診斷。<br>※本站使用聯盟連結（Amazon Associates）與 Google AdSense。<br>© 2025 16 Love-Type Cats / Mymatrix"},
 }
 LANG_LABEL={"ja":"日本語","en":"English","ko":"한국어","zh":"简体中文","tw":"繁體中文"}
 def types_path(lg): return "types.html" if lg=="ja" else ("types-en.html" if lg=="en" else f"types-{lg}.html")
@@ -55,7 +55,7 @@ def cards(lang):
     return out
 
 def hreflang():
-    b="https://16lovetypedogs.com/"
+    b="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{b}types.html">',
       f'<link rel="alternate" hreflang="en" href="{b}types-en.html">',
@@ -76,10 +76,10 @@ TEMPLATE="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,8 +109,8 @@ def build(lang):
     cc=C[lang]; sp=types_path(lang)
     ldjson=json.dumps({"@context":"https://schema.org","@type":"CollectionPage","name":cc["title"],
         "description":cc["sub"],"inLanguage":cc["htmllang"],
-        "url":f"https://16lovetypedogs.com/{sp}",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Dogs","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "url":f"https://16lovetypecats.com/{sp}",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=cc["htmllang"],locale=cc["locale"],title=esc(cc["title"]),sub=esc(cc["sub"]),
         self_path=sp,hreflang=hreflang(),style=STYLE,site=cc["site"],quiz=cc["quiz"],types=cc["types"],
         privacy=cc["privacy"],privacy_href=cc["privacy_href"],langbar=langbar(lang),cards=cards(lang),

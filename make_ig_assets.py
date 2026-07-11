@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Instagram-ready (1080x1080) image assets for 16わんこ恋愛診断."""
+"""Generate Instagram-ready (1080x1080) image assets for 16にゃんこ恋愛診断."""
 import json, re, os
 from PIL import Image, ImageDraw, ImageFont
 
@@ -72,7 +72,7 @@ def type_card(code):
     for ln in wrap(d,d0["tag"],tf,W-160)[:2]:
         center_text(d,cx,y,ln,tf,INK); y+=46
     # footer
-    ff=f(30); foot="@16lovetypedogs ・ 16わんこ恋愛診断"
+    ff=f(30); foot="@16lovetypecats ・ 16にゃんこ恋愛診断"
     center_text(d,cx,H-70,foot,ff,INK_SOFT)
     img.save(os.path.join(OUT,f"igcard_{code.lower()}.png"))
 
@@ -80,7 +80,7 @@ def title_card():
     W=H=1080; img=Image.new("RGB",(W,H),CREAM); img=blobs(img); d=ImageDraw.Draw(img); cx=W//2
     ef=f(34); et="MBTI  ×  恋愛  ×  犬"; ew=d.textlength(et,font=ef)
     d.rounded_rectangle([cx-ew/2-30,150,cx+ew/2+30,218],34,fill=PILL); d.text((cx-ew/2,168),et,font=ef,fill=PINK)
-    center_text(d,cx,300,"16わんこ",f(150),INK)
+    center_text(d,cx,300,"16にゃんこ",f(150),INK)
     center_text(d,cx,470,"恋愛診断",f(150),PINK)
     center_text(d,cx,560,"",f(20),INK)
     # row of small dogs
@@ -91,13 +91,13 @@ def title_card():
             dg=Image.open(p).convert("RGBA").resize((ds,ds))
             bg=Image.new("RGBA",(ds,ds),WHITE+(255,)); bg.alpha_composite(dg)
             img.paste(bg.convert("RGB"),(x0+i*150,660),rounded((ds,ds),28))
-    center_text(d,cx,860,"あなたの恋を、かわいい犬種で診断",f(38),INK)
+    center_text(d,cx,860,"あなたの恋を、かわいい猫種で診断",f(38),INK)
     center_text(d,cx,930,"12問・無料・登録不要",f(32),INK_SOFT)
     img.save(os.path.join(OUTA,"cover_title.png"))
 
 def cta_card():
     W=H=1080; img=Image.new("RGB",(W,H),CREAM); img=blobs(img); d=ImageDraw.Draw(img); cx=W//2
-    center_text(d,cx,200,"あなたは何わんこ？",f(78),INK)
+    center_text(d,cx,200,"あなたは何にゃんこ？",f(78),INK)
     center_text(d,cx,320,"今すぐ無料で診断",f(56),PINK)
     # center dog image instead of emoji
     p=os.path.join(ROOT,"enfp.png"); ds=300
@@ -108,7 +108,7 @@ def cta_card():
         d.rounded_rectangle([cx-ds//2,440,cx+ds//2,440+ds],60,outline=PINK_BD,width=5)
     d.rounded_rectangle([cx-340,800,cx+340,900],50,fill=PINK)
     center_text(d,cx,825,"プロフィールのリンクから",f(40),WHITE)
-    center_text(d,cx,950,"@16lovetypedogs",f(38),INK_SOFT)
+    center_text(d,cx,950,"@16lovetypecats",f(38),INK_SOFT)
     img.save(os.path.join(OUTA,"cta_diagnose.png"))
 
 def profile_icon():
@@ -119,7 +119,7 @@ def profile_icon():
         dg=dg.resize((int(dg.width*s),int(dg.height*s))); l=(dg.width-ds)//2;t=(dg.height-ds)//2
         dg=dg.crop((l,t,l+ds,t+ds)); bg=Image.new("RGBA",(ds,ds),WHITE+(255,)); bg.alpha_composite(dg)
         img.paste(bg.convert("RGB"),(cx-ds//2,170),rounded((ds,ds),200))
-    center_text(d,cx,760,"16わんこ",f(96),INK)
+    center_text(d,cx,760,"16にゃんこ",f(96),INK)
     center_text(d,cx,880,"恋愛診断",f(96),PINK)
     img.save(os.path.join(OUTA,"profile_icon.png"))
 
