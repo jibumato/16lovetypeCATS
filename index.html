@@ -306,6 +306,9 @@ body{
 .ura-strat .s-overlay{position:absolute;left:0;right:0;bottom:0;top:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(to bottom,rgba(255,247,251,.35),rgba(255,247,251,.78))}
 .ura-strat .s-overlay .ic{font-size:24px}
 .ura-strat .s-overlay .t{font-size:11.5px;font-weight:800;color:var(--pink-deep);text-align:center;letter-spacing:.02em;padding:0 16px}
+.ura-strat-open{border-radius:16px;overflow:hidden;border:1px solid rgba(210,98,143,.22);margin-bottom:14px}
+.ura-strat-open .s-head{background:rgba(247,168,196,.14);padding:9px 14px;font-size:11px;font-weight:800;color:var(--pink-deep);letter-spacing:.04em}
+.ura-strat-open .s-body-open{padding:13px 15px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.7;background:linear-gradient(135deg,#fff7fb,#fdeef6)}
 .ura-buybtn{display:block;background:linear-gradient(135deg,#e58aa0,#d2628f);color:#fff;font-family:inherit;font-size:14px;font-weight:800;border:0;border-radius:99px;padding:13px 18px;width:100%;text-align:center;letter-spacing:.04em;cursor:pointer;text-decoration:none;box-shadow:0 8px 18px -6px rgba(210,98,143,.5)}
 .ura-note{text-align:center;font-size:10.5px;color:var(--ink-soft);font-weight:700;margin-top:10px}
 
@@ -1680,25 +1683,31 @@ function renderResult(code,stay){
     +'<div class="sec"><h3><span class="dot">💗</span>'+i.h_pros+'</h3><div class="taglist">'+d.pros.map(p=>'<span>'+p+'</span>').join('')+'</div></div>'
     +'<div class="sec"><h3><span class="dot">🐾</span>'+i.h_cons+'</h3><div class="taglist cons">'+d.cons.map(p=>'<span>'+p+'</span>').join('')+'</div></div>'
     +'<div class="sec"><h3><span class="dot">💡</span>'+i.h_walk+'</h3><p>'+((WALK[L]||WALK.ja)[(new Date().getDate()+ORDER.indexOf(code))%8])+'</p></div>'
-    +lockedBlock('🫶',i.h_howto,d.howto,code);
+    +(GUIDE_ENABLED?lockedBlock('🫶',i.h_howto,d.howto,code):block('🫶',i.h_howto,d.howto));
   const top=ORDER.filter(c=>c!==code).map(c=>({c:c,s:compatScore(code,c)[0]})).sort((a,b)=>b.s-a.s).slice(0,3);
   const medals=['🥇','🥈','🥉'];
-  const RANK_LOCK={ja:'🔒 レポートで確認',en:'🔒 See in Report',ko:'🔒 리포트에서 확인',zh:'🔒 在报告中查看',tw:'🔒 在報告中查看'};
-  const RANK_BUY={ja:'プレミアムレポートで全相性を見る →',en:'See all 16 in the Premium Report →',ko:'프리미엄 리포트에서 전 16타입 보기 →',zh:'在深度报告中查看全16类型契合 →',tw:'在深度報告中查看全16類型契合 →'};
-  const RANK_NOTE={ja:'📖 全16タイプとの詳細な相性スコア＋コメントは <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">プレミアムレポート</a> で確認できます',
-    en:'📖 Full compatibility scores + notes for all 16 types in the <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">Premium Report</a>',
-    ko:'📖 전 16타입과의 상세 궁합 점수와 코멘트는 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">프리미엄 리포트</a>에서 확인',
-    zh:'📖 与全16类型的详细契合度及点评，请在 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">深度报告</a> 中查看',
-    tw:'📖 與全16類型的詳細契合度及點評，請在 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">深度報告</a> 中查看'};
   const shownRow=(m,idx)=>'<div class="rankrow" onclick="pickRank(\''+m.c+'\')"><span class="medal">'+medals[idx]+'</span>'+dogImg(m.c)+'<div class="rankinfo"><div class="rankname">'+LOC[L][m.c].name+'</div><div class="rankbreed">'+LOC[L][m.c].breed+' ('+m.c+')</div></div><div class="rankscore">'+m.s+'%</div></div>';
-  const blurRow=(m,idx)=>'<div class="rankrow rank-locked"><span class="medal">'+medals[idx]+'</span><div class="rank-blur-content">'+dogImg(m.c)+'<div class="rankinfo"><div class="rankname">'+LOC[L][m.c].name+'</div><div class="rankbreed">'+LOC[L][m.c].breed+' ('+m.c+')</div></div><div class="rankscore">'+m.s+'%</div></div></div>';
-  /* 上位2件はブラー行をひとまとめにし、解除ボタンは1つだけ（重複解消） */
-  const lockedGroup='<div class="rank-locked-group">'+blurRow(top[0],0)+blurRow(top[1],1)
-    +'<div class="rank-overlay rank-group-overlay"><a class="rank-buybtn" href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">'+RANK_BUY[L]+'</a></div></div>';
+  let rankBody,rankNote='';
+  if(GUIDE_ENABLED){
+    const RANK_BUY={ja:'プレミアムレポートで全相性を見る →',en:'See all 16 in the Premium Report →',ko:'프리미엄 리포트에서 전 16타입 보기 →',zh:'在深度报告中查看全16类型契合 →',tw:'在深度報告中查看全16類型契合 →'};
+    const RANK_NOTE={ja:'📖 全16タイプとの詳細な相性スコア＋コメントは <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">プレミアムレポート</a> で確認できます',
+      en:'📖 Full compatibility scores + notes for all 16 types in the <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">Premium Report</a>',
+      ko:'📖 전 16타입과의 상세 궁합 점수와 코멘트는 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">프리미엄 리포트</a>에서 확인',
+      zh:'📖 与全16类型的详细契合度及点评，请在 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">深度报告</a> 中查看',
+      tw:'📖 與全16類型的詳細契合度及點評，請在 <a href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">深度報告</a> 中查看'};
+    const blurRow=(m,idx)=>'<div class="rankrow rank-locked"><span class="medal">'+medals[idx]+'</span><div class="rank-blur-content">'+dogImg(m.c)+'<div class="rankinfo"><div class="rankname">'+LOC[L][m.c].name+'</div><div class="rankbreed">'+LOC[L][m.c].breed+' ('+m.c+')</div></div><div class="rankscore">'+m.s+'%</div></div></div>';
+    /* 上位2件はブラー行をひとまとめにし、解除ボタンは1つだけ（重複解消） */
+    const lockedGroup='<div class="rank-locked-group">'+blurRow(top[0],0)+blurRow(top[1],1)
+      +'<div class="rank-overlay rank-group-overlay"><a class="rank-buybtn" href="'+guideBuyUrl(code,L)+'" target="_blank" rel="noopener">'+RANK_BUY[L]+'</a></div></div>';
+    rankBody=lockedGroup+shownRow(top[2],2);
+    rankNote='<p class="rank-all-note">'+(RANK_NOTE[L]||RANK_NOTE.ja)+'</p>';
+  }else{
+    rankBody=top.map(shownRow).join('');
+  }
   document.getElementById('ranking').innerHTML='<div class="sec mt"><h3><span class="dot">💘</span>'+i.rank_head+'</h3><div class="rank">'
-    +lockedGroup+shownRow(top[2],2)
+    +rankBody
     +'</div>'
-    +'<p class="rank-all-note">'+(RANK_NOTE[L]||RANK_NOTE.ja)+'</p>'
+    +rankNote
     +'</div>';
   renderUraChara(code);
   renderLoveGuide(code);
@@ -2092,7 +2101,9 @@ const GUIDE_EXTRA={
 function gaClientId(){
   try{ var m=document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/); return m?m[1]:''; }catch(e){ return ''; }
 }
-function hasGuideLink(code,lang){ return !!((STRIPE_LINKS_BY_LANG[lang]||{})[code]); }
+/* 猫版PDFガイドがまだ存在しないため、有料導線一式を無効化。ガイド用意後は true に戻す */
+const GUIDE_ENABLED=false;
+function hasGuideLink(code,lang){ return GUIDE_ENABLED && !!((STRIPE_LINKS_BY_LANG[lang]||{})[code]); }
 function guideBuyUrl(code,lang){
   var links=STRIPE_LINKS_BY_LANG[lang]||{};
   var u=links[code]; if(!u) return '#';
@@ -2344,16 +2355,22 @@ function renderUraChara(code){
     +'<div class="ura-turn">'+I18.turn+'</div>'
     +'<div class="ura-scorehead">'+I18.scorehead+'</div>'
     +'<div class="ura-grid">'+cards+'</div>'
-    +'<div class="ura-strat">'
-      +'<div class="s-head">'+I18.strathead+'</div>'
-      +'<div class="s-body">'+u.strat+'</div>'
-      +'<div class="s-overlay"><span class="ic">🔒</span><span class="t">'+I18.lock+'</span></div>'
-    +'</div>'
-    +'<a class="ura-buybtn" href="#loveGuide" onclick="event.preventDefault();guideToCta()">'+I18.btn+'</a>'
-    +'<p class="ura-note">'+I18.note+'</p>'
+    +(GUIDE_ENABLED?(
+      '<div class="ura-strat">'
+        +'<div class="s-head">'+I18.strathead+'</div>'
+        +'<div class="s-body">'+u.strat+'</div>'
+        +'<div class="s-overlay"><span class="ic">🔒</span><span class="t">'+I18.lock+'</span></div>'
+      +'</div>'
+      +'<a class="ura-buybtn" href="#loveGuide" onclick="event.preventDefault();guideToCta()">'+I18.btn+'</a>'
+      +'<p class="ura-note">'+I18.note+'</p>'
+    ):(
+      '<div class="ura-strat-open"><div class="s-head">'+I18.strathead+'</div><div class="s-body-open">'+u.strat+'</div></div>'
+    ))
   +'</div>';
 }
 function renderLoveGuide(code){
+  const elLg=document.getElementById('loveGuide');
+  if(!GUIDE_ENABLED){ if(elLg) elLg.innerHTML=''; return; }
   const g=GUIDE_I18N[L]||GUIDE_I18N.ja, d=LOC[L][code], i=I();
   const ge=GUIDE_EXTRA[L]||GUIDE_EXTRA.ja;
   const SC_H={ja:'あなたのタイプ専用の<br>恋愛レポート',en:'Your personal<br>love report',ko:'나만을 위한<br>연애 리포트',zh:'你的专属<br>恋爱报告',tw:'你的專屬<br>戀愛報告'};
