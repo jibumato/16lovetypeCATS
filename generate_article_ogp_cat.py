@@ -24,7 +24,7 @@ WHITE = (255, 255, 255)
 EYEBROW = {"ja": "MBTI × 恋愛", "en": "MBTI × LOVE", "ko": "MBTI 연애", "zh": "MBTI 恋爱", "tw": "MBTI 戀愛"}
 HASHTAG = {"ja": "#16にゃんこ恋愛診断", "en": "#16LoveTypeCats", "ko": "#16연애묘진단",
            "zh": "#16恋爱猫测验", "tw": "#16戀愛貓測驗"}
-DOMAIN = "16lovetypedogs.com"
+DOMAIN = "16lovetypecats.com"
 
 def bold_font(lang, size):
     return ImageFont.truetype(MPB if lang == "ja" else DEJA_B if lang == "en" else WQY, size)

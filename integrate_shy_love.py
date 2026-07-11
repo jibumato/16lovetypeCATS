@@ -153,13 +153,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-shy-love-en" not in sitemap:
     APPROACH_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-approach-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-approach-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     SHY_LOVE_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-shy-love-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-shy-love-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

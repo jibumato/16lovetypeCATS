@@ -55,7 +55,7 @@ def cards(lang):
     return out
 
 def hreflang():
-    b="https://16lovetypedogs.com/"
+    b="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{b}types.html">',
       f'<link rel="alternate" hreflang="en" href="{b}types-en.html">',
@@ -76,10 +76,10 @@ TEMPLATE="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,8 +109,8 @@ def build(lang):
     cc=C[lang]; sp=types_path(lang)
     ldjson=json.dumps({"@context":"https://schema.org","@type":"CollectionPage","name":cc["title"],
         "description":cc["sub"],"inLanguage":cc["htmllang"],
-        "url":f"https://16lovetypedogs.com/{sp}",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "url":f"https://16lovetypecats.com/{sp}",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=cc["htmllang"],locale=cc["locale"],title=esc(cc["title"]),sub=esc(cc["sub"]),
         self_path=sp,hreflang=hreflang(),style=STYLE,site=cc["site"],quiz=cc["quiz"],types=cc["types"],
         privacy=cc["privacy"],privacy_href=cc["privacy_href"],langbar=langbar(lang),cards=cards(lang),

@@ -85,7 +85,7 @@ def page_path(lang, code):
     return f"type-{code.lower()}.html" if lang=="ja" else f"type-{code.lower()}-{lang}.html"
 
 def hreflang_block(code):
-    base="https://16lovetypedogs.com/"
+    base="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{base}{page_path("ja",code)}">',
       f'<link rel="alternate" hreflang="en" href="{base}{page_path("en",code)}">',
@@ -153,11 +153,11 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp/{lang}/{code_lower}.png?v=4">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp/{lang}/{code_lower}.png?v=4">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://16lovetypedogs.com/ogp/{lang}/{code_lower}.png?v=4">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<meta name="twitter:image" content="https://16lovetypecats.com/ogp/{lang}/{code_lower}.png?v=4">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -240,8 +240,8 @@ def build(lang, code):
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article",
         "headline":f'{d["name"]}（{code}/{d["breed"]}）',"description":d["tag"],
         "inLanguage":C["htmllang"],
-        "url":f'https://16lovetypedogs.com/{page_path(lang,code)}',
-        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},
+        "url":f'https://16lovetypecats.com/{page_path(lang,code)}',
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},
         ensure_ascii=False)
     out=TEMPLATE.format(
         htmllang=C["htmllang"], locale=C["locale"], lang=lang, code=code, code_lower=code.lower(),

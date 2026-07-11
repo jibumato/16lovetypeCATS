@@ -70,7 +70,7 @@ else:
     m = re.search(r'<url>\s*<loc>https://16lovetypecats\.com/mbti-kakekiki\.html</loc>.*?</url>', sm, re.DOTALL)
     if m:
         entry = f'''  <url>
-    <loc>https://16lovetypedogs.com/{NEW}</loc>
+    <loc>https://16lovetypecats.com/{NEW}</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

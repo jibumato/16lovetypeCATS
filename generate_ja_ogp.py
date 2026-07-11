@@ -43,7 +43,7 @@ def make(code,lang="ja"):
     y+=6
     for ln in wrap(dr,d["tag"],fr(28),LW)[:3]:dr.text((LX,y),ln,font=fr(28),fill=INK_SOFT,anchor="lm");y+=38
     dr.line([LX,H-92,LX+LW,H-92],fill=PINK_BD,width=2)
-    dr.text((LX,H-58),f"16lovetypedogs.com    #{I18N[lang]['hashtag']}",font=fr(26),fill=INK_SOFT,anchor="lm")
+    dr.text((LX,H-58),f"16lovetypecats.com    #{I18N[lang]['hashtag']}",font=fr(26),fill=INK_SOFT,anchor="lm")
     CW,CH=410,478;CX,CY=W-CW-70,(H-CH)//2
     img.paste(Image.new("RGB",(CW,CH),WHITE),(CX,CY),rmask((CW,CH),34))
     dr.rounded_rectangle([CX,CY,CX+CW,CY+CH],34,outline=PINK_BD,width=4)

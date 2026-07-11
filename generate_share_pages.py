@@ -43,7 +43,7 @@ FONTS = {
 LABEL   = {"en": "My love-cat is", "zh": "我的恋爱猫是", "ko": "내 연애묘은", "tw": "我的戀愛貓是"}
 EYEBROW = {"en": "16 TYPES  ×  LOVE  ×  CAT", "zh": "16类型  ×  恋爱  ×  猫种", "ko": "16유형  ×  연애  ×  고양이", "tw": "16類型  ×  戀愛  ×  貓種"}
 RESULT  = {"en": "16 Love-Type Cats  result", "zh": "16恋爱猫测验  结果", "ko": "16 연애묘 진단  결과", "tw": "16戀愛貓測驗  結果"}
-SITE    = "16lovetypedogs.com"
+SITE    = "16lovetypecats.com"
 
 
 def fnt(lang, kind, size):
@@ -182,15 +182,15 @@ REDIRECT = """<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{ogtitle}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp/{lang}/{slug}.png?v=5">
-<meta property="og:url" content="https://16lovetypedogs.com/{lang}/{slug}.html">
+<meta property="og:image" content="https://16lovetypecats.com/ogp/{lang}/{slug}.png?v=5">
+<meta property="og:url" content="https://16lovetypecats.com/{lang}/{slug}.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://16lovetypedogs.com/ogp/{lang}/{slug}.png?v=5">
-<link rel="canonical" href="https://16lovetypedogs.com/{lang}/{slug}.html">
-<script>location.replace('https://16lovetypedogs.com/?type={code}&lang={lang}');</script>
+<meta name="twitter:image" content="https://16lovetypecats.com/ogp/{lang}/{slug}.png?v=5">
+<link rel="canonical" href="https://16lovetypecats.com/{lang}/{slug}.html">
+<script>location.replace('https://16lovetypecats.com/?type={code}&lang={lang}');</script>
 </head>
 <body>
-<p><a href="https://16lovetypedogs.com/?type={code}&lang={lang}">{cta}</a></p>
+<p><a href="https://16lovetypecats.com/?type={code}&lang={lang}">{cta}</a></p>
 </body>
 </html>
 """

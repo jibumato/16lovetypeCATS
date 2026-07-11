@@ -177,11 +177,11 @@ def langbar(metric):
     return '<div class="langbar" style="display:flex;justify-content:center;gap:6px;padding:12px 0;flex-wrap:wrap">'+"".join(parts)+'</div>'
 
 STYLE=re.search(r'<style>(.*?)</style>', open(os.path.join(ROOT,"ranking-loyalty-en.html"),encoding="utf-8").read(), re.DOTALL).group(1)
-HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/ranking-{metric}.html">\n'
- '<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/ranking-{metric}-en.html">\n'
- '<link rel="alternate" hreflang="ko" href="https://16lovetypedogs.com/ranking-{metric}-ko.html">\n'
- '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypedogs.com/ranking-{metric}-zh.html">\n'
- '<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/ranking-{metric}-en.html">')
+HREF=('<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/ranking-{metric}.html">\n'
+ '<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/ranking-{metric}-en.html">\n'
+ '<link rel="alternate" hreflang="ko" href="https://16lovetypecats.com/ranking-{metric}-ko.html">\n'
+ '<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypecats.com/ranking-{metric}-zh.html">\n'
+ '<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/ranking-{metric}-en.html">')
 
 TEMPLATE="""<!DOCTYPE html>
 <html lang="{htmllang}">
@@ -194,10 +194,10 @@ TEMPLATE="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
+<link rel="canonical" href="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
 {href}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,8 +234,8 @@ TEMPLATE="""<!DOCTYPE html>
 def build(metric):
     M=META[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],"description":M["sub"],
-        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "inLanguage":CHROME["htmllang"],"url":f"https://16lovetypecats.com/ranking-{metric}-{LANG}.html",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,href=HREF.format(metric=metric),style=STYLE,site=CHROME["site"],
         quiz=CHROME["quiz"],types=CHROME["types"],types_href=CHROME["types_href"],privacy=CHROME["privacy"],

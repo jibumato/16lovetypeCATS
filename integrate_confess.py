@@ -149,12 +149,12 @@ src_path = os.path.join(BASE, "mbti-kokuhaku.html")
 src_text = open(src_path, encoding="utf-8").read()
 
 if "hreflang" not in src_text:
-    CANONICAL = '<link rel="canonical" href="https://16lovetypedogs.com/mbti-kokuhaku.html">'
+    CANONICAL = '<link rel="canonical" href="https://16lovetypecats.com/mbti-kokuhaku.html">'
     HREFLANG_BLOCK = (
         CANONICAL + "\n"
-        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/mbti-kokuhaku.html">\n'
-        + '  <link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/mbti-confess-en.html">\n'
-        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/mbti-confess-en.html">'
+        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/mbti-kokuhaku.html">\n'
+        + '  <link rel="alternate" hreflang="en" href="https://16lovetypecats.com/mbti-confess-en.html">\n'
+        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/mbti-confess-en.html">'
     )
     src_text = src_text.replace(CANONICAL, HREFLANG_BLOCK, 1)
     print("OK hreflang: mbti-kokuhaku.html")
@@ -185,13 +185,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-confess-en" not in sitemap:
     ACTS_COLD_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-acts-cold-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-acts-cold-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     CONFESS_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-confess-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-confess-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

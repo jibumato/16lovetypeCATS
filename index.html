@@ -9,23 +9,23 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="16にゃんこ恋愛診断">
 <meta property="og:description" content="あなたの恋を、かわいい猫種で診断。相性チェックもできるよ🐾">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
-<meta property="og:url" content="https://16lovetypedogs.com/">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/">
+<link rel="canonical" href="https://16lovetypecats.com/">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#d2628f">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/?lang=ja">
-<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/?lang=en">
-<link rel="alternate" hreflang="ko" href="https://16lovetypedogs.com/ko/">
-<link rel="alternate" hreflang="zh" href="https://16lovetypedogs.com/?lang=zh">
-<link rel="alternate" hreflang="zh-TW" href="https://16lovetypedogs.com/?lang=tw">
-<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/">
-<meta name="twitter:image" content="https://16lovetypedogs.com/ogp.png">
+<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/?lang=ja">
+<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/?lang=en">
+<link rel="alternate" hreflang="ko" href="https://16lovetypecats.com/ko/">
+<link rel="alternate" hreflang="zh" href="https://16lovetypecats.com/?lang=zh">
+<link rel="alternate" hreflang="zh-TW" href="https://16lovetypecats.com/?lang=tw">
+<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/">
+<meta name="twitter:image" content="https://16lovetypecats.com/ogp.png">
 <script defer src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"16にゃんこ恋愛診断","alternateName":"16 Love-Type Cats","url":"https://16lovetypedogs.com/","description":"16タイプ性格診断をもとに、あなたの恋愛タイプをかわいい猫種で診断。相性チェック・恋愛おみくじも無料。","publisher":{"@type":"Organization","name":"16にゃんこ恋愛診断","url":"https://16lovetypedogs.com/","logo":{"@type":"ImageObject","url":"https://16lovetypedogs.com/ogp.png","width":1200,"height":630}}}
+{"@context":"https://schema.org","@type":"WebSite","name":"16にゃんこ恋愛診断","alternateName":"16 Love-Type Cats","url":"https://16lovetypecats.com/","description":"16タイプ性格診断をもとに、あなたの恋愛タイプをかわいい猫種で診断。相性チェック・恋愛おみくじも無料。","publisher":{"@type":"Organization","name":"16にゃんこ恋愛診断","url":"https://16lovetypecats.com/","logo":{"@type":"ImageObject","url":"https://16lovetypecats.com/ogp.png","width":1200,"height":630}}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"16にゃんこ恋愛診断は無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、すべて無料・登録不要で利用できます。12問の質問に答えるだけで、あなたの恋愛タイプを16種類の猫種で診断します。"}},{"@type":"Question","name":"MBTIの結果を知っていれば質問に答えなくてもいい？","acceptedAnswer":{"@type":"Answer","text":"はい。トップの「タイプがわかる人はこちら」から16タイプを直接選んで、すぐに恋愛にゃんこ診断の結果を見られます。"}},{"@type":"Question","name":"診断は当たりますか？","acceptedAnswer":{"@type":"Answer","text":"本診断はMBTI理論を参考にしたエンターテインメントコンテンツです。心理学的・医学的な診断ではありませんので、恋のヒントとして気軽にお楽しみください。"}}]}
@@ -1248,7 +1248,7 @@ const LOOP_TXT={
 /* ============ LOGIC ============ */
 const GROUP={NT:'var(--nt)',NF:'var(--nf)',SJ:'var(--sj)',SP:'var(--sp)'};
 const LANGS=['ja','en','ko','zh','tw'];
-const SITE_URL='https://16lovetypedogs.com/';
+const SITE_URL='https://16lovetypecats.com/';
 const KAKAO_JS_KEY='';
 let L='ja',current=null,qi=0,score={},hist=[],loadTimer=null,quizActive=false;
 
@@ -2782,7 +2782,7 @@ function drawCompatCard(cb){
     x.strokeStyle='#f7a8c4';x.lineCap='round';x.beginPath();x.arc(W/2,cy,rad,-Math.PI/2,-Math.PI/2+Math.PI*2*s/100);x.stroke();x.lineCap='butt';
     x.fillStyle='#d2628f';x.font='800 92px '+FF;x.fillText(s+'%',W/2,cy+32);
     x.font='500 33px '+FF;wrapLines(x,msg,W/2,cy+rad+76,W-240,46,'#6b5648');
-    x.fillStyle='#9c8676';x.font='400 28px '+FF;x.fillText('#'+i.hashtag+'  ·  16lovetypedogs.com',W/2,H-104);
+    x.fillStyle='#9c8676';x.font='400 28px '+FF;x.fillText('#'+i.hashtag+'  ·  16lovetypecats.com',W/2,H-104);
     cb(c);
   }
   [a,b].forEach(code=>{const im=new Image();im.onload=()=>{imgs[code]=im;if(++loaded===2)done();};im.onerror=()=>{if(++loaded===2)done();};im.src=imgPath(code);});
@@ -2925,7 +2925,7 @@ function drawShareCard(code,cb){
     }
     x.textAlign='center';
     x.fillStyle='#b88a3a';x.font='700 34px '+FF;x.fillText(i.title,W/2,H-156);
-    x.fillStyle='#9c8676';x.font='400 26px '+FF;x.fillText('#'+i.hashtag+'  ·  16lovetypedogs.com',W/2,H-110);
+    x.fillStyle='#9c8676';x.font='400 26px '+FF;x.fillText('#'+i.hashtag+'  ·  16lovetypecats.com',W/2,H-110);
     cb&&cb();
   }
   const dog=new Image();dog.onload=()=>render(dog);dog.onerror=()=>render(null);dog.src=imgPath(code);

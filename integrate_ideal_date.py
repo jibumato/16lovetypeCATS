@@ -129,12 +129,12 @@ date_path = os.path.join(BASE, "mbti-date.html")
 date_text = open(date_path, encoding="utf-8").read()
 
 if "hreflang" not in date_text:
-    CANONICAL = '<link rel="canonical" href="https://16lovetypedogs.com/mbti-date.html">'
+    CANONICAL = '<link rel="canonical" href="https://16lovetypecats.com/mbti-date.html">'
     HREFLANG_BLOCK = (
         CANONICAL + "\n"
-        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/mbti-date.html">\n'
-        + '  <link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/mbti-ideal-date-en.html">\n'
-        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/mbti-ideal-date-en.html">'
+        + '  <link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/mbti-date.html">\n'
+        + '  <link rel="alternate" hreflang="en" href="https://16lovetypecats.com/mbti-ideal-date-en.html">\n'
+        + '  <link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/mbti-ideal-date-en.html">'
     )
     date_text = date_text.replace(CANONICAL, HREFLANG_BLOCK, 1)
     print("OK hreflang: mbti-date.html")
@@ -165,13 +165,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-ideal-date-en" not in sitemap:
     MARRIAGE_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-marriage-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-marriage-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     DATE_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-ideal-date-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-ideal-date-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

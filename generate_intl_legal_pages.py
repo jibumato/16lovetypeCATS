@@ -94,7 +94,7 @@ def langbar(ptype, cur):
     return '<div class="langbar" style="display:flex;justify-content:center;gap:6px;padding:12px 0;flex-wrap:wrap">'+"".join(out)+'</div>'
 
 def hreflang(ptype):
-    b="https://16lovetypedogs.com/"
+    b="https://16lovetypecats.com/"
     return "\n".join([
       f'<link rel="alternate" hreflang="ja" href="{b}{slug(ptype,"ja")}">',
       f'<link rel="alternate" hreflang="en" href="{b}{slug(ptype,"en")}">',
@@ -115,11 +115,11 @@ TPL="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}{suffix}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/{self_path}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/{self_path}">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://16lovetypedogs.com/{self_path}">
+<link rel="canonical" href="https://16lovetypecats.com/{self_path}">
 {hreflang}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

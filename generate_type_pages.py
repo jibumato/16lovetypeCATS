@@ -196,7 +196,7 @@ def generate_page(mbti):
     article_headline = f'{name}（{mbti}/{breed}）の恋愛タイプ診断'
     article_desc = tag
 
-    page_url = f'https://16lovetypedogs.com/type-{mbti_lower}.html'
+    page_url = f'https://16lovetypecats.com/type-{mbti_lower}.html'
 
     html = f'''<!DOCTYPE html>
 <html lang="ja">
@@ -206,17 +206,17 @@ def generate_page(mbti):
 <title>{page_title}</title>
 <meta name="description" content="{meta_desc}">
 <link rel="canonical" href="{page_url}">
-<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/type-{mbti_lower}.html">
-<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/type-{mbti_lower}-en.html">
-<link rel="alternate" hreflang="ko" href="https://16lovetypedogs.com/type-{mbti_lower}-ko.html">
-<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypedogs.com/type-{mbti_lower}-zh.html">
-<link rel="alternate" hreflang="zh-Hant" href="https://16lovetypedogs.com/type-{mbti_lower}-tw.html">
-<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/type-{mbti_lower}.html">
+<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/type-{mbti_lower}.html">
+<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/type-{mbti_lower}-en.html">
+<link rel="alternate" hreflang="ko" href="https://16lovetypecats.com/type-{mbti_lower}-ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypecats.com/type-{mbti_lower}-zh.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://16lovetypecats.com/type-{mbti_lower}-tw.html">
+<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/type-{mbti_lower}.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{page_title}">
 <meta property="og:description" content="{og_desc}">
 <meta property="og:url" content="{page_url}">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{page_title}">
 <meta name="twitter:description" content="{og_desc}">
@@ -360,14 +360,14 @@ footer a{{color:var(--ink-soft)}}
       "url": "{page_url}",
       "datePublished": "2025-01-01",
       "dateModified": "2026-06-19",
-      "publisher": {{"@type":"Organization","name":"16にゃんこ恋愛診断","url":"https://16lovetypedogs.com"}},
+      "publisher": {{"@type":"Organization","name":"16にゃんこ恋愛診断","url":"https://16lovetypecats.com"}},
       "mainEntityOfPage": "{page_url}"
     }},
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {{"@type":"ListItem","position":1,"name":"ホーム","item":"https://16lovetypedogs.com/"}},
-        {{"@type":"ListItem","position":2,"name":"タイプ一覧","item":"https://16lovetypedogs.com/types.html"}},
+        {{"@type":"ListItem","position":1,"name":"ホーム","item":"https://16lovetypecats.com/"}},
+        {{"@type":"ListItem","position":2,"name":"タイプ一覧","item":"https://16lovetypecats.com/types.html"}},
         {{"@type":"ListItem","position":3,"name":"{breadcrumb_label}","item":"{page_url}"}}
       ]
     }}

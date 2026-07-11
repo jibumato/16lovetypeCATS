@@ -151,13 +151,13 @@ sitemap = open(sitemap_path, encoding="utf-8").read()
 
 if "mbti-love-language-en" not in sitemap:
     CONFESS_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-confess-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-confess-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>"""
     LOVE_LANG_ENTRY = """  <url>
-    <loc>https://16lovetypedogs.com/mbti-love-language-en.html</loc>
+    <loc>https://16lovetypecats.com/mbti-love-language-en.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

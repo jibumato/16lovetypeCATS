@@ -199,14 +199,14 @@ TEMPLATE="""<!DOCTYPE html>
 <meta property="og:locale" content="{locale}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{sub}">
-<meta property="og:url" content="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
-<meta property="og:image" content="https://16lovetypedogs.com/ogp.png">
+<meta property="og:url" content="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
+<meta property="og:image" content="https://16lovetypecats.com/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://16lovetypedogs.com/ranking-{metric}-{lang}.html">
-<link rel="alternate" hreflang="ja" href="https://16lovetypedogs.com/ranking-{metric}.html">
-<link rel="alternate" hreflang="en" href="https://16lovetypedogs.com/ranking-{metric}-en.html">
-<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypedogs.com/ranking-{metric}-zh.html">
-<link rel="alternate" hreflang="x-default" href="https://16lovetypedogs.com/ranking-{metric}-en.html">
+<link rel="canonical" href="https://16lovetypecats.com/ranking-{metric}-{lang}.html">
+<link rel="alternate" hreflang="ja" href="https://16lovetypecats.com/ranking-{metric}.html">
+<link rel="alternate" hreflang="en" href="https://16lovetypecats.com/ranking-{metric}-en.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://16lovetypecats.com/ranking-{metric}-zh.html">
+<link rel="alternate" hreflang="x-default" href="https://16lovetypecats.com/ranking-{metric}-en.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Baloo+2:wght@500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
@@ -243,8 +243,8 @@ def build(metric):
     M=META[metric]
     ldjson=json.dumps({"@context":"https://schema.org","@type":"Article","headline":M["title"],
         "description":M["sub"],"inLanguage":CHROME["htmllang"],
-        "url":f"https://16lovetypedogs.com/ranking-{metric}-{LANG}.html",
-        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypedogs.com"}},ensure_ascii=False)
+        "url":f"https://16lovetypecats.com/ranking-{metric}-{LANG}.html",
+        "publisher":{"@type":"Organization","name":"16 Love-Type Cats","url":"https://16lovetypecats.com"}},ensure_ascii=False)
     out=TEMPLATE.format(htmllang=CHROME["htmllang"],locale=CHROME["locale"],title=esc(M["title"]),sub=esc(M["sub"]),
         intro=esc(M["intro"]),metric=metric,lang=LANG,style=STYLE,site=CHROME["site"],quiz=CHROME["quiz"],
         types=CHROME["types"],types_href=CHROME["types_href"],privacy=CHROME["privacy"],privacy_href=CHROME["privacy_href"],

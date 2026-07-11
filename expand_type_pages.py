@@ -304,7 +304,7 @@ for code in ORDER:
             if '@graph' in data:
                 # Remove existing FAQPage if any
                 data['@graph'] = [x for x in data['@graph'] if x.get('@type') != 'FAQPage']
-                type_url = f'https://16lovetypedogs.com/type-{code.lower()}.html'
+                type_url = f'https://16lovetypecats.com/type-{code.lower()}.html'
                 data['@graph'].append(build_faqpage_schema(code, type_url))
             return '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=2) + '\n</script>'
         except Exception as e:
