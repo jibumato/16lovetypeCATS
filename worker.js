@@ -346,7 +346,7 @@ ${tagLine}
           const zeroDec = cur === "jpy" || cur === "krw";
           const value = (s.amount_total != null) ? (zeroDec ? s.amount_total : s.amount_total / 100) : 1180;
 
-          const mid = env.GA_MEASUREMENT_ID || "G-C3W7FBQRCD";
+          const mid = env.GA_MEASUREMENT_ID || "G-DFG3BKGJHL";
           if (env.GA_MP_API_SECRET) {
             await fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${mid}&api_secret=${env.GA_MP_API_SECRET}`, {
               method: "POST",
