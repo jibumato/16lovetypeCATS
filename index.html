@@ -122,6 +122,14 @@ body{
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
 .btn.sub{background:rgba(255,255,255,.66);color:var(--pink-deep);border:1px solid var(--glass-bd);box-shadow:var(--shadow);font-size:15px;padding:15px}
+.att-card{display:flex;align-items:center;gap:12px;margin-top:14px;padding:14px 16px;border-radius:20px;text-decoration:none;
+  background:rgba(255,255,255,.72);border:1px solid var(--glass-bd);box-shadow:var(--shadow);transition:transform .15s}
+.att-card:hover{transform:translateY(-2px)}
+.att-emo{flex:none;font-size:17px;letter-spacing:-2px}
+.att-txt{flex:1;min-width:0;text-align:left;line-height:1.5}
+.att-txt b{display:block;font-size:13.5px;font-weight:800;color:var(--ink)}
+.att-txt small{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;text-wrap:pretty}
+.att-go{flex:none;font-size:16px;font-weight:800;color:var(--pink-deep)}
 .btn.ghost{background:rgba(255,255,255,.6);color:var(--ink);border:1px solid var(--glass-bd);box-shadow:none;font-size:15px;padding:15px;font-weight:800}
 .hint{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:2px}
 .sns-buzz{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;color:#fff;background:linear-gradient(90deg,#1d9bf0,#c9a6f0);padding:5px 14px;border-radius:999px;margin:8px auto 0;letter-spacing:.03em}
@@ -797,6 +805,14 @@ h1,h2,h3,.res-head,.reviews-head,.sec-head,#t-title{color:var(--ink)!important}
 .btn:active{transform:translate(3px,3px)!important;box-shadow:2px 2px 0 var(--ink)!important}
 .btn.sub,.btn.ghost{background:#fff!important;color:var(--ink)!important;border:3px solid var(--ink)!important;
   box-shadow:5px 5px 0 var(--accentb)!important}
+/* --- 愛着スタイル診断への導線カード --- */
+.att-card{background:var(--yellow)!important;border:3px solid var(--ink)!important;
+  box-shadow:5px 5px 0 var(--ink)!important;border-radius:20px!important}
+.att-card:hover{transform:translate(-1px,-1px)!important;box-shadow:6px 6px 0 var(--ink)!important}
+.att-card:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 var(--ink)!important}
+.att-txt b{color:var(--ink)!important}
+.att-txt small{color:#6b5a78!important}
+.att-go{color:var(--ink)!important}
 .btn.sub:active,.btn.ghost:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 var(--accentb)!important}
 /* --- cards / panels --- */
 .sec,.rt-card,.bonus,.result-next,.result-more,.qcard,.ura-card,.shareblock{
@@ -852,6 +868,11 @@ h1,h2,h3,.res-head,.reviews-head,.sec-head,#t-title{color:var(--ink)!important}
       <div class="diag-count" id="diagCount" hidden></div>
       <button class="btn" id="t-start" onclick="startQuiz()">診断をはじめる 🐾</button>
       <button class="btn sub" id="t-shortcut" onclick="show('shortcut')">タイプがわかる人はこちら</button>
+      <a class="att-card" href="/attachment.html" onclick="if(typeof gtag==='function')gtag('event','attachment_entry',{from:'top'})">
+        <span class="att-emo">☀️🐾🌙🌗</span>
+        <span class="att-txt"><b id="t-atth">もうひとつの診断：愛着スタイル</b><small id="t-atts">あなたの「甘え方」は、どの猫？10問・1分</small></span>
+        <span class="att-go">→</span>
+      </a>
       <div class="reviews-head" id="t-reviewshead">🐾 みんなの診断レポート</div>
       <div class="reviews-ticker" id="reviewsTicker"></div>
     </div>
@@ -1323,6 +1344,7 @@ function applyStatic(){
   setText('t-title',i.title);setText('t-sub',i.sub);setText('t-lead',i.lead);
   setText('t-snsbuzz',SNS_BUZZ[L]||SNS_BUZZ.ja);
   setText('t-reviewshead',REVIEWS_HEAD_TICKER[L]||REVIEWS_HEAD_TICKER.ja);
+  setText('t-atth',(ATT_CARD[L]||ATT_CARD.ja).h);setText('t-atts',(ATT_CARD[L]||ATT_CARD.ja).s);
   (function(){var hero=document.querySelector('#top .hero');if(!hero)return;var langs=['ja','en','ko','zh','tw'];hero.classList.toggle('has-logo',langs.indexOf(L)>=0);langs.forEach(function(x){hero.classList.toggle('logo-'+x+'-on',L===x);});})();
   renderSeo();
   setText('t-start',i.start);setText('t-shortcut',i.shortcut);
@@ -1551,6 +1573,13 @@ function loadDiagCount(){
 
 const SNS_BUZZ={ja:'♡ SNSで話題',en:'♡ Trending on social',ko:'♡ SNS에서 화제',zh:'♡ 社交媒体热议',tw:'♡ 社群媒體熱議'};
 const REVIEWS_HEAD_TICKER={ja:'🐾 みんなの診断レポート',en:'🐾 Everyone’s Results',ko:'🐾 모두의 진단 리포트',zh:'🐾 大家的诊断报告',tw:'🐾 大家的診斷報告'};
+/* トップの「もうひとつの診断（愛着スタイル）」カード */
+const ATT_CARD={
+  ja:{h:'もうひとつの診断：愛着スタイル',s:'あなたの「甘え方」はどの猫？ 10問1分'},
+  en:{h:'Second quiz: Your attachment style',s:'How do you get close? 10 questions, 1 min'},
+  ko:{h:'또 하나의 진단: 애착 스타일',s:'당신의 “응석 부리는 법”은 어떤 고양이? 10문항·1분'},
+  zh:{h:'另一个测验：依恋风格',s:'你的“撒娇方式”是哪只猫？10题・1分钟'},
+  tw:{h:'另一個測驗：依戀風格',s:'你的「撒嬌方式」是哪隻貓？10題・1分鐘'}};
 const REVIEWS={
   ja:[
     {h:"@きなこ",m:"19歳・大学生",q:"友達に勧められてやったら、当たりすぎて叫んだ😹"},
