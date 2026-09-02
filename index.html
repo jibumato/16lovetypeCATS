@@ -130,6 +130,14 @@ body{
 .att-txt b{display:block;font-size:13.5px;font-weight:800;color:var(--ink)}
 .att-txt small{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;text-wrap:pretty}
 .att-go{flex:none;font-size:16px;font-weight:800;color:var(--pink-deep)}
+.sister-card{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px 16px;border-radius:20px;text-decoration:none;
+  background:rgba(255,255,255,.72);border:1px solid var(--glass-bd);box-shadow:var(--shadow);transition:transform .15s}
+.sister-card:hover{transform:translateY(-2px)}
+.sis-emo{flex:none;font-size:26px}
+.sis-txt{flex:1;min-width:0;text-align:left;line-height:1.5}
+.sis-txt b{display:block;font-size:13.5px;font-weight:800;color:var(--ink)}
+.sis-txt small{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;text-wrap:pretty}
+.sis-go{flex:none;font-size:16px;font-weight:800;color:var(--pink-deep)}
 .btn.ghost{background:rgba(255,255,255,.6);color:var(--ink);border:1px solid var(--glass-bd);box-shadow:none;font-size:15px;padding:15px;font-weight:800}
 .hint{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:2px}
 .sns-buzz{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;color:#fff;background:linear-gradient(90deg,#1d9bf0,#c9a6f0);padding:5px 14px;border-radius:999px;margin:8px auto 0;letter-spacing:.03em}
@@ -813,6 +821,14 @@ h1,h2,h3,.res-head,.reviews-head,.sec-head,#t-title{color:var(--ink)!important}
 .att-txt b{color:var(--ink)!important}
 .att-txt small{color:#6b5a78!important}
 .att-go{color:var(--ink)!important}
+/* --- 姉妹サイト（犬版）への導線カード --- */
+.sister-card{background:#fff!important;border:3px solid var(--ink)!important;
+  box-shadow:5px 5px 0 var(--accentb)!important;border-radius:20px!important}
+.sister-card:hover{transform:translate(-1px,-1px)!important;box-shadow:6px 6px 0 var(--accentb)!important}
+.sister-card:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 var(--accentb)!important}
+.sis-txt b{color:var(--ink)!important}
+.sis-txt small{color:#6b5a78!important}
+.sis-go{color:var(--ink)!important}
 .btn.sub:active,.btn.ghost:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 var(--accentb)!important}
 /* --- cards / panels --- */
 .sec,.rt-card,.bonus,.result-next,.result-more,.qcard,.ura-card,.shareblock{
@@ -973,6 +989,14 @@ h1,h2,h3,.res-head,.reviews-head,.sec-head,#t-title{color:var(--ink)!important}
 
     <!-- 7. 今日の恋愛おみくじ（毎日引けるリピート導線） -->
     <div class="sec mt omk-sec" id="omkSection" style="text-align:center"></div>
+
+    <!-- 7.5 姉妹サイト（16わんこ恋愛診断）への送客 -->
+    <a class="sister-card" id="sisterCard" href="https://16lovetypedogs.com/" target="_blank" rel="noopener"
+       onclick="if(typeof gtag==='function')gtag('event','sister_site_click',{from:'result'})">
+      <span class="sis-emo">🐶</span>
+      <span class="sis-txt"><b id="t-sish"></b><small id="t-siss"></small></span>
+      <span class="sis-go">→</span>
+    </a>
 
     <div class="bonus" style="display:none">
       <h3 id="t-bonush"></h3>
@@ -1345,6 +1369,7 @@ function applyStatic(){
   setText('t-snsbuzz',SNS_BUZZ[L]||SNS_BUZZ.ja);
   setText('t-reviewshead',REVIEWS_HEAD_TICKER[L]||REVIEWS_HEAD_TICKER.ja);
   setText('t-atth',(ATT_CARD[L]||ATT_CARD.ja).h);setText('t-atts',(ATT_CARD[L]||ATT_CARD.ja).s);
+  setText('t-sish',(SISTER_CARD[L]||SISTER_CARD.ja).h);setText('t-siss',(SISTER_CARD[L]||SISTER_CARD.ja).s);
   (function(){var hero=document.querySelector('#top .hero');if(!hero)return;var langs=['ja','en','ko','zh','tw'];hero.classList.toggle('has-logo',langs.indexOf(L)>=0);langs.forEach(function(x){hero.classList.toggle('logo-'+x+'-on',L===x);});})();
   renderSeo();
   setText('t-start',i.start);setText('t-shortcut',i.shortcut);
@@ -1375,6 +1400,7 @@ function applyStatic(){
   document.getElementById('t-footer').innerHTML=i.footer.replace(/\n/g,'<br>')+'<br>'+i.aff_disclosure
     +'<br><span style="opacity:.8">'+(TM_NOTE[L]||TM_NOTE.ja)+'</span>'
     +'<br><a href="/types.html" style="color:inherit">タイプ一覧</a> ｜ <a href="/about.html" style="color:inherit">運営者情報</a> ｜ <a href="/privacy.html" style="color:inherit">プライバシーポリシー</a> ｜ <a href="/privacy.html#tokushoho" style="color:inherit">特定商取引法に基づく表記</a> ｜ <a href="/contact.html" style="color:inherit">お問い合わせ</a>'
+    +'<br><a href="https://16lovetypedogs.com/" target="_blank" rel="noopener" style="color:inherit" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'sister_site_click\',{from:\'footer\'})">🐶 '+(SISTER_CARD[L]||SISTER_CARD.ja).h+'</a>'
     +'<br>© 2026 '+i.title+' / Type&amp;Co';
   document.querySelectorAll('.lang-dd-menu button').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
   setText('t-langcur',LANG_NAMES[L]||LANG_NAMES.ja);
@@ -1580,6 +1606,13 @@ const ATT_CARD={
   ko:{h:'또 하나의 진단: 애착 스타일',s:'당신의 “응석 부리는 법”은 어떤 고양이? 10문항·1분'},
   zh:{h:'另一个测验：依恋风格',s:'你的“撒娇方式”是哪只猫？10题・1分钟'},
   tw:{h:'另一個測驗：依戀風格',s:'你的「撒嬌方式」是哪隻貓？10題・1分鐘'}};
+/* 姉妹サイト（16わんこ恋愛診断）カード */
+const SISTER_CARD={
+  ja:{h:'姉妹サイト：16わんこ恋愛診断',s:'犬派のあなたへ。同じ16タイプを犬種で診断🐶'},
+  en:{h:'Sister site: 16 Love-Type Dogs',s:'More of a dog person? The same 16 types, as dog breeds 🐶'},
+  ko:{h:'자매 사이트: 16 연애견 진단',s:'강아지파라면? 같은 16타입을 견종으로 진단 🐶'},
+  zh:{h:'姊妹站：16恋爱犬测验',s:'你是狗派？用犬种来诊断同样的16类型 🐶'},
+  tw:{h:'姊妹站：16戀愛犬測驗',s:'你是狗派？用犬種來診斷同樣的16類型 🐶'}};
 const REVIEWS={
   ja:[
     {h:"@きなこ",m:"19歳・大学生",q:"友達に勧められてやったら、当たりすぎて叫んだ😹"},
