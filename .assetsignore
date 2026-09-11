@@ -4,6 +4,7 @@ node_modules
 *.pdf
 # 有料PDFの原稿・企画ドキュメントは配信から除外（公開URLで読めると課金価値が毀損する）
 guide-drafts
+guide-build
 *.md
 # 重いソース犬画像(1254px PNG)はOGP/型ページ生成のビルド入力用。
 # 配信ランタイムは最適化済み /*.webp を使うため配信から除外。
