@@ -1,0 +1,884 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><title>恋愛攻略書 — サイベリアン（ENFJ）</title><style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Baloo+2:wght@600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#fdf6fa; --cream2:#fbeaf2; --paper:#ffffff;
+  --wine:#2c1b3d; --wine2:#e0559a; --wine-l:#b98af0;
+  --pink:#fff0f6; --pinkbd:#2c1b3d;
+  --gold:#ffe27a; --gold-l:#ffe27a;
+  --ink:#3d3047; --ink2:#5d4f68; --ink3:#9b8da8;
+  --rule:#efe2f4; --lav:#c9a0f0; --mint:#9ad9c4;
+  --sh:3px 3px 0 var(--lav);
+}
+@page{size:A4;margin:0}
+html,body{background:#999}
+body{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1;line-height:1.8}
+.page{width:210mm;height:297mm;background:var(--cream);position:relative;
+  overflow:hidden;page-break-after:always;padding:11mm 12mm 9mm}
+.page:last-child{page-break-after:auto}
+.page::before{content:"";position:absolute;inset:5mm;border:2.2pt solid var(--wine);
+  border-radius:5mm;pointer-events:none}
+.page::after{display:none}
+.inner{position:relative;height:100%;display:flex;flex-direction:column;padding:3mm 3mm 0}
+
+/* ── ヘッダ ── */
+.phead{display:flex;justify-content:space-between;align-items:center;
+  font-size:7.2pt;font-weight:700;color:var(--ink3);padding-bottom:2mm}
+.chapno{position:absolute;top:-1mm;right:0;font-family:'Baloo 2',cursive;
+  font-size:30pt;font-weight:800;color:var(--lav);opacity:.3;line-height:1}
+.clabel{display:inline-block;font-size:7.4pt;font-weight:800;letter-spacing:.1em;color:var(--wine);
+  background:var(--gold);border:2pt solid var(--wine);border-radius:99px;padding:1mm 3.4mm;
+  box-shadow:2px 2px 0 var(--wine);margin-top:2mm}
+h1.ptitle{font-size:21pt;font-weight:900;color:var(--wine);letter-spacing:.01em;
+  margin-top:2.4mm;line-height:1.4}
+.hr-main{border:0;border-top:2pt dotted var(--lav);margin:3mm 0 3.6mm}
+
+/* ── 共通部品 ── */
+.lead{font-size:8.6pt;line-height:1.95;color:var(--ink2);margin-bottom:3.4mm}
+.freeband{background:var(--gold);border:2.2pt solid var(--wine);border-radius:4mm;
+  padding:2.6mm 4mm;display:flex;gap:4mm;align-items:center;font-size:7.8pt;margin-bottom:3mm;
+  box-shadow:3px 3px 0 var(--wine)}
+.freeband .fb-t{font-size:6.4pt;font-weight:800;letter-spacing:.14em;color:var(--wine2);display:block}
+.freeband .fb-h{font-size:8.6pt;font-weight:900;color:var(--wine);white-space:nowrap}
+.freeband span.it{color:var(--wine);font-weight:700}
+.freeband b{color:var(--wine2);font-weight:800}
+.centernote{text-align:center;font-size:7.6pt;font-weight:700;color:var(--wine2);margin:2.6mm 0 3.2mm}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:3.4mm}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
+.panel{background:var(--paper);border:2.2pt solid var(--wine);border-radius:4mm;
+  padding:3mm 3.6mm;box-shadow:var(--sh)}
+.panel.pink{background:var(--pink)}
+.panel .pt{font-size:8pt;font-weight:900;color:var(--wine2);margin-bottom:1.8mm}
+.panel p{font-size:8pt;line-height:1.9;color:var(--ink)}
+.sect-h{font-size:9pt;font-weight:900;color:var(--wine);margin:4mm 0 2.4mm;
+  display:flex;align-items:center;gap:2.4mm}
+.sect-h::after{content:"";flex:1;border-top:2pt dotted var(--lav)}
+.tag{display:inline-block;border:1.8pt solid var(--wine);border-radius:99px;
+  padding:1mm 3mm;font-size:7.4pt;font-weight:700;color:var(--wine);margin:0 1.6mm 1.8mm 0;
+  background:var(--paper);box-shadow:2px 2px 0 var(--lav)}
+.stat{background:var(--paper);border:2.2pt solid var(--wine);border-radius:4mm;
+  padding:3mm 3.6mm;box-shadow:var(--sh)}
+.stat .sh{font-size:8pt;font-weight:900;color:var(--wine2);margin-bottom:2mm}
+.strow{display:flex;justify-content:space-between;font-size:8pt;padding:1mm 0;color:var(--ink2);font-weight:700}
+.st{color:var(--wine2);letter-spacing:.06em}.st.off{color:#e6dcec}
+.deflist dt{font-size:8pt;font-weight:900;color:var(--wine2);float:left;width:14mm}
+.deflist dd{font-size:8pt;line-height:1.85;margin-left:14mm;padding-bottom:1.8mm;
+  border-bottom:1.6pt dotted var(--rule);margin-bottom:1.8mm;color:var(--ink2)}
+.foot-note{margin-top:auto;background:var(--cream2);border:2pt solid var(--wine);border-radius:4mm;
+  padding:2.6mm 3.6mm;font-size:7.6pt;line-height:1.85;color:var(--ink2);box-shadow:2px 2px 0 var(--lav)}
+.foot-note b{color:var(--wine2);font-weight:900;font-size:7.4pt;margin-right:2mm}
+.pfoot{display:flex;justify-content:space-between;font-size:7pt;font-weight:700;
+  color:var(--ink3);margin-top:auto;padding-top:3mm}
+.pfoot .pno{color:var(--wine2);font-weight:800}
+ul.check{list-style:none}
+ul.check li{font-size:8pt;line-height:1.95;color:var(--ink2);padding-left:5mm;position:relative;font-weight:500}
+ul.check li::before{content:"💗";position:absolute;left:0;font-size:7pt}
+ul.ng li::before{content:"💔";font-size:7pt}
+ul.ok li::before{content:"✅";font-size:7pt}
+.num{display:inline-flex;width:5.6mm;height:5.6mm;border-radius:50%;background:var(--wine2);color:#fff;
+  font-size:7.4pt;font-weight:800;align-items:center;justify-content:center;
+  font-family:'Baloo 2',cursive;flex:none;border:1.6pt solid var(--wine)}
+.step{display:flex;gap:2.8mm;align-items:flex-start;margin-bottom:2.6mm}
+.step .sbody{font-size:8pt;line-height:1.9}
+.step .sbody b{color:var(--wine2);font-weight:900;display:block;font-size:8.4pt;margin-bottom:.6mm}
+
+/* 表紙 */
+.cover{display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;padding-top:3mm}
+.cov-top{display:inline-block;font-size:8pt;font-weight:800;color:var(--wine);background:var(--gold);
+  border:2.2pt solid var(--wine);border-radius:99px;padding:1.4mm 5mm;box-shadow:3px 3px 0 var(--wine)}
+.cov-top .ln{display:none}
+.cov-ped{font-family:'Baloo 2',cursive;font-size:8pt;font-weight:700;letter-spacing:.2em;
+  color:var(--ink3);margin-top:3.4mm}
+.cov-medal{width:66mm;height:66mm;border-radius:50%;border:2.6pt solid var(--wine);
+  margin:6mm auto 0;display:flex;align-items:center;justify-content:center;position:relative;
+  background:var(--paper);box-shadow:5px 5px 0 var(--lav)}
+.cov-medal::before{display:none}
+.cov-medal img{width:57mm;height:57mm;border-radius:50%;object-fit:cover}
+.cov-breed-en{display:none}
+.cov-sub{font-size:10pt;font-weight:800;color:var(--wine2);margin-top:6mm;letter-spacing:.02em}
+.cov-name{font-size:33pt;font-weight:900;color:var(--wine);letter-spacing:.02em;margin-top:2.4mm;line-height:1.3}
+.cov-ln{width:0;border:0;margin:3mm auto}
+.cov-code{display:inline-block;font-size:10pt;font-weight:800;color:var(--wine);
+  background:var(--paper);border:2.2pt solid var(--wine);border-radius:99px;padding:1.4mm 5mm;
+  box-shadow:3px 3px 0 var(--lav)}
+.cov-lead{font-size:9pt;line-height:2;color:var(--ink2);margin-top:6mm;font-weight:500}
+.cov-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:2.2mm;margin-top:8mm;max-width:135mm}
+.cov-chips span{font-size:8pt;font-weight:800;color:var(--wine);background:var(--paper);
+  border:2pt solid var(--wine);border-radius:99px;padding:1.2mm 3.4mm;box-shadow:2px 2px 0 var(--lav)}
+.cov-pages{margin-top:6mm;font-size:9pt;font-weight:700;color:var(--ink2)}
+.cov-pages b{font-family:'Baloo 2',cursive;font-size:15pt;font-weight:800;color:var(--wine2);margin:0 1mm}
+.cov-seal{width:0;height:0;border:0;margin:0;display:none}
+.cov-bot{display:inline-block;font-size:13pt;font-weight:900;color:var(--wine);
+  background:var(--gold);border:2.4pt solid var(--wine);border-radius:99px;padding:2mm 7mm;
+  box-shadow:4px 4px 0 var(--wine);margin-top:auto}
+.cov-bot2{font-size:7.4pt;font-weight:700;letter-spacing:.06em;color:var(--ink3);margin-top:3.4mm}
+
+/* もくじ */
+.toc-part{font-size:8.4pt;font-weight:900;color:var(--wine);background:var(--cream2);
+  border:2pt solid var(--wine);border-radius:99px;padding:1.2mm 3.6mm;margin:3.6mm 0 2.2mm;
+  display:flex;justify-content:space-between;box-shadow:2px 2px 0 var(--lav)}
+.toc-part b{color:var(--wine2);font-weight:900}
+.toc-row{display:flex;align-items:baseline;font-size:8.2pt;padding:1.2mm 0;color:var(--ink2);font-weight:600}
+.toc-row .dots{flex:1;border-bottom:1.6pt dotted var(--lav);margin:0 2.4mm}
+.toc-row .n{font-family:'Baloo 2',cursive;color:var(--wine2);font-size:8.6pt;font-weight:800}
+
+/* イントロ */
+.intro-card{background:var(--paper);border:2.2pt solid var(--wine);border-radius:4mm;
+  padding:3.2mm 2.6mm;text-align:center;box-shadow:var(--sh)}
+.intro-card .ic{font-size:16pt}
+.intro-card .it{font-size:8pt;font-weight:900;color:var(--wine2);margin:1.6mm 0 1.2mm}
+.intro-card p{font-size:7.4pt;line-height:1.8;color:var(--ink2)}
+.warnbar{border:2pt solid var(--wine);background:var(--cream2);border-radius:4mm;
+  padding:2.6mm 3.6mm;font-size:7.4pt;color:var(--ink2);line-height:1.85;margin-top:3.4mm;
+  box-shadow:2px 2px 0 var(--lav)}
+
+/* 相性マップ */
+.cmap-grp{margin-bottom:3mm}
+.cmap-h{display:inline-block;font-size:7.6pt;font-weight:900;color:var(--wine);background:var(--gold);
+  border:1.8pt solid var(--wine);border-radius:99px;padding:.7mm 3mm;margin-bottom:1.8mm}
+.cmap-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm}
+.cbox{background:var(--paper);border:2pt solid var(--wine);border-radius:3.4mm;
+  padding:2mm 1.6mm;text-align:center;box-shadow:2px 2px 0 var(--lav)}
+.cbox.you{background:var(--wine2);box-shadow:2px 2px 0 var(--wine)}
+.cbox.you .cb-b,.cbox.you .cb-s,.cbox.you .cb-c{color:#fff}
+.cbox .cb-b{font-size:6.8pt;font-weight:700;color:var(--ink2);line-height:1.4;min-height:8mm;
+  display:flex;align-items:center;justify-content:center}
+.cbox .cb-s{font-family:'Baloo 2',cursive;font-size:15pt;font-weight:800;color:var(--wine2);line-height:1}
+.cbox .cb-c{font-size:6.2pt;font-weight:700;letter-spacing:.1em;color:var(--ink3);margin-top:.8mm}
+.legend{display:flex;gap:4mm;justify-content:center;font-size:7pt;font-weight:700;color:var(--ink3);margin:2.6mm 0}
+.legend i{font-style:normal;color:var(--wine2);font-weight:800}
+
+/* TOP5 */
+.t5{display:flex;gap:3mm;align-items:center;background:var(--paper);border:2pt solid var(--wine);
+  border-radius:3.6mm;padding:2.4mm 3mm;margin-bottom:2.4mm;box-shadow:2px 2px 0 var(--lav)}
+.t5 .rk{font-family:'Baloo 2',cursive;font-size:17pt;font-weight:800;color:var(--wine2);width:7mm;flex:none;line-height:1}
+.t5 .t5b{flex:1}
+.t5 .t5n{font-size:9pt;font-weight:900;color:var(--wine)}
+.t5 .t5n small{font-size:7pt;color:var(--ink3);font-weight:700;margin-left:2mm}
+.t5 .t5c{font-size:7.6pt;line-height:1.8;color:var(--ink2);margin-top:.8mm}
+.t5 .t5s{font-family:'Baloo 2',cursive;font-size:16pt;font-weight:800;color:var(--wine2);flex:none}
+
+/* バー */
+.bar{height:3.4mm;background:#f0e6f6;border:1.6pt solid var(--wine);border-radius:99px;overflow:hidden;margin-top:1.2mm}
+.bar i{display:block;height:100%;background:repeating-linear-gradient(45deg,var(--wine2),var(--wine2) 2mm,var(--lav) 2mm,var(--lav) 4mm)}
+.brow{margin-bottom:2.8mm}
+.brow .bh{display:flex;justify-content:space-between;font-size:8pt;color:var(--ink2);font-weight:700}
+.brow .bh b{color:var(--wine);font-weight:900}
+.brow .bh .v{font-family:'Baloo 2',cursive;font-size:10pt;font-weight:800;color:var(--wine2)}
+.brow p{font-size:7.4pt;color:var(--ink3);line-height:1.75;margin-top:.9mm}
+
+/* LINE風 */
+.chat{background:#eaf4ea;border:2.2pt solid var(--wine);border-radius:4mm;padding:3mm;box-shadow:var(--sh)}
+.chat .ch-h{font-size:7.2pt;font-weight:800;color:var(--wine);border-bottom:1.6pt solid var(--wine);
+  padding-bottom:1.4mm;margin-bottom:2.4mm}
+.bub{max-width:76%;font-size:7.6pt;line-height:1.8;padding:2mm 2.8mm;border-radius:3mm;margin-bottom:2mm;
+  border:1.6pt solid var(--wine)}
+.bub.them{background:#fff;color:var(--ink)}
+.bub.me{background:#b6e3a8;margin-left:auto;color:var(--wine)}
+.bub .tm{display:block;font-size:5.8pt;color:var(--ink3);margin-top:.7mm;font-weight:700}
+
+/* あるある30 */
+.aru-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 5mm}
+.aru-i{display:flex;gap:2mm;font-size:7.9pt;line-height:1.8;padding:1.75mm 0;
+  border-bottom:1.4pt dotted var(--rule);color:var(--ink2);font-weight:500}
+.aru-i .an{font-family:'Baloo 2',cursive;color:var(--wine2);font-size:7.4pt;font-weight:800;width:4.6mm;flex:none}
+
+/* ワーク罫線 */
+.wline{border-bottom:1.6pt dashed var(--lav);height:8mm}
+.wbox{background:var(--paper);border:2.2pt solid var(--wine);border-radius:4mm;padding:3mm 3.4mm;
+  margin-top:1.8mm;box-shadow:var(--sh)}
+.wlabel{font-size:8.2pt;font-weight:900;color:var(--wine);margin:3.4mm 0 1.6mm;display:flex;gap:2.4mm;align-items:center}
+
+/* フローチャート */
+.flow-q{background:var(--gold);border:2.2pt solid var(--wine);border-radius:99px;
+  padding:2mm 3.4mm;font-size:8.4pt;font-weight:900;color:var(--wine);text-align:center;
+  box-shadow:3px 3px 0 var(--wine)}
+.flow-ar{text-align:center;color:var(--wine2);font-size:9pt;font-weight:800;margin:1.6mm 0}
+.flow-2{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:1.8mm}
+.flow-b{border:2pt solid var(--wine);background:var(--paper);border-radius:3.6mm;padding:2.2mm 2.8mm;
+  box-shadow:2px 2px 0 var(--lav)}
+.flow-b .fl{font-size:7pt;font-weight:900;color:var(--wine2);display:block;margin-bottom:.9mm}
+.flow-b p{font-size:7.6pt;line-height:1.8;color:var(--ink2)}
+.flow-goal{background:var(--wine2);color:#fff;border:2.2pt solid var(--wine);border-radius:99px;
+  padding:2.6mm;text-align:center;font-size:9.4pt;font-weight:900;margin-top:2.8mm;
+  box-shadow:3px 3px 0 var(--wine)}
+
+/* 比較表 */
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:7.6pt;
+  border:2pt solid var(--wine);border-radius:3.4mm;overflow:hidden}
+.cmp th{background:var(--cream2);color:var(--wine);font-weight:900;padding:2mm;
+  border-bottom:1.8pt solid var(--wine);font-size:7.4pt}
+.cmp td{padding:1.9mm 2.2mm;border-bottom:1.4pt dotted var(--rule);line-height:1.75;
+  color:var(--ink2);vertical-align:top}
+.cmp td.lb{background:var(--pink);color:var(--wine2);font-weight:900;white-space:nowrap;width:21mm}
+.cmp tr:last-child td{border-bottom:0}
+
+/* 章扉 */
+.divider{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;text-align:center}
+.divider .dl{display:inline-block;font-size:8pt;font-weight:900;color:var(--wine);background:var(--gold);
+  border:2.2pt solid var(--wine);border-radius:99px;padding:1.4mm 5mm;box-shadow:3px 3px 0 var(--wine)}
+.divider h2{font-size:24pt;font-weight:900;color:var(--wine);line-height:1.6;margin-top:7mm}
+.divider .dp{font-size:8.6pt;line-height:2.1;color:var(--ink2);margin-top:5mm;max-width:124mm}
+.divider .dlist{margin-top:9mm;font-size:8.4pt;font-weight:700;color:var(--ink2);line-height:2.6}
+.divider .dq{margin-top:11mm;font-size:9pt;line-height:2.1;color:var(--wine2);font-weight:700}
+.divider .dq small{display:block;font-family:'Baloo 2',cursive;font-size:7.2pt;
+  letter-spacing:.14em;color:var(--ink3);margin-top:3mm;font-weight:700}
+.refs{border-top:2pt dotted var(--lav);margin-top:3.4mm;padding-top:2.8mm}
+.refs .rh{font-size:7pt;font-weight:900;color:var(--wine2);margin-bottom:1.8mm}
+.refs .rg{display:grid;grid-template-columns:1fr 1fr;gap:1mm 4mm;font-size:6.6pt;color:var(--ink3);line-height:1.7}
+</style></head><body><section class="page cover-pg"><div class="inner"><div class="cover">
+      <div class="cov-top">🐾 にゃんこ恋愛トリセツ</div>
+      <div class="cov-ped">for ENFJ ・ 完全版</div>
+      <div class="cov-medal"><img src="data:image/webp;base64,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"></div>
+      <div class="cov-breed-en">サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン</div>
+      <div class="cov-sub">寄り添い上手な、みんなの安らぎ</div>
+      <div class="cov-name">サイベリアン</div>
+      <div class="cov-ln"></div>
+      <div class="cov-code">E&nbsp;N&nbsp;F&nbsp;J　·　主人公</div>
+      <div class="cov-lead">みんなの安らぎ担当。だけど本命の前では、ちょっと不器用。<br>そんなあなたの恋を、ぜんぶ解説するトリセツです🐾</div>
+      <div class="cov-chips">
+        <span>#全16タイプ相性</span><span>#LINEの送り方</span><span>#ケンカ仲直り</span>
+        <span>#甘え方のクセ</span><span>#長続きの条件</span><span>#復縁のすべて</span>
+      </div>
+      <div class="cov-pages">ぜんぶで <b>32</b> ページ</div>
+      <div class="cov-seal"><div class="s1">ENFJ</div><div class="paw">🐾</div>
+        <div class="s1">No.2891</div></div>
+      <div class="cov-bot">恋愛トリセツ 完全版</div>
+      <div class="cov-bot2">あなただけの1冊　·　16にゃんこ恋愛診断</div>
+    </div></div></section><section class="page "><div class="inner"><div class="chapno">00</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>I&nbsp;N&nbsp;T&nbsp;R&nbsp;O&nbsp;D&nbsp;U&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N</span></div><div class="clabel">I&nbsp;N&nbsp;T&nbsp;R&nbsp;O&nbsp;D&nbsp;U&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N</div><h1 class="ptitle">このトリセツの使い方</h1><hr class="hr-main"><p class="lead">これは、サイベリアン（ENFJ）のあなた専用の恋愛トリセツ。無料版が“入口”なら、こちらは全部のせの完全版です。自分でも気づいてないクセ、ハマりがちな落とし穴、相性のいいコの見つけ方まで、ぜんぶ書いてあります🐾</p>
+      <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm"><div class="intro-card"><div class="ic">♡</div>
+      <div class="it">恋愛傾向の深掘り</div><p>外からは見えない、心の中の動きまで全部解説します。</p></div><div class="intro-card"><div class="ic">★</div>
+      <div class="it">全16タイプ相性表</div><p>スコアとコメントで「あのコとの相性」が丸わかりです。</p></div><div class="intro-card"><div class="ic">✉</div>
+      <div class="it">LINE攻略ガイド</div><p>自分のLINEのクセと、刺さる送り方がわかります。</p></div><div class="intro-card"><div class="ic">✎</div>
+      <div class="it">書き込みワーク</div><p>読むだけで終わらせない、書いて整理する3枚。</p></div></div>
+      <div class="sect-h">📖 読み方のコツ</div>
+      <div class="grid3">
+        <div class="panel"><div class="pt">① まず通し読み</div><p>P4〜P12をさらっと読んで、まず全体をつかみましょう。</p></div>
+        <div class="panel"><div class="pt">② 気になる人のページへ</div><p>好きな人ができたら、相性ページへ直行してください。</p></div>
+        <div class="panel"><div class="pt">③ ワークに書き込む</div><p>P22〜24に自分の言葉で書くと、頭がスッキリします。</p></div>
+      </div>
+      <div class="sect-h">🎁 このトリセツで手に入るもの</div>
+      <div class="grid3">
+        <div class="panel pink"><div class="pt">自己理解</div><p>なんで毎回おなじパターンなのか、その理由がわかります。</p></div>
+        <div class="panel pink"><div class="pt">相手選び</div><p>16タイプとの相性から、自分に合う人が見えてきます。</p></div>
+        <div class="panel pink"><div class="pt">伝える力</div><p>我慢しないで、でも相手を責めずに気持ちを伝えられます。</p></div>
+      </div>
+      <div class="warnbar">⚠　このトリセツは楽しむためのコンテンツです。心理学的・医学的な診断ではないので、自分を知るきっかけとして、気軽にお読みください。</div>
+      <div class="foot-note"><b>💡 恋のまめ知識</b>心理学では、自分の気持ちを「言葉にする」だけでストレスが下がるとされています（感情ラベリング効果）。人に寄り添うあなたにこそ必要なセルフケアです。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　02</span></div></div></section><section class="page "><div class="inner"><div class="chapno">♢</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;O&nbsp;N&nbsp;T&nbsp;E&nbsp;N&nbsp;T&nbsp;S</span></div><div class="clabel">C&nbsp;O&nbsp;N&nbsp;T&nbsp;E&nbsp;N&nbsp;T&nbsp;S</div><h1 class="ptitle">もくじ</h1><hr class="hr-main"><p class="lead">全7部構成。気になるページから開いてもOK、頭から読んでもOK。基礎編でざっくり知って、理論編で深掘り、ワークで整理、巻末で復縁まで。</p>
+      <div class="grid2" style="gap:6mm">
+       <div>
+        <div class="toc-part"><b>P&nbsp;A&nbsp;R&nbsp;T&nbsp; &nbsp;I</b><span>基礎編</span></div>
+        <div class="toc-row"><span>サイベリアンという恋愛人格</span><span class="dots"></span><span class="n">04</span></div><div class="toc-row"><span>恋に落ちるまでの5段階</span><span class="dots"></span><span class="n">05</span></div><div class="toc-row"><span>無自覚なクセと恋愛の罠</span><span class="dots"></span><span class="n">06</span></div><div class="toc-row"><span>全16タイプ 相性マップ</span><span class="dots"></span><span class="n">07</span></div><div class="toc-row"><span>ベスト相性 TOP5</span><span class="dots"></span><span class="n">08</span></div><div class="toc-row"><span>要注意タイプとの付き合い方</span><span class="dots"></span><span class="n">09</span></div><div class="toc-row"><span>LINE・メッセージ攻略</span><span class="dots"></span><span class="n">10</span></div><div class="toc-row"><span>ケンカ・倦怠期の乗り越え方</span><span class="dots"></span><span class="n">11</span></div><div class="toc-row"><span>結婚観と長続きの条件</span><span class="dots"></span><span class="n">12</span></div>
+        <div class="toc-part"><b>P&nbsp;A&nbsp;R&nbsp;T&nbsp; &nbsp;I&nbsp;I</b><span>理論編</span></div>
+        <div class="toc-row"><span>あなたの愛着スタイル</span><span class="dots"></span><span class="n">14</span></div><div class="toc-row"><span>相手のタイプ別・接し方</span><span class="dots"></span><span class="n">15</span></div><div class="toc-row"><span>あなたの「愛の言語」</span><span class="dots"></span><span class="n">16</span></div><div class="toc-row"><span>ENFJ 恋愛あるある30</span><span class="dots"></span><span class="n">17</span></div><div class="toc-row"><span>恋の落とし穴と処方箋</span><span class="dots"></span><span class="n">18</span></div>
+       </div>
+       <div>
+        <div class="toc-part"><b>T&nbsp;H&nbsp;E&nbsp;O&nbsp;R&nbsp;Y</b><span>理論編 つづき</span></div>
+        <div class="toc-row"><span>恋愛の三角理論</span><span class="dots"></span><span class="n">19</span></div><div class="toc-row"><span>ビッグファイブ恋愛分析</span><span class="dots"></span><span class="n">20</span></div><div class="toc-row"><span>認知機能でみる恋愛</span><span class="dots"></span><span class="n">21</span></div>
+        <div class="toc-part"><b>W&nbsp;O&nbsp;R&nbsp;K</b><span>書き込みワーク</span></div>
+        <div class="toc-row"><span>理論で自己分析シート</span><span class="dots"></span><span class="n">22</span></div><div class="toc-row"><span>理想と現実の棚卸しシート</span><span class="dots"></span><span class="n">23</span></div><div class="toc-row"><span>本音を伝える練習シート</span><span class="dots"></span><span class="n">24</span></div>
+        <div class="toc-part"><b>A&nbsp;P&nbsp;P&nbsp;E&nbsp;N&nbsp;D&nbsp;I&nbsp;X</b><span>巻末特集</span></div>
+        <div class="toc-row"><span>ケンカ仲直りフローチャート</span><span class="dots"></span><span class="n">25</span></div><div class="toc-row"><span>復縁という選択</span><span class="dots"></span><span class="n">26</span></div><div class="toc-row"><span>復縁の見極め</span><span class="dots"></span><span class="n">27</span></div><div class="toc-row"><span>復縁テクニック実践編</span><span class="dots"></span><span class="n">28</span></div><div class="toc-row"><span>タイプ別・復縁アプローチ</span><span class="dots"></span><span class="n">29</span></div><div class="toc-row"><span>復縁とSNS</span><span class="dots"></span><span class="n">30</span></div><div class="toc-row"><span>復縁とSNS 実践編</span><span class="dots"></span><span class="n">31</span></div>
+       </div>
+      </div>
+      <div class="foot-note"><b>📌 読み方</b>迷ったら基礎編（P4〜P12）から。悩みがハッキリしてるなら、巻末に直行でも大丈夫です。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　03</span></div></div></section><section class="page "><div class="inner"><div class="chapno">01</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 1</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 1</div><h1 class="ptitle">サイベリアンって、こういう人</h1><hr class="hr-main"><div class="freeband"><span class="fb-h"><span class="fb-t">F&nbsp;R&nbsp;E&nbsp;E&nbsp; &nbsp;v&nbsp;e&nbsp;r&nbsp;.</span>無料版のおさらい</span><span class="it">♡　タイプはサイベリアン（ENFJ）</span><span class="it">♡　恋は寄り添い・献身タイプ</span><span class="it">♡　包容力・聞き上手・献身</span></div>
+      <div class="centernote">＼ 無料版はここまで。ここから先が、ぜんぶ本音のトリセツ ／</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">▶　外から見えるあなた</div><p>あったかくて、誰からも頼られる聞き上手。落ち込んでる人のそばにいつのまにか座ってる、みんなの安らぎ担当。恋愛でもモテるけど、「誰にでも優しい人」に見られがち。</p></div>
+        <div class="panel pink"><div class="pt">▶　内側の本当のあなた</div><p>でも本命には、誰よりまっすぐで一途。頼られ役の顔の裏では、好きな人の幸せだけをひたすら願ってる。「みんなに優しい」と「本当に大事な人」は、自分の中では完全に別ものなんです。</p></div>
+      </div>
+      <div class="grid2" style="grid-template-columns:52mm 1fr;margin-top:3.4mm">
+        <div class="stat"><div class="sh">恋愛ステータス</div><div class="strow"><span>一途度</span><span class="st">★★★★</span><span class="st off">☆</span></div><div class="strow"><span>尽くし度</span><span class="st">★★★★★</span><span class="st off"></span></div><div class="strow"><span>結婚向き</span><span class="st">★★★★</span><span class="st off">☆</span></div><div class="strow"><span>嫉妬深さ</span><span class="st">★★★</span><span class="st off">☆☆</span></div><div class="strow"><span>ドキドキ度</span><span class="st">★★★</span><span class="st off">☆☆</span></div></div>
+        <div><div class="pt" style="font-size:7.88pt;font-weight:700;color:var(--wine);letter-spacing:.1em;margin-bottom:1.8mm">💎 あなたの3つの軸</div>
+          <dl class="deflist"><dt>包容力</dt><dd>相手の幸せ＝自分の幸せ。寄り添うのに迷いがない。</dd><dt>共感</dt><dd>察する力が高すぎる。だから一人で抱え込んじゃう。</dd><dt>献身</dt><dd>誰とでも心を通わせられる。でも本命への一途さは別格。</dd></dl></div>
+      </div>
+      <p class="lead" style="margin-top:3mm">サイベリアンの恋は「包み込む」ことから始まる。相手の幸せを願う気持ちが先に出ちゃうから、自分のことはどうしても後回し。でもね、本当に大事な関係って、支え合ってはじめて長続きします。</p>
+      <div style="font-size:7.42pt;letter-spacing:.2em;color:var(--wine-l);margin-bottom:1.4mm">🏷 あなたの恋愛キーワード</div>
+      <div><span class="tag">#愛情深い</span><span class="tag">#寄り添い型</span><span class="tag">#聞き上手</span><span class="tag">#一途</span><span class="tag">#頼られ役</span><span class="tag">#癒し系</span><span class="tag">#世話好き</span><span class="tag">#本命主義</span></div>
+      <div class="sect-h">💘 ときめきスイッチ＆地雷スイッチ</div>
+      <div class="grid2">
+        <div class="panel pink"><div class="pt">♡　グッとくる瞬間</div><ul class="check"><li>ちゃんと「ありがとう」と言ってくれた時</li><li>気遣いを当たり前にせず受け取ってくれた時</li><li>「無理しないでね」と言われた時</li></ul></div>
+        <div class="panel"><div class="pt">✕　一気に冷める瞬間</div><ul class="check ng"><li>優しさを「当たり前」に扱われた時</li><li>「誰にでも優しいだけでしょ」と言われた時</li><li>感謝がない一方通行がずっと続いた時</li></ul></div>
+      </div>
+      <div class="foot-note"><b>💡 知っとくと得</b>ENFJ型は全人口の約2.5%しかいないレアタイプ。人を惹きつける力と、尽くす優しさを両立できる人って、実はかなり珍しい存在です。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　04</span></div></div></section><section class="page "><div class="inner"><div class="chapno">02</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 2</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 2</div><h1 class="ptitle">恋に落ちるまでの5ステップ</h1><hr class="hr-main"><div class="freeband"><span class="fb-h"><span class="fb-t">F&nbsp;R&nbsp;E&nbsp;E&nbsp; &nbsp;v&nbsp;e&nbsp;r&nbsp;.</span>無料版のおさらい</span>
+        <span class="it">無料版では「寄り添うタイプ」ってひとこと言っただけ。</span></div>
+      <div class="panel" style="margin-bottom:3.2mm"><div class="pt">🔓 この章でわかること</div>
+        <p>恋に落ちるまでの5ステップを、心の動きごとに分解。それぞれの落とし穴と強み、恋のスピード感まで解説します。</p></div>
+      <div class="cmap-row" style="grid-template-columns:repeat(5,1fr)"><div class="cbox"><div class="cb-s">01</div>
+      <div style="font-size:8.33pt;font-weight:700;color:var(--wine);margin:.8mm 0 .6mm">気配り</div>
+      <div style="font-size:7.2pt;line-height:1.65;color:var(--ink2)">相手の様子を自然と気にかける</div></div><div class="cbox"><div class="cb-s">02</div>
+      <div style="font-size:8.33pt;font-weight:700;color:var(--wine);margin:.8mm 0 .6mm">お世話</div>
+      <div style="font-size:7.2pt;line-height:1.65;color:var(--ink2)">気づいたら支えている</div></div><div class="cbox"><div class="cb-s">03</div>
+      <div style="font-size:8.33pt;font-weight:700;color:var(--wine);margin:.8mm 0 .6mm">特別扱い</div>
+      <div style="font-size:7.2pt;line-height:1.65;color:var(--ink2)">この人だけ特別かも</div></div><div class="cbox"><div class="cb-s">04</div>
+      <div style="font-size:8.33pt;font-weight:700;color:var(--wine);margin:.8mm 0 .6mm">告白</div>
+      <div style="font-size:7.2pt;line-height:1.65;color:var(--ink2)">まっすぐ気持ちを伝える</div></div><div class="cbox"><div class="cb-s">05</div>
+      <div style="font-size:8.33pt;font-weight:700;color:var(--wine);margin:.8mm 0 .6mm">全力愛情</div>
+      <div style="font-size:7.2pt;line-height:1.65;color:var(--ink2)">惜しみなく愛を注ぐ</div></div></div>
+      <div class="grid2" style="margin-top:3.4mm">
+        <div class="panel"><div class="pt">⚠️ やりすぎ注意ポイント</div><p>Stage2の「お世話」が行きすぎると、相手が求める前から与えちゃって、つい見返りを期待しがち。「これ、相手は望んでる？」と一度確認するクセをつけましょう。</p></div>
+        <div class="panel pink"><div class="pt">💪 Stage4のまっすぐさが強み</div><p>気持ちをまっすぐ言えるのは、とても大きな強みです。尽くし度★5・一途度★4の通り、一度伝えた気持ちはブレずに続くタイプです。</p></div>
+      </div>
+      <div class="sect-h">⚡ サイベリアンの恋愛スピード</div>
+      <div class="cmap-row" style="grid-template-columns:repeat(3,1fr)"><div class="cbox"><div style="font-size:10.12pt;color:var(--wine);font-weight:700">早め</div>
+      <div class="cb-c">アプローチまで</div></div><div class="cbox"><div style="font-size:10.12pt;color:var(--wine);font-weight:700">穏やか</div>
+      <div class="cb-c">表現の質</div></div><div class="cbox"><div style="font-size:10.12pt;color:var(--wine);font-weight:700">安定</div>
+      <div class="cb-c">気持ちの持続力</div></div></div>
+      <div class="sect-h">💗 寄り添うあなたが愛される理由</div>
+      <div class="grid3"><div class="panel pink"><div class="pt">♡　とにかく安心感がすごい</div><p>そばにいてくれるだけで、相手は「自分は大切にされている」と確信できます。</p></div><div class="panel pink"><div class="pt">♡　一緒にいると心がほどける</div><p>あなたのあたたかさが、相手の張りつめた日常をゆるめてくれます。</p></div><div class="panel pink"><div class="pt">♡　裏表がまったくない</div><p>誰にでも優しく見えても、本命への態度は誰より誠実。そのブレなさが信頼になります。</p></div></div>
+      <div class="foot-note"><b>💡 ひとくちメモ</b>「単純接触効果」といって、人は何度も接する相手を好きになりやすいんだって。あなたの気配りの多さは、知らないうちに相手の好意を育てています。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　05</span></div></div></section><section class="page "><div class="inner"><div class="chapno">03</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 3</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 3</div><h1 class="ptitle">無意識にやりがちな3つのクセ</h1><hr class="hr-main"><div class="freeband"><span class="fb-h"><span class="fb-t">F&nbsp;R&nbsp;E&nbsp;E&nbsp; &nbsp;v&nbsp;e&nbsp;r&nbsp;.</span>無料版のおさらい</span>
+        <span class="it">無料版では「気をつけたいところ」を3語出しただけ。</span></div>
+      <div class="panel" style="margin-bottom:3mm"><div class="pt">🔓 この章でわかること</div>
+        <p>3つのクセを「なんで起きる？→どうなる？→どうする？」まで分解。優しさを空回りさせず、ちゃんと魅力にする方法を教えるよ。</p></div>
+      <div style="font-size:8.1pt;color:var(--wine);font-weight:700;margin-bottom:1.8mm">💭 でも、クセは「長所の裏返し」です</div>
+      <div class="grid3" style="margin-bottom:3mm"><div class="panel"><div style="font-size:7.2pt;color:var(--ink3)">抱え込みグセ　↓</div>
+      <div class="pt" style="margin:.8mm 0 .8mm">一人で立てる強さ</div><p>自分で立てる力があるから、誰かを支えられるんです。</p></div><div class="panel"><div style="font-size:7.2pt;color:var(--ink3)">後回しグセ　↓</div>
+      <div class="pt" style="margin:.8mm 0 .8mm">思いやりの深さ</div><p>自分を後にできるのは、相手を本気で大切にしている証拠です。</p></div><div class="panel"><div style="font-size:7.2pt;color:var(--ink3)">甘え下手　↓</div>
+      <div class="pt" style="margin:.8mm 0 .8mm">与えられる才能</div><p>もらう前に与えられる人は、それだけでレアな存在です。</p></div></div>
+      <div class="panel pink" style="margin-bottom:2.4mm">
+          <div style="display:flex;gap:2.4mm;align-items:baseline">
+            <span style="font-size:6.75pt;letter-spacing:.2em;color:var(--wine-l)">罠 ①</span>
+            <b style="font-size:9.45pt;color:var(--wine)">抱え込みがち</b>
+            <span style="font-size:7.65pt;color:var(--ink3)">弱音を見せられず、一人で抱える</span></div>
+          <p style="margin-top:1.2mm">頼られるのは慣れてても、頼るのは全然慣れてない。しんどさを一人で処理し続けて、限界がくるまで誰にも気づかれない。相手からは「何も困っていない人」に見えてしまいます。</p>
+          <p style="margin-top:1.4mm;padding-top:1.4mm;border-top:.4pt dotted var(--rule);font-size:7.99pt">
+            <b style="color:var(--wine2);letter-spacing:.14em;font-size:7.2pt">S&nbsp;O&nbsp;L&nbsp;U&nbsp;T&nbsp;I&nbsp;O&nbsp;N</b>　週に一度でかまいません。「実はちょっと疲れてて」って、オチのない話を渡してみてください。弱さの共有は、実は距離をいちばん縮めます。</p></div><div class="panel " style="margin-bottom:2.4mm">
+          <div style="display:flex;gap:2.4mm;align-items:baseline">
+            <span style="font-size:6.75pt;letter-spacing:.2em;color:var(--wine-l)">罠 ②</span>
+            <b style="font-size:9.45pt;color:var(--wine)">自分を後回しにする</b>
+            <span style="font-size:7.65pt;color:var(--ink3)">相手を優先するあまり、自分の希望が消える</span></div>
+          <p style="margin-top:1.2mm">相手を優先しすぎて、自分がどうしたいのか分からなくなる。気づいたらヘトヘトで、急に距離を置きたくなることもあります。</p>
+          <p style="margin-top:1.4mm;padding-top:1.4mm;border-top:.4pt dotted var(--rule);font-size:7.99pt">
+            <b style="color:var(--wine2);letter-spacing:.14em;font-size:7.2pt">S&nbsp;O&nbsp;L&nbsp;U&nbsp;T&nbsp;I&nbsp;O&nbsp;N</b>　1日5分でかまいません。「今、自分どう感じてる？」って確認する時間を作りましょう。自分を満たすのも、ちゃんと愛情のうちです。</p></div><div class="panel pink" style="margin-bottom:2.4mm">
+          <div style="display:flex;gap:2.4mm;align-items:baseline">
+            <span style="font-size:6.75pt;letter-spacing:.2em;color:var(--wine-l)">罠 ③</span>
+            <b style="font-size:9.45pt;color:var(--wine)">甘えるのが苦手</b>
+            <span style="font-size:7.65pt;color:var(--ink3)">受け取る側になれず、関係が一方通行になる</span></div>
+          <p style="margin-top:1.2mm">あげるのは得意なのに、もらうのは苦手。相手が何かしようとすると「大丈夫」と遠慮してしまい、相手に「必要とされていないのかな」と思わせることもあります。</p>
+          <p style="margin-top:1.4mm;padding-top:1.4mm;border-top:.4pt dotted var(--rule);font-size:7.99pt">
+            <b style="color:var(--wine2);letter-spacing:.14em;font-size:7.2pt">S&nbsp;O&nbsp;L&nbsp;U&nbsp;T&nbsp;I&nbsp;O&nbsp;N</b>　「ありがとう、助かる」と素直に🎁 受け取る練習を。甘えることは、相手に「役に立てた」という喜びを贈ることでもあります。</p></div>
+      <div class="foot-note"><b>💡 恋のまめ知識</b>適度な自己開示は、むしろ親密度を上げるという研究があります。「本音を見せる」ことは、関係を深めるいちばんの近道です。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　06</span></div></div></section><section class="page "><div class="inner"><div class="chapno">04</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 4</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 4</div><h1 class="ptitle">全16タイプ 相性まるわかり表</h1><hr class="hr-main"><div class="freeband"><span class="fb-h"><span class="fb-t">F&nbsp;R&nbsp;E&nbsp;E&nbsp; &nbsp;v&nbsp;e&nbsp;r&nbsp;.</span>無料版のおさらい</span>
+        <span class="it">無料版では「相性のいいタイプTOP3」だけを公開していました。</span></div>
+      <div class="panel" style="margin-bottom:2.8mm"><div class="pt">🔓 この章でわかること</div>
+        <p>全16タイプの相性スコアを一気に公開。NT・NF・SJ・SPの4グループごとに、あなたの立ち位置と「なんで合うのか」まで見えてきます。ピンクの枠があなたです。</p></div>
+      <div class="cmap-grp"><div class="cmap-h">N&nbsp;T　思考家</div>
+          <div class="cmap-row"><div class="cbox"><div class="cb-b">ノルウェージャンフォレストキャット</div>
+              <div class="cb-s">83</div><div class="cb-c">I&nbsp;N&nbsp;T&nbsp;J</div></div><div class="cbox"><div class="cb-b">シャルトリュー</div>
+              <div class="cb-s">90</div><div class="cb-c">I&nbsp;N&nbsp;T&nbsp;P</div></div><div class="cbox"><div class="cb-b">シャム</div>
+              <div class="cb-s">77</div><div class="cb-c">E&nbsp;N&nbsp;T&nbsp;J</div></div><div class="cbox"><div class="cb-b">デボンレックス</div>
+              <div class="cb-s">84</div><div class="cb-c">E&nbsp;N&nbsp;T&nbsp;P</div></div></div></div><div class="cmap-grp"><div class="cmap-h">N&nbsp;F　理想家</div>
+          <div class="cmap-row"><div class="cbox"><div class="cb-b">ロシアンブルー</div>
+              <div class="cb-s">91</div><div class="cb-c">I&nbsp;N&nbsp;F&nbsp;J</div></div><div class="cbox"><div class="cb-b">ペルシャ</div>
+              <div class="cb-s">98</div><div class="cb-c">I&nbsp;N&nbsp;F&nbsp;P</div></div><div class="cbox"><div class="cb-b">ソマリ</div>
+              <div class="cb-s">92</div><div class="cb-c">E&nbsp;N&nbsp;F&nbsp;P</div></div><div class="cbox you"><div class="cb-b">サイベリアン</div>
+              <div class="cb-s">Y&nbsp;O&nbsp;U</div><div class="cb-c">E&nbsp;N&nbsp;F&nbsp;J</div></div></div></div><div class="cmap-grp"><div class="cmap-h">S&nbsp;J　堅実家</div>
+          <div class="cmap-row"><div class="cbox"><div class="cb-b">ブリティッシュショートヘア</div>
+              <div class="cb-s">57</div><div class="cb-c">I&nbsp;S&nbsp;T&nbsp;J</div></div><div class="cbox"><div class="cb-b">ラグドール</div>
+              <div class="cb-s">65</div><div class="cb-c">I&nbsp;S&nbsp;F&nbsp;J</div></div><div class="cbox"><div class="cb-b">メインクーン</div>
+              <div class="cb-s">51</div><div class="cb-c">E&nbsp;S&nbsp;T&nbsp;J</div></div><div class="cbox"><div class="cb-b">バーマン</div>
+              <div class="cb-s">59</div><div class="cb-c">E&nbsp;S&nbsp;F&nbsp;J</div></div></div></div><div class="cmap-grp"><div class="cmap-h">S&nbsp;P　行動家</div>
+          <div class="cmap-row"><div class="cbox"><div class="cb-b">アメリカンショートヘア</div>
+              <div class="cb-s">64</div><div class="cb-c">I&nbsp;S&nbsp;T&nbsp;P</div></div><div class="cbox"><div class="cb-b">スコティッシュフォールド</div>
+              <div class="cb-s">72</div><div class="cb-c">I&nbsp;S&nbsp;F&nbsp;P</div></div><div class="cbox"><div class="cb-b">ベンガル</div>
+              <div class="cb-s">58</div><div class="cb-c">E&nbsp;S&nbsp;T&nbsp;P</div></div><div class="cbox"><div class="cb-b">アビシニアン</div>
+              <div class="cb-s">66</div><div class="cb-c">E&nbsp;S&nbsp;F&nbsp;P</div></div></div></div>
+      <div class="legend"><span><i>85〜</i> ベスト</span><span><i>75〜84</i> 好相性</span>
+        <span><i>65〜74</i> 普通</span><span><i>〜64</i> 要工夫</span></div>
+      <div class="panel pink" style="margin-bottom:2.8mm"><div class="pt">📏 スコアの読み方</div>
+        <p>スコアは「出会った瞬間の合いやすさ」＝スタート地点で、恋の上限ではありません。85↑運命級／75↑good／65↑ふつう／〜64は伸びしろ大。低スコアでも、ちゃんと話せば育つ恋はいくらでもあります。</p></div>
+      <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm"><div class="panel"><div class="pt">NT 思考家</div><p>リアクション薄めでも、ちゃんと愛情はあります。焦らず行動を見て判断を。</p></div><div class="panel"><div class="pt">NF 理想家</div><p>感情を深く分かち合える相手。お互い抱え込みすぎないのがコツです。</p></div><div class="panel"><div class="pt">SJ 堅実家</div><p>安定志向が合う相手。あなたの包容力が、相手の緊張をほどきます。</p></div><div class="panel"><div class="pt">SP 行動家</div><p>一緒にいて楽しい組み合わせ。あなたの気配りが相手の自由を支える土台に。</p></div></div>
+      <div class="panel pink" style="margin-top:2.8mm"><div class="pt">💡 NF理想家と相性がいいワケ</div>
+        <p>サイベリアンの「惜しみなく与える力」を、NFの「深く受け止める感受性」が循環させてくれるから。一方通行になりがちなあなたの愛が、ちゃんと返ってくる。同じ理想を語り合える仲間だからこそ、お互い満たし合える関係になれます🐾</p></div>
+      <div class="foot-note"><b>💡 知っとくと得</b>相性の研究では「似ているほど安心、違うほど刺激」と言われます。似た者同士は安心ですが、たまに刺激も足すと長続きします。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　07</span></div></div></section><section class="page "><div class="inner"><div class="chapno">05</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 5</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 5</div><h1 class="ptitle">相性いいコ TOP5</h1><hr class="hr-main"><div style="margin-bottom:1mm"><div class="t5"><div class="rk">1</div><div class="t5b">
+          <div class="t5n">ペルシャ<small>I&nbsp;N&nbsp;F&nbsp;P</small></div>
+          <div class="t5c">寄り添い合うソウルメイト。お互いの感情を深く理解し合える最高の相互理解ペア。あなたが与える愛を、相手は全力で受け止めてくれる。</div></div><div class="t5s">98%</div></div><div class="t5"><div class="rk">2</div><div class="t5b">
+          <div class="t5n">ソマリ<small>E&nbsp;N&nbsp;F&nbsp;P</small></div>
+          <div class="t5c">好奇心の塊のような相手。あなたの安心感が、ソマリの自由な冒険を支える帰る場所になる。飽きのこない関係に。</div></div><div class="t5s">92%</div></div><div class="t5"><div class="rk">3</div><div class="t5b">
+          <div class="t5n">ロシアンブルー<small>I&nbsp;N&nbsp;F&nbsp;J</small></div>
+          <div class="t5c">洞察の深い相手との組み合わせ。言葉にしない部分まで読み合えるので、あなたが抱え込んでも気づいてもらえる稀有な相手。</div></div><div class="t5s">91%</div></div><div class="t5"><div class="rk">4</div><div class="t5b">
+          <div class="t5n">シャルトリュー<small>I&nbsp;N&nbsp;T&nbsp;P</small></div>
+          <div class="t5c">静かな思考家との組み合わせ。あなたの愛情表現が、INTPの内に秘めた感情を外に引き出すきっかけになる。</div></div><div class="t5s">90%</div></div><div class="t5"><div class="rk">5</div><div class="t5b">
+          <div class="t5n">デボンレックス<small>E&nbsp;N&nbsp;T&nbsp;P</small></div>
+          <div class="t5c">発想が跳ねる相手。あなたの受け止める力と相手の刺激が組み合わさり、飽きのこない関係に。</div></div><div class="t5s">84%</div></div></div>
+      <div class="sect-h">♡　💬 TOP5に効く「最初のひとこと」</div>
+      <div class="grid2" style="gap:1mm 5mm"><div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">1</b>　ペルシャ　「いつも受け止めてくれてありがとう」</div><div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">2</b>　ソマリ　「一緒にいると世界が広がる」</div><div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">3</b>　ロシアンブルー　「あなたの気持ち、聞かせて」</div><div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">4</b>　シャルトリュー　「あなたのこと、ちゃんと見てるよ」</div><div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">5</b>　デボンレックス　「一緒にいると楽しい！」</div></div>
+      <div class="panel pink" style="margin-top:3mm"><div class="pt">🔑 TOP5に共通していること</div>
+        <p>5タイプに共通するのは「あなたの愛情をきちんと受け取り、お返しできる人」であること。一方的に与えるだけの関係ではなく、循環する愛情こそが、あなたを満たしてくれます。</p></div>
+      <div class="panel" style="margin-top:2.6mm"><div class="pt">🔎 この共通点の活かし方</div>
+        <p>“内面まで話せる人”かを見極める質問を。「最近ハマってることは？ なんで好き？」「一人の時間って何してる？」「将来こうなりたい、ってある？」——答えの深さで相性が見えます。</p></div>
+      <div class="foot-note"><b>💡 ひとくちメモ</b>「ピグマリオン効果」では、期待された人はその通りに成長しやすいとされます。あなたの励ましは、相手の可能性を本当に開花させます。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　08</span></div></div></section><section class="page "><div class="inner"><div class="chapno">06</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 6</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 6</div><h1 class="ptitle">ちょっと手ごわいコとの付き合い方</h1><hr class="hr-main"><p class="lead">スコアが低い＝ダメ、ではありません。相性スコアは「初期設定」であって「運命」ではありません。大事なのは、違いを知ったうえで歩み寄れるかどうか。この3タイプとの恋も、コツさえ知っていれば十分うまくいきます。</p>
+      <div style="border-bottom:.4pt dotted var(--rule);padding:4.4mm 0">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <b style="font-size:9.22pt;color:var(--wine)">ベンガル<small style="font-size:7.2pt;color:var(--ink3);letter-spacing:.14em;margin-left:2mm">E&nbsp;S&nbsp;T&nbsp;P</small></b>
+            <span style="font-family:Cormorant Garamond,serif;font-size:13.5pt;color:var(--wine2)">58%</span></div>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:1mm"><b style="color:var(--wine2)">課題</b>　どちらも行動的だが、ESTPはスピードと刺激の人。あなたの心の充電が追いつかず、寄り添う余裕を失いやすい。</p>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.7mm"><b style="color:var(--wine2)">対策</b>　「今日は静かに過ごしたい」を早めに宣言。テンポの違いは、先に共有しておけば衝突になりません。</p></div><div style="border-bottom:.4pt dotted var(--rule);padding:4.4mm 0">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <b style="font-size:9.22pt;color:var(--wine)">ブリティッシュショートヘア<small style="font-size:7.2pt;color:var(--ink3);letter-spacing:.14em;margin-left:2mm">I&nbsp;S&nbsp;T&nbsp;J</small></b>
+            <span style="font-family:Cormorant Garamond,serif;font-size:13.5pt;color:var(--wine2)">57%</span></div>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:1mm"><b style="color:var(--wine2)">課題</b>　安定志向は似ているが、ISTJは感情表現が最小限。あなたの気遣いが言葉で返ってこず、「伝わっているのか」が見えにくい。</p>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.7mm"><b style="color:var(--wine2)">対策</b>　気持ちではなく「事実」で伝え合う。「週1で電話したい」など具体的な希望に翻訳すると、誠実に応えてくれます。</p></div><div style="border-bottom:.4pt dotted var(--rule);padding:4.4mm 0">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <b style="font-size:9.22pt;color:var(--wine)">メインクーン<small style="font-size:7.2pt;color:var(--ink3);letter-spacing:.14em;margin-left:2mm">E&nbsp;S&nbsp;T&nbsp;J</small></b>
+            <span style="font-family:Cormorant Garamond,serif;font-size:13.5pt;color:var(--wine2)">51%</span></div>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:1mm"><b style="color:var(--wine2)">課題</b>　どちらも面倒見がよく責任感が強いが、ESTJは正論で解決しようとする。あなたの「気持ちを聞いてほしい」とすれ違いやすい。</p>
+          <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.7mm"><b style="color:var(--wine2)">対策</b>　話す前に「解決策じゃなくて、ただ聞いてほしい」と一言添える。目的を共有すれば、頼れる味方になります。</p></div>
+      <div class="sect-h">♡　💬 効くひとこと／NGなひとこと</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2);padding:2.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="color:var(--wine)">ベンガル</b>　◎「今日は一緒にのんびりしたい」　<span style="color:var(--ink3)">✕「ちょっと落ち着いてほしい」</span></div><div style="font-size:8.1pt;line-height:2;color:var(--ink2);padding:2.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="color:var(--wine)">ブリティッシュショー</b>　◎「あなたの誠実さ、ちゃんと伝わってる」　<span style="color:var(--ink3)">✕「もっと気持ちを言葉にしてよ」</span></div><div style="font-size:8.1pt;line-height:2;color:var(--ink2);padding:2.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="color:var(--wine)">メインクーン</b>　◎「聞いてくれるだけで助かる」　<span style="color:var(--ink3)">✕「正論はもういいから」</span></div>
+      <div class="foot-note"><b>💡 恋のまめ知識</b>心理学者ゴットマンいわく、別れるカップルの差は「ケンカの有無」じゃなくて「仲直りのうまさ」なのだそうです。あなたの共感力は、そこでとても強い武器になります。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　09</span></div></div></section><section class="page "><div class="inner"><div class="chapno">07</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 7</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 7</div><h1 class="ptitle">LINEの送り方、これが正解</h1><hr class="hr-main"><div class="grid3" style="gap:2.8mm">
+        <div class="panel"><div class="pt">あなたのLINEあるある</div><ul class="check ok"><li>つい長文で気持ちを伝えちゃう</li><li>スタンプと絵文字で感情マシマシ</li><li>相手の様子をすぐ気にしちゃう</li><li>既読つけたらすぐ返したくなる</li><li>既読つかないとちょっとソワソワ</li></ul></div>
+        <div class="panel pink"><div class="pt">脈ありのサイン（あなたから）</div><ul class="check"><li>毎日連絡したくなってる</li><li>相手の予定を覚えてて聞いちゃう</li><li>褒め言葉が自然と増える</li><li>「会いたい」が素直に出る</li><li>相手の好きなもの、こっそり調べてる</li></ul></div>
+        <div><div class="panel" style="margin-bottom:2.4mm"><div class="pt">N&nbsp;G　避けたいパターン</div><ul class="check ng"><li>相手の負担を考えず尽くしすぎ</li><li>既読つかなくて連投しちゃう</li><li>自分の気持ちをずっと後回し</li></ul></div>
+          <div class="panel"><div class="pt">O&nbsp;K　効果的なパターン</div><ul class="check ok"><li>「無理しないでね」で寄り添う</li><li>返信ペースは相手に合わせる</li><li>「実は私も…」と自分の話もする</li></ul></div></div>
+      </div>
+      <div class="sect-h">🫧 迷ったときのお守りフレーズ3選</div>
+      <div class="grid3"><div class="panel"><div class="pt">心配しすぎた時</div><p>「気になったから連絡してみたよ」</p></div><div class="panel"><div class="pt">尽くしすぎた時</div><p>「私もこうしたかったから、気にしないで」</p></div><div class="panel"><div class="pt">本音を言いたい時</div><p>「実は私も、こう思ってたんだ」</p></div></div>
+      <div class="grid2" style="grid-template-columns:1fr 1fr;gap:3.4mm;margin-top:3.4mm">
+        <div class="chat"><div class="ch-h">‹　ペルシャ　≡</div><div class="bub them">今日はちょっと疲れた…<span class="tm">19:04</span></div><div class="bub me">お疲れさま！無理しないでね、力になれることあったら言って<span class="tm">19:05</span></div><div class="bub them">ありがとう、それだけで元気出た<span class="tm">19:06</span></div>
+          <div style="font-size:7.2pt;color:var(--wine2);margin-top:1mm">✓　この気にかける一言が最大の武器</div></div>
+        <div class="panel pink"><div class="pt">🎁 受け取る練習</div><p>与えるのは得意でも、受け取るのが苦手なあなた。「ありがとう、助かる！」って甘えるのも、ちゃんと愛情です。たまには「○○してほしいな」と言ってみてください。受け取る姿は、相手をとても安心させます。</p></div>
+      </div>
+      <div class="sect-h">♡　📝 そのままコピペOKな神テンプレ</div>
+      <div class="grid3"><div class="panel pink"><div class="pt">デートに誘う</div><p>「今度〇〇行かない？ あなたとなら楽しそう」</p></div><div class="panel pink"><div class="pt">やんわり断る</div><p>「その日は難しいけど、また誘ってね」</p></div><div class="panel pink"><div class="pt">謝る</div><p>「言葉足らずでごめん。本当はこう思ってた」</p></div></div>
+      <div class="foot-note"><b>💡 知っとくと得</b>メッセージで感謝を伝える回数が多いほど、関係の満足度が高いという研究もあります。あなたの素直な「ありがとう」は、科学的にも効いています。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　10</span></div></div></section><section class="page "><div class="inner"><div class="chapno">08</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 8</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 8</div><h1 class="ptitle">ケンカ＆マンネリの抜け出し方</h1><hr class="hr-main"><div class="freeband"><span class="fb-h"><span class="fb-t">F&nbsp;R&nbsp;E&nbsp;E&nbsp; &nbsp;v&nbsp;e&nbsp;r&nbsp;.</span>無料版のおさらい</span>
+        <span class="it">無料版は「ケンカしたときの行動」をちらっと出しただけ。</span></div>
+      <div class="panel" style="margin-bottom:3mm"><div class="pt">🔓 この章でわかること</div>
+        <p>あなたのケンカ＆マンネリのパターンを分析して、関係を壊さない仲直りの言葉と、冷めた空気を温め直す方法まで解説します。</p></div>
+      <div style="font-size:8.1pt;font-weight:700;color:var(--wine);margin-bottom:1.6mm">サイベリアンのケンカあるある</div>
+      <div class="grid3" style="margin-bottom:3.2mm"><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">1</span><b style="font-size:8.55pt;color:var(--wine)">笑顔で本音を隠しちゃう</b></div><p>傷ついてても「大丈夫」って笑っちゃうから、相手は問題に気づけません。あとから不満が一気に出ることもあります。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">2</span><b style="font-size:8.55pt;color:var(--wine)">抱え込んで消耗する</b></div><p>ケンカのあとも相手に気を遣い続けて、自分の心を休ませる時間が取れません。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">3</span><b style="font-size:8.55pt;color:var(--wine)">自分を責めすぎる</b></div><p>うまくいかないと「私のせいかも」って抱え込んで、どんどん自己否定モードになってしまいます。</p></div></div>
+      <div class="sect-h">🤝 3ステップ仲直り法</div>
+      <div class="step"><span class="num">1</span><div class="sbody">
+      <b>S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;1　「実は」から始めてみる</b>笑顔の下の本当の気持ちを、信頼できる相手にだけは見せてみましょう。完璧でいなくて大丈夫です。</div></div><div class="step"><span class="num">2</span><div class="sbody">
+      <b>S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;2　まず自分を休ませる</b>仲直りを急がなくて大丈夫。自分を満たしてから向き合う方が、ずっとうまくいきます。</div></div><div class="step"><span class="num">3</span><div class="sbody">
+      <b>S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;3　「私のせいじゃないかも」と思ってみる</b>全部を自分の責任にしないこと。相手にも半分ある、くらいがちょうどいいです。</div></div>
+      <div class="grid2" style="margin-top:2.6mm">
+        <div class="panel"><div class="pt">倦怠期</div><p>「寄り添ってるのに満たされない…」って感じたら、それがマンネリのサインです。与えることに疲れているなら、伝えていい合図。自分の希望を言うのは、関係を深める第一歩です。</p></div>
+        <div class="panel pink"><div class="pt">🌈 ケンカは本音を見せるチャンス</div>
+          <p>表面的な笑顔より、本音を見せ合えた関係のほうが長く続きます。仲直りのあとは「助けてくれて嬉しかった」と具体的に伝えてみてください。</p></div>
+      </div>
+      <div class="panel" style="margin-top:2.6mm"><div class="pt">🫣 笑顔の裏ルール</div>
+        <p>「大丈夫」って笑う前の30秒、本当の気持ちを確かめてみてください。「実は、ちょっと寂しかった」のひとことで十分です。完璧な笑顔より、弱さを見せた方が、相手はあなたを大切にできます。</p></div>
+      <div class="sect-h">♡　🔥 マンネリ脱出アクション</div>
+      <div class="grid3"><div class="panel pink"><div class="pt">①　「してほしい」を言ってみる</div><p>与えるだけでなく、受け取る日をつくりましょう。甘えるのも愛情です。</p></div><div class="panel pink"><div class="pt">②　ありがとうを交換する</div><p>「ありがとう」を二人で言い合う習慣をつくりましょう。</p></div><div class="panel pink"><div class="pt">③　自分を満たす日をつくる</div><p>寄り添いはちょっとお休みして、自分のための時間を持ちましょう。</p></div></div>
+      <div class="foot-note"><b>💡 ひとくちメモ</b>「Iメッセージ」は心理学者ゴードンが提唱した伝え方。「私は」で始めるだけで、責める感じにならずに気持ちが伝わります。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　11</span></div></div></section><section class="page "><div class="inner"><div class="chapno">09</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 9</span></div><div class="clabel">C&nbsp;H&nbsp;A&nbsp;P&nbsp;T&nbsp;E&nbsp;R　0 9</div><h1 class="ptitle">長続きするのは、こんな人</h1><hr class="hr-main"><div class="grid2" style="grid-template-columns:46mm 1fr;gap:4mm">
+        <div class="stat" style="text-align:center">
+          <div style="font-size:14.62pt;color:var(--wine2);letter-spacing:.06em">★★★★</div>
+          <div class="cb-c" style="margin-top:1mm">結婚向き</div>
+          <hr style="border:0;border-top:.4pt solid var(--gold-l);margin:2.2mm 0">
+          <div style="font-size:9.45pt;color:var(--wine);font-weight:700">穏やか</div><div class="cb-c">絆の質</div>
+          <hr style="border:0;border-top:.4pt solid var(--gold-l);margin:2.2mm 0">
+          <div style="font-size:9.45pt;color:var(--wine);font-weight:700">家庭的</div><div class="cb-c">結婚像</div></div>
+        <div class="panel"><div class="pt">結婚観</div><p>結婚向きは★4でかなり高め。愛情深くて家庭的だから、結婚してからも自然と相手や家族のために動けるタイプ。記念日も日々の気遣いも忘れない、あたたかい家庭をつくります。</p></div>
+      </div>
+      <div class="sect-h">💗 サイベリアンが幸せになれる相手の条件</div>
+      <div style="display:flex;gap:2.4mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <span style="font-family:Cormorant Garamond,serif;color:var(--wine-l);font-size:8.33pt;width:5mm;flex:none">01</span>
+      <div style="flex:1"><b style="font-size:8.33pt;color:var(--wine)">気遣いに「ありがとう」を言える人</b>
+      <span style="font-size:7.76pt;color:var(--ink2);margin-left:2mm">その一言が、あなたの愛情を回し続ける燃料になる。</span></div></div><div style="display:flex;gap:2.4mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <span style="font-family:Cormorant Garamond,serif;color:var(--wine-l);font-size:8.33pt;width:5mm;flex:none">02</span>
+      <div style="flex:1"><b style="font-size:8.33pt;color:var(--wine)">本音を引き出してくれる人</b>
+      <span style="font-size:7.76pt;color:var(--ink2);margin-left:2mm">笑顔の裏の気持ちに気づいて、言葉にするのを手伝ってくれる人。</span></div></div><div style="display:flex;gap:2.4mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <span style="font-family:Cormorant Garamond,serif;color:var(--wine-l);font-size:8.33pt;width:5mm;flex:none">03</span>
+      <div style="flex:1"><b style="font-size:8.33pt;color:var(--wine)">たまには甘えさせてくれる人</b>
+      <span style="font-size:7.76pt;color:var(--ink2);margin-left:2mm">あげるだけじゃなく、もらう側にもなれる関係をつくってくれる人。</span></div></div><div style="display:flex;gap:2.4mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <span style="font-family:Cormorant Garamond,serif;color:var(--wine-l);font-size:8.33pt;width:5mm;flex:none">04</span>
+      <div style="flex:1"><b style="font-size:8.33pt;color:var(--wine)">交友関係を尊重してくれる人</b>
+      <span style="font-size:7.76pt;color:var(--ink2);margin-left:2mm">友達の多さを、嫉妬じゃなく魅力として見てくれる人。</span></div></div><div style="display:flex;gap:2.4mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <span style="font-family:Cormorant Garamond,serif;color:var(--wine-l);font-size:8.33pt;width:5mm;flex:none">05</span>
+      <div style="flex:1"><b style="font-size:8.33pt;color:var(--wine)">一緒に成長を楽しめる人</b>
+      <span style="font-size:7.76pt;color:var(--ink2);margin-left:2mm">お互い与え合いながら、二人で伸びていける関係を望む人。</span></div></div>
+      <p style="font-size:7.54pt;color:var(--ink3);line-height:1.8;margin-top:1.6mm">5つ全部そろっていなくて大丈夫です。「3つ以上あるかな？」くらいが目安です。足りないところを相手に変えてもらうより、お互い補い合える関係のほうが理想です。</p>
+      <div class="sect-h">🎉 逆に、あなたを選んだ人はこんなに幸せ</div>
+      <div class="grid3"><div class="panel pink"><div class="pt">毎日が記念日みたいになる</div><p>尽くし度★5のあなたに選ばれた人は、小さな愛情表現で満たされ続けます。</p></div><div class="panel pink"><div class="pt">心がほどける居場所ができる</div><p>あなたとの関係は、相手にとって世界でいちばん安心できる場所になります。</p></div><div class="panel pink"><div class="pt">本気の愛情を独り占めできる</div><p>一途度★4のあなたが選んだ相手は、誰にも奪われない愛情を受け取れます。</p></div></div>
+      <div class="sect-h">♡　💍 結婚前に話しておきたい5つのこと</div>
+      <div class="grid2" style="gap:.4mm 5mm"><div style="font-size:7.76pt;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">01</b>　お金の使い方・将来の貯め方は？</div><div style="font-size:7.76pt;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">02</b>　家族・親との距離感は？</div><div style="font-size:7.76pt;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">03</b>　子ども・暮らしの理想像は？</div><div style="font-size:7.76pt;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">04</b>　一人時間と二人時間のバランスは？</div><div style="font-size:7.76pt;color:var(--ink2);padding:.5mm 0">
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">05</b>　ケンカの時、どう仲直りしたい？</div></div>
+      <div class="panel pink" style="margin-top:2.4mm"><div class="pt">💍 「結婚かも」のサイン</div>
+        <p>沈黙が心地いい／弱さも見せられる／一人の時間を邪魔されない／“5年後も隣にいる”が自然に想像できる。これが揃ったら、あなたの中ではもう“この人”です。</p></div>
+      <div class="foot-note"><b>💡 恋のまめ知識</b>長続きするカップルの共通点は「相手を変えようとしないこと」。与えるのが好きなあなたも、相手のペースを尊重するのが大切です。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　12</span></div></div></section><section class="page divider-pg"><div class="inner"><div class="divider">
+      <div class="dl">P&nbsp;A&nbsp;R&nbsp;T&nbsp; &nbsp;I&nbsp;I　·　A&nbsp;C&nbsp;A&nbsp;D&nbsp;E&nbsp;M&nbsp;I&nbsp;C&nbsp; &nbsp;A&nbsp;N&nbsp;A&nbsp;L&nbsp;Y&nbsp;S&nbsp;I&nbsp;S</div>
+      <h2>ちょっと理論で<br>読み解いてみる</h2>
+      <p class="dp">心理学の有名な理論をもとに、あなたの恋愛をいろんな角度から分析します。「なんとなく感じていた自分」に、ちゃんと名前をつける章です。</p>
+      <div class="dlist">— 愛着スタイル理論 —<br>— ５つの愛の言語 —<br>— S&nbsp;t&nbsp;e&nbsp;r&nbsp;n&nbsp;b&nbsp;e&nbsp;r&nbsp;g 恋愛の三角理論 —<br>— ビッグファイブ・M&nbsp;B&nbsp;T&nbsp;I認知機能 —</div>
+      <div class="dq">「愛とは、互いに見つめ合うことではなく、<br>共に同じ方向を見つめることである。」
+        <small>—　A&nbsp;N&nbsp;T&nbsp;O&nbsp;I&nbsp;N&nbsp;E&nbsp; &nbsp;D&nbsp;E&nbsp; &nbsp;S&nbsp;A&nbsp;I&nbsp;N&nbsp;T&nbsp;-&nbsp;E&nbsp;X&nbsp;U&nbsp;P&nbsp;E&nbsp;R&nbsp;Y</small></div>
+    </div></div></section><section class="page "><div class="inner"><div class="chapno">10</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>A&nbsp;T&nbsp;T&nbsp;A&nbsp;C&nbsp;H&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp; &nbsp;S&nbsp;T&nbsp;Y&nbsp;L&nbsp;E</span></div><div class="clabel">A&nbsp;T&nbsp;T&nbsp;A&nbsp;C&nbsp;H&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp; &nbsp;S&nbsp;T&nbsp;Y&nbsp;L&nbsp;E</div><h1 class="ptitle">あなたの甘え方のクセ</h1><hr class="hr-main"><p class="lead">愛着スタイル理論（Bowlby／Ainsworth）は、小さい頃に育った「人との距離の取り方」が恋愛にも出るっていう考え方。あなたの不安やクセの“根っこ”が見えてきます。</p>
+      <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm"><div class="panel pink"><div class="pt">安定型<span style="font-size:6.52pt;color:var(--wine2);margin-left:2mm">YOU寄り</span></div><p>自分も相手も信頼できる。素直に甘え、素直に与えられる。ENFJの理想的な状態。</p></div><div class="panel "><div class="pt">不安型</div><p>見捨てられ不安が強い。尽くしすぎ・既読を気にしすぎる。ストレス時に傾く先。</p></div><div class="panel "><div class="pt">回避型</div><p>親密さを避け、距離を置きたがる。感情を見せるのが苦手。</p></div><div class="panel "><div class="pt">恐れ・回避型</div><p>近づきたいのに怖い。求めと拒絶が同居する。</p></div></div>
+      <div class="panel pink" style="margin-top:3mm"><div class="pt">サイベリアン（ENFJ）の傾向</div><p>基本は安定型。人を信じて、愛情を惜しみなく注げるタイプ。ただ「相手の役に立ててるか」が自信の土台になってるから、寄り添っても反応が薄いと一気に不安型に傾いて、見捨てられ不安が出てきます。</p></div>
+      <div class="grid2" style="margin-top:3mm">
+        <div class="panel"><div class="pt">あなたが不安になる瞬間</div>
+          <ul class="check"><li>既読ついたのに返信がこない</li><li>「ありがとう」が返ってこない</li><li>相手が一人の時間を欲しがってる</li><li>寄り添ってるのに距離を感じる</li></ul></div>
+        <div class="panel"><div class="pt">安定型でいるための処方箋</div>
+          <ul class="check ok"><li>自分の価値を「役に立つか」で測らない</li><li>返信が遅い＝愛が薄い、ではない</li><li>与える前に、まず受け取ってみる</li><li>相手の「一人時間」は信頼の証だと思う</li></ul></div>
+      </div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　不安になったら連投せず、「ひと呼吸おいて6時間」ルールを試す。<br>
+        ◇　1日1回、小さなお願いをして“受け取る”練習をする。</div>
+      <div class="foot-note"><b>📖 ちょっと理論の話</b>愛着スタイルは一生固定じゃなくて、安心できる関係を経験すると後から安定型に変われるんだって（獲得安定型）。自分のクセを知るのが、その第一歩。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　14</span></div></div></section><section class="page "><div class="inner"><div class="chapno">11</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>A&nbsp;T&nbsp;T&nbsp;A&nbsp;C&nbsp;H&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp; &nbsp;×&nbsp; &nbsp;P&nbsp;A&nbsp;R&nbsp;T&nbsp;N&nbsp;E&nbsp;R</span></div><div class="clabel">A&nbsp;T&nbsp;T&nbsp;A&nbsp;C&nbsp;H&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp; &nbsp;×&nbsp; &nbsp;P&nbsp;A&nbsp;R&nbsp;T&nbsp;N&nbsp;E&nbsp;R</div><h1 class="ptitle">相手のタイプ別・接し方のコツ</h1><hr class="hr-main"><p class="lead">相手の愛着スタイルがわかると、すれ違いの9割は防げます。与え上手なあなたが「相手に合わせて愛を届ける」ための実践ガイド。</p>
+      <div style="display:grid;gap:2.6mm"><div class="panel pink"><div class="pt">安定型<span style="font-size:6.52pt;letter-spacing:.2em;color:var(--ink3);margin-left:2mm">S&nbsp;E&nbsp;C&nbsp;U&nbsp;R&nbsp;E</span></div><p>あなたの愛情を素直に受け取ってくれる相性◎。尽くしすぎず、対等に。あなたも安心して甘えられる理想の相手。</p></div><div class="panel "><div class="pt">不安型<span style="font-size:6.52pt;letter-spacing:.2em;color:var(--ink3);margin-left:2mm">A&nbsp;N&nbsp;X&nbsp;I&nbsp;O&nbsp;U&nbsp;S</span></div><p>あなたの愛情表現が刺さる相手。ただし「尽くす者同士」で共倒れ注意。安心の言葉をこまめに、でも依存し合わない距離を。</p></div><div class="panel "><div class="pt">回避型<span style="font-size:6.52pt;letter-spacing:.2em;color:var(--ink3);margin-left:2mm">A&nbsp;V&nbsp;O&nbsp;I&nbsp;D&nbsp;A&nbsp;N&nbsp;T</span></div><p>最も注意が必要。あなたの愛情が「重い」と感じられがち。追わずに待つ・一人時間を尊重するのが正解。詰めると逃げます。</p></div><div class="panel "><div class="pt">恐れ・回避型<span style="font-size:6.52pt;letter-spacing:.2em;color:var(--ink3);margin-left:2mm">F&nbsp;E&nbsp;A&nbsp;R&nbsp;F&nbsp;U&nbsp;L</span></div><p>近づくと逃げ、離れると求める難しい相手。一貫した態度と安全基地になること。あなたの包容力が活きるが、消耗にも注意。</p></div></div>
+      <div class="sect-h">♡　🔍 相手のタイプを見抜く3つの質問</div>
+      <div class="grid3">
+        <div class="panel"><p><b style="color:var(--wine2)">Q1</b>　不安なとき、連絡を増やす？減らす？</p></div>
+        <div class="panel"><p><b style="color:var(--wine2)">Q2</b>　弱音を素直に言える人？隠す人？</p></div>
+        <div class="panel"><p><b style="color:var(--wine2)">Q3</b>　一人時間と二人時間、どちらが好き？</p></div>
+      </div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　相手の連絡量の増減を1週間メモして、愛着タイプを見極める。<br>
+        ◇　回避型には「追わず待つ」、不安型には「安心のひと言」を実践する。</div>
+      <div class="foot-note"><b>💡 知っとくと得</b>研究では、カップルの一方が安定型だと、もう一方も時間とともに安定化しやすいとされます。あなたが「安全基地」になることが、二人の関係を育てます。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　15</span></div></div></section><section class="page "><div class="inner"><div class="chapno">12</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>５　L&nbsp;O&nbsp;V&nbsp;E&nbsp; &nbsp;L&nbsp;A&nbsp;N&nbsp;G&nbsp;U&nbsp;A&nbsp;G&nbsp;E&nbsp;S</span></div><div class="clabel">５　L&nbsp;O&nbsp;V&nbsp;E&nbsp; &nbsp;L&nbsp;A&nbsp;N&nbsp;G&nbsp;U&nbsp;A&nbsp;G&nbsp;E&nbsp;S</div><h1 class="ptitle">あなたの愛の伝わり方</h1><hr class="hr-main"><p class="lead">人が愛を感じる・伝える方法は5つに分かれるとされています（Chapman）。「伝え方」と「受け取り方」がズレてると、愛があっても届かない。まずは自分の言語を知りましょう。</p>
+      <div class="grid2">
+        <div class="stat"><div class="sh">あなたが「与える」言語</div><div class="strow"><span>サービス行為</span><span style="color:var(--wine2)">最も強い</span></div><div class="strow"><span>肯定の言葉</span><span style="color:var(--wine2)">強い</span></div><div class="strow"><span>クオリティタイム</span><span style="color:var(--wine2)">中</span></div><div class="strow"><span>スキンシップ</span><span style="color:var(--wine2)">低</span></div><div class="strow"><span>贈り物</span><span style="color:var(--wine2)">低</span></div></div>
+        <div class="stat"><div class="sh">あなたが「受け取りたい」言語</div><div class="strow"><span>肯定の言葉</span><span style="color:var(--wine2)">最も欲しい</span></div><div class="strow"><span>クオリティタイム</span><span style="color:var(--wine2)">欲しい</span></div><div class="strow"><span>スキンシップ</span><span style="color:var(--wine2)">中</span></div><div class="strow"><span>サービス行為</span><span style="color:var(--wine2)">中</span></div><div class="strow"><span>贈り物</span><span style="color:var(--wine2)">低</span></div></div>
+      </div>
+      <div class="panel pink" style="margin-top:3.2mm"><div class="pt">⚠　あなたが陥りやすい「すれ違い」</div>
+        <p>あなたは<b style="color:var(--wine2)">行動</b>で愛を伝えるのに、本当に欲しいのは<b style="color:var(--wine2)">言葉</b>。だから「こんなに寄り添ってるのに、なんで言葉が返ってこないの？」となりがちです。「言葉が欲しい」と素直に伝えるのが、満たされる近道です。</p></div>
+      <div class="grid2" style="margin-top:3mm">
+        <div class="panel"><div class="pt">相手に響かせるコツ</div><p>尽くす前に、まず相手の言語を観察してみてください。言葉が欲しい人には言葉を、時間が欲しい人には予定を空けて。</p></div>
+        <div class="panel"><div class="pt">自分を満たすコツ</div><p>「ありがとう」「あなたのおかげ」を求めてOK。欲しい言葉は、言わないと届きません。</p></div>
+      </div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　今日、相手の具体的な行動をあげて「ありがとう」と言葉にする。<br>
+        ◇　「○○してくれると嬉しい」と“欲しい言葉”を一つリクエストする。</div>
+      <div class="foot-note"><b>📖 ちょっと理論の話</b>「与える言語」と「受け取りたい言語」が違う人は、実は多いです。両方知っておくと、モヤモヤの正体に気づけます。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　16</span></div></div></section><section class="page "><div class="inner"><div class="chapno">13</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>E&nbsp;N&nbsp;F&nbsp;J　L&nbsp;O&nbsp;V&nbsp;E&nbsp; &nbsp;A&nbsp;R&nbsp;U&nbsp;A&nbsp;R&nbsp;U</span></div><div class="clabel">E&nbsp;N&nbsp;F&nbsp;J　L&nbsp;O&nbsp;V&nbsp;E&nbsp; &nbsp;A&nbsp;R&nbsp;U&nbsp;A&nbsp;R&nbsp;U</div><h1 class="ptitle">ENFJの恋愛あるある30</h1><hr class="hr-main"><p class="lead">いくつ当てはまる？ チェックしながら読んでみてください。「全部わたしだ…」となったら、それがあなたの恋の核です。</p>
+      <div class="aru-grid"><div><div class="aru-i"><span class="an">01</span><span>好きな人の機嫌をすぐ察してしまう</span></div><div class="aru-i"><span class="an">02</span><span>相手の長所を本気で見つけるのが得意</span></div><div class="aru-i"><span class="an">03</span><span>つい世話を焼きすぎて重いと言われる</span></div><div class="aru-i"><span class="an">04</span><span>自分の弱音は最後まで言えない</span></div><div class="aru-i"><span class="an">05</span><span>恋人の友達にも好かれようとする</span></div><div class="aru-i"><span class="an">06</span><span>頼られると断れない</span></div><div class="aru-i"><span class="an">07</span><span>ケンカの後すぐ自分から謝ってしまう</span></div><div class="aru-i"><span class="an">08</span><span>相手の予定に自分を合わせがち</span></div><div class="aru-i"><span class="an">09</span><span>連絡が来ないと「何かした？」と考えてしまう</span></div><div class="aru-i"><span class="an">10</span><span>悩み相談を受けると放っておけない</span></div><div class="aru-i"><span class="an">11</span><span>LINEの返信は丁寧で長め</span></div><div class="aru-i"><span class="an">12</span><span>「あなたのため」が口癖になりがち</span></div><div class="aru-i"><span class="an">13</span><span>恋人ができると一気にのめり込む</span></div><div class="aru-i"><span class="an">14</span><span>別れた後も相手の幸せを願ってしまう</span></div><div class="aru-i"><span class="an">15</span><span>「重い」と「冷たい」の間で揺れる</span></div></div><div><div class="aru-i"><span class="an">16</span><span>「で、あなたはどうしたい？」と聞かれると困る</span></div><div class="aru-i"><span class="an">17</span><span>感謝されると一週間がんばれる</span></div><div class="aru-i"><span class="an">18</span><span>相手の元恋人の話まで覚えている</span></div><div class="aru-i"><span class="an">19</span><span>「嫌われたかも」で頭がいっぱいになる</span></div><div class="aru-i"><span class="an">20</span><span>記念日は誰よりも本気で準備する</span></div><div class="aru-i"><span class="an">21</span><span>相手の成長が自分のことのように嬉しい</span></div><div class="aru-i"><span class="an">22</span><span>本音より「丸く収まる」言い方を選ぶ</span></div><div class="aru-i"><span class="an">23</span><span>「いい人」で終わった経験がある</span></div><div class="aru-i"><span class="an">24</span><span>デートのプランをつい完璧に組んでしまう</span></div><div class="aru-i"><span class="an">25</span><span>周りから恋愛相談をよく持ちかけられる</span></div><div class="aru-i"><span class="an">26</span><span>相手の小さな変化によく気づく</span></div><div class="aru-i"><span class="an">27</span><span>尽くした分だけ見返りを期待してしまう</span></div><div class="aru-i"><span class="an">28</span><span>別れ話を自分からは切り出せない</span></div><div class="aru-i"><span class="an">29</span><span>褒められると謙遜して受け取れない</span></div><div class="aru-i"><span class="an">30</span><span>結局、人を幸せにするのが一番好き</span></div></div></div>
+      <div class="panel pink" style="margin-top:3.4mm"><div class="pt">📊 いくつ当てはまった？</div>
+        <p>20個以上＝ 生粋のENFJ恋愛体質／10〜19個＝ 状況で出るタイプ／9個以下＝ 他タイプの一面も。どれも「あなたらしさ」です🐾</p></div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　17</span></div></div></section><section class="page "><div class="inner"><div class="chapno">14</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>P&nbsp;I&nbsp;T&nbsp;F&nbsp;A&nbsp;L&nbsp;L&nbsp;S&nbsp; &nbsp;&&nbsp; &nbsp;R&nbsp;E&nbsp;M&nbsp;E&nbsp;D&nbsp;Y</span></div><div class="clabel">P&nbsp;I&nbsp;T&nbsp;F&nbsp;A&nbsp;L&nbsp;L&nbsp;S&nbsp; &nbsp;&&nbsp; &nbsp;R&nbsp;E&nbsp;M&nbsp;E&nbsp;D&nbsp;Y</div><h1 class="ptitle">ハマりがちな落とし穴</h1><hr class="hr-main"><p class="lead">CH03が「性格のクセ」なら、こっちは“場面”でやらかすやつ。デート、付き合ったあと、別れ際…シーンごとの落とし穴を、原因と対処法つきで。当てはまるものから手放していこう。</p>
+      <div class="panel pink" style="margin-bottom:2.4mm">
+      <div class="pt">落とし穴 ①　付き合った途端、追いすぎて重くなる</div>
+      <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　安心したい一心で、連絡・予定を詰めすぎてしまう。</p>
+      <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　相手の返信ペースに合わせる。「会えない時間」も信頼の練習。</p></div><div class="panel " style="margin-bottom:2.4mm">
+      <div class="pt">落とし穴 ②　追いかけるべきでない相手に尽くす</div>
+      <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　「私が支えれば変わる」と、応えてくれない人に注ぎ込む。</p>
+      <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　“与えた分が返ってくるか”で見極める。尽くす相手は選んでいい。</p></div><div class="panel pink" style="margin-bottom:2.4mm">
+      <div class="pt">落とし穴 ③　別れ際を引きずり、決断が遅れる</div>
+      <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　相手を傷つけたくなくて、終わった関係にもしがみつく。</p>
+      <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　「優しさ」と「情」を分ける。区切りをつけるのも相手への誠実。</p></div><div class="panel " style="margin-bottom:2.4mm">
+      <div class="pt">落とし穴 ④　SNSを見て一喜一憂してしまう</div>
+      <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　相手の投稿・既読・オンライン表示を深読みして不安になる。</p>
+      <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　通知をオフに。見る回数を決め、“画面の中の相手”で判断しない。</p></div>
+      <div style="text-align:center;margin-top:3.4mm;font-size:10.12pt;line-height:2;color:var(--wine2);font-style:italic">
+        <span style="font-size:16.88pt;color:var(--wine-l)">“</span><br>恋って、相手をどう変えるかじゃなくて、<br>自分の優しさをどこに向けるか、なんですよね。</div>
+      <div class="foot-note"><b>🐾 ひとこと</b>落とし穴は全部「優しさ」の裏返し。直すべき欠点じゃなくて、向ける方向をちょっと変えるだけ。あなたの愛情は、そのままで十分すぎるくらい魅力です🐾</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　18</span></div></div></section><section class="page "><div class="inner"><div class="chapno">15</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>T&nbsp;R&nbsp;I&nbsp;A&nbsp;N&nbsp;G&nbsp;U&nbsp;L&nbsp;A&nbsp;R&nbsp; &nbsp;T&nbsp;H&nbsp;E&nbsp;O&nbsp;R&nbsp;Y</span></div><div class="clabel">T&nbsp;R&nbsp;I&nbsp;A&nbsp;N&nbsp;G&nbsp;U&nbsp;L&nbsp;A&nbsp;R&nbsp; &nbsp;T&nbsp;H&nbsp;E&nbsp;O&nbsp;R&nbsp;Y</div><h1 class="ptitle">あなたの愛のバランス</h1><hr class="hr-main"><p class="lead">Sternbergいわく、愛は「親密性・情熱・コミットメント」の3つでできてるらしい。このバランスで「愛のかたち」が決まるよ。</p>
+      <div class="brow"><div class="bh"><b>親密性</b>
+      <span><span class="v">90</span>　<span style="font-size:7.2pt;color:var(--ink3)">・とても高い</span></span></div>
+      <div class="bar"><i style="width:90%"></i></div><p>心を通わせ、深くつながる力は抜群。</p></div><div class="brow"><div class="bh"><b>コミットメント</b>
+      <span><span class="v">85</span>　<span style="font-size:7.2pt;color:var(--ink3)">・高い</span></span></div>
+      <div class="bar"><i style="width:85%"></i></div><p>一度決めた相手に寄り添い続ける責任感。</p></div><div class="brow"><div class="bh"><b>情熱</b>
+      <span><span class="v">65</span>　<span style="font-size:7.2pt;color:var(--ink3)">・中</span></span></div>
+      <div class="bar"><i style="width:65%"></i></div><p>燃え上がりより、穏やかな愛情が長く続く。</p></div>
+      <div class="panel pink" style="margin-top:2.6mm"><div class="pt">あなたの愛の形　＝　「友愛的な愛」から「完全愛」へ</div>
+        <p>親密性とコミットメントが高いあなたは、<b style="color:var(--wine2)">深く長く続く「友愛的な愛」</b>が得意。あとは情熱をキープする工夫（新しい体験・ときめきの共有）を足せば、3つ揃った<b style="color:var(--wine2)">「完全愛」</b>に届くよ。</p></div>
+      <div class="sect-h">💞 7つの愛のかたち</div>
+      <div class="cmap-row" style="grid-template-columns:repeat(4,1fr);gap:2mm"><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">好意</div>
+      <div class="cb-c">親密のみ</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">夢中</div>
+      <div class="cb-c">情熱のみ</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">空虚な愛</div>
+      <div class="cb-c">コミットのみ</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">ロマンチック</div>
+      <div class="cb-c">親密＋情熱</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--wine)">友愛的な愛</div>
+      <div class="cb-c">親密＋コミット</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">愚かな愛</div>
+      <div class="cb-c">情熱＋コミット</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--wine)">完全愛 ★</div>
+      <div class="cb-c">3つすべて</div></div><div class="cbox"><div style="font-size:7.88pt;font-weight:700;color:var(--ink2)">非愛</div>
+      <div class="cb-c">どれもなし</div></div></div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　週に一度、二人で“はじめてのこと”を予定に入れる。<br>
+        ◇　ときめいた瞬間は、その場で言葉にして伝える。</div>
+      <div class="foot-note"><b>💡 知っとくと得</b>情熱って、時間とともに自然に下がるものです。長続きするカップルは、情熱を「育て直す」工夫をしています。あなたの強みの親密性が、その土台になります。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　19</span></div></div></section><section class="page "><div class="inner"><div class="chapno">16</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>B&nbsp;I&nbsp;G&nbsp; &nbsp;F&nbsp;I&nbsp;V&nbsp;E&nbsp; &nbsp;P&nbsp;R&nbsp;O&nbsp;F&nbsp;I&nbsp;L&nbsp;E</span></div><div class="clabel">B&nbsp;I&nbsp;G&nbsp; &nbsp;F&nbsp;I&nbsp;V&nbsp;E&nbsp; &nbsp;P&nbsp;R&nbsp;O&nbsp;F&nbsp;I&nbsp;L&nbsp;E</div><h1 class="ptitle">性格5factorで見る恋愛</h1><hr class="hr-main"><p class="lead">性格を5つの要素で測る、心理学でいちばん信頼されてるモデル。あなたの恋愛での「出方」を要素ごとに見ていきます。</p>
+      <div class="brow"><div class="bh"><b>協調性　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">Agreeableness</span></b>
+      <span class="v">92</span></div><div class="bar"><i style="width:92%"></i></div><p>思いやりと共感のかたまり。相手を優先しすぎるのは注意。</p></div><div class="brow"><div class="bh"><b>外向性　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">Extraversion</span></b>
+      <span class="v">88</span></div><div class="bar"><i style="width:88%"></i></div><p>人とのつながりがエネルギー源。場をあたためる力あり。</p></div><div class="brow"><div class="bh"><b>誠実性　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">Conscientiousness</span></b>
+      <span class="v">80</span></div><div class="bar"><i style="width:80%"></i></div><p>約束を守るし、関係にちゃんと責任を持つ。記念日も大事。</p></div><div class="brow"><div class="bh"><b>開放性　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">Openness</span></b>
+      <span class="v">70</span></div><div class="bar"><i style="width:70%"></i></div><p>理想を描いて、相手の可能性を信じる想像力がある。</p></div><div class="brow"><div class="bh"><b>神経症傾向　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">Neuroticism</span></b>
+      <span class="v">55</span></div><div class="bar"><i style="width:55%"></i></div><p>普段は穏やか。でも「嫌われたかも」で揺れやすい一面も。</p></div>
+      <div class="grid2" style="margin-top:2.6mm">
+        <div class="panel pink"><div class="pt">この組み合わせの強み</div>
+          <p>協調性＋外向性の高さ＝<b style="color:var(--wine2)">誰からも好かれる愛され体質</b>。誠実性も高いから、長く続く関係をつくる力がある。</p></div>
+        <div class="panel"><div class="pt">気をつけたい点</div>
+          <p>協調性が高すぎると<b style="color:var(--wine2)">自己主張が消えがち</b>。不安の揺れと重なると、尽くして疲れる悪循環にハマる。</p></div>
+      </div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　1日1回、小さな「私はこうしたい」を口に出す。<br>
+        ◇　不安になったら、事実と思い込みを紙に分けて書き出す。</div>
+      <div class="foot-note"><b>📖 ちょっと理論の話</b>カップルの満足度にいちばん効くのは「不安の少なさ」と「協調性の高さ」なのだそうです。あなたは協調性が強みだから、あとは不安との付き合い方を整えればOK。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　20</span></div></div></section><section class="page "><div class="inner"><div class="chapno">17</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>C&nbsp;O&nbsp;G&nbsp;N&nbsp;I&nbsp;T&nbsp;I&nbsp;V&nbsp;E&nbsp; &nbsp;F&nbsp;U&nbsp;N&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N&nbsp;S</span></div><div class="clabel">C&nbsp;O&nbsp;G&nbsp;N&nbsp;I&nbsp;T&nbsp;I&nbsp;V&nbsp;E&nbsp; &nbsp;F&nbsp;U&nbsp;N&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N&nbsp;S</div><h1 class="ptitle">頭の使い方でみる恋愛</h1><hr class="hr-main"><p class="lead">MBTIの奥にある「心の使い方の順番」が認知機能。ENFJは Fe → Ni → Se → Ti の順で世界を見てるよ。恋愛でどう働くのか見てみよう。</p>
+      <div class="panel pink" style="margin-bottom:2.4mm">
+      <div style="display:flex;gap:2.6mm;align-items:baseline">
+        <span style="font-family:Cormorant Garamond,serif;font-size:16.88pt;color:var(--wine);line-height:1">Fe</span>
+        <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">主導機能</span>
+        <b style="font-size:8.33pt;color:var(--wine2)">外向的感情</b></div>
+      <p style="margin-top:1mm">相手の感情を一瞬で察知して、場を整える力。「この人が今なにを求めてるか」が自然にわかる、ENFJ最大の武器。恋愛では究極の気配り上手。</p></div><div class="panel " style="margin-bottom:2.4mm">
+      <div style="display:flex;gap:2.6mm;align-items:baseline">
+        <span style="font-family:Cormorant Garamond,serif;font-size:16.88pt;color:var(--wine);line-height:1">Ni</span>
+        <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">補助機能</span>
+        <b style="font-size:8.33pt;color:var(--wine2)">内向的直観</b></div>
+      <p style="margin-top:1mm">関係の「未来像」を描く力。この人とどうなりたいか、ちゃんと絵が見えてる。一途さと、相手の本質を見抜く洞察力になる。</p></div><div class="panel " style="margin-bottom:2.4mm">
+      <div style="display:flex;gap:2.6mm;align-items:baseline">
+        <span style="font-family:Cormorant Garamond,serif;font-size:16.88pt;color:var(--wine);line-height:1">Se</span>
+        <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">第三機能</span>
+        <b style="font-size:8.33pt;color:var(--wine2)">外向的感覚</b></div>
+      <p style="margin-top:1mm">今この瞬間を楽しむ力。デートや体験の共有で距離がぐっと縮まる。ここが育つと、恋にメリハリと情熱が出てくる。</p></div><div class="panel " style="margin-bottom:2.4mm">
+      <div style="display:flex;gap:2.6mm;align-items:baseline">
+        <span style="font-family:Cormorant Garamond,serif;font-size:16.88pt;color:var(--wine);line-height:1">Ti</span>
+        <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">劣等機能</span>
+        <b style="font-size:8.33pt;color:var(--wine2)">内向的思考</b></div>
+      <p style="margin-top:1mm">ストレス時の弱点。感情で動くあなたが追い詰められると、急に理屈っぽく相手を分析・批判しちゃうことが。疲れたら一人で休もう。</p></div>
+      <div class="sect-h">✨ 今日からできること</div>
+      <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
+        ◇　疲れを感じたら抱え込まず、一人で休む時間をとる。<br>
+        ◇　責めたくなったら“事実→自分の気持ち”の順で伝える。</div>
+      <div class="foot-note"><b>📖 ちょっと理論の話</b>Feで尽くして、Tiが暴走すると理屈で責める。この振れ幅を知っておくと、ケンカのときの自分を一歩引いて見られるよ。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　21</span></div></div></section><section class="page "><div class="inner"><div class="chapno">W3</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>T&nbsp;H&nbsp;E&nbsp;O&nbsp;R&nbsp;Y&nbsp; &nbsp;W&nbsp;O&nbsp;R&nbsp;K&nbsp;S&nbsp;H&nbsp;E&nbsp;E&nbsp;T</span></div><div class="clabel">T&nbsp;H&nbsp;E&nbsp;O&nbsp;R&nbsp;Y&nbsp; &nbsp;W&nbsp;O&nbsp;R&nbsp;K&nbsp;S&nbsp;H&nbsp;E&nbsp;E&nbsp;T</div><h1 class="ptitle">書いて整理する自己分析</h1><hr class="hr-main"><p class="lead">ここまでの理論を、自分の恋にあてはめて書き出してみよう。書くと、知識がちゃんと「自分のもの」になります。</p>
+      <div class="wlabel"><span class="num">1</span>私の愛着スタイルは？　それが出た具体的な場面は？</div><div class="wline"></div><div class="wline"></div>
+      <div class="wlabel"><span class="num">2</span>私が「受け取りたい」愛の言語を、相手にどう伝える？</div><div class="wline"></div><div class="wline"></div>
+      <div class="wlabel"><span class="num">3</span>「完全愛」に近づくため、情熱を育てる工夫を一つ。</div><div class="wline"></div><div class="wline"></div>
+      <div class="refs"><div class="rh">R&nbsp;E&nbsp;F&nbsp;E&nbsp;R&nbsp;E&nbsp;N&nbsp;C&nbsp;E&nbsp;S　・　主な参考理論</div><div class="rg">
+      <span>Bowlby, J. (1969). Attachment and Loss.</span><span>Hazan, C. &amp; Shaver, P. (1987). Romantic love as attachment.</span>
+      <span>Ainsworth, M. (1978). Patterns of Attachment.</span><span>Chapman, G. (1992). The Five Love Languages.</span>
+      <span>Sternberg, R. (1986). A triangular theory of love.</span><span>Costa, P. &amp; McCrae, R. (1992). NEO-PI-R (Big Five).</span>
+      <span>Jung, C.G. (1921). Psychological Types.</span><span>Myers, I. &amp; Briggs, K. MBTI® framework.</span></div>
+      <p style="font-size:6.52pt;color:var(--ink3);line-height:1.7;margin-top:1.8mm">※本書は上記の理論を一般向けに分かりやすく再構成したものであり、学術的・臨床的診断ではありません。自己理解を深める読み物としてお楽しみください。</p></div>
+      <div class="foot-note"><b>🐾 さいごに</b>理論はあくまで「地図」。実際に歩くのはあなた。知った自分を手がかりに、あなたらしい恋を育ててね🐾</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　22</span></div></div></section><section class="page "><div class="inner"><div class="chapno">W1</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>W&nbsp;O&nbsp;R&nbsp;K　0 1</span></div><div class="clabel">W&nbsp;O&nbsp;R&nbsp;K　0 1</div><h1 class="ptitle">理想の相手、棚おろし</h1><hr class="hr-main"><p class="lead">頭の中の「理想の恋人像」を、一回ぜんぶ紙に出してみよう。書き出すと、本当に譲れないものと手放せるものが見えてくる。</p>
+      <div class="wlabel"><span class="num">1</span>理想の恋人像を、思いつくまま書き出す</div>
+      <div class="wline"></div><div class="wline"></div><div class="wline"></div><div class="wline"></div>
+      <div class="wlabel"><span class="num">2</span>「絶対に譲れないもの」を3つだけ選んで書く</div>
+      <div class="grid3">
+        <div class="wbox"><div class="cb-c">01</div><div class="wline" style="border-bottom:none;height:6mm"></div></div>
+        <div class="wbox"><div class="cb-c">02</div><div class="wline" style="border-bottom:none;height:6mm"></div></div>
+        <div class="wbox"><div class="cb-c">03</div><div class="wline" style="border-bottom:none;height:6mm"></div></div>
+      </div>
+      <div class="wlabel"><span class="num">3</span>3つに絞った感想・気づきを書く</div>
+      <div class="wline"></div><div class="wline"></div><div class="wline"></div>
+      <div class="panel pink" style="margin-top:3mm"><div class="pt">💡 ヒント</div>
+        <p>3つに絞れたら、それ以外は「あったら嬉しいボーナス」。完璧な人を探すんじゃなくて、譲れない3つを持ってる人を探す。これだけで恋のハードルがぐっと現実的になります。</p></div>
+      <div class="foot-note"><b>💡 ひとくちメモ</b>目標って「紙に書くと叶いやすくなる」と言われています。誰かのためだけじゃなく、自分のための目標も書いてみてください。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　23</span></div></div></section><section class="page "><div class="inner"><div class="chapno">W2</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>W&nbsp;O&nbsp;R&nbsp;K　0 2</span></div><div class="clabel">W&nbsp;O&nbsp;R&nbsp;K　0 2</div><h1 class="ptitle">本音の言い方 練習シート</h1><hr class="hr-main"><p class="lead">我慢グセを手放すための「Iメッセージ」練習シート。相手のせいにする言い方から、自分の気持ちを伝える言い方に変換する練習です。</p>
+      <div class="panel pink"><div class="pt">📝 Iメッセージの型</div>
+        <p style="font-size:9.0pt;line-height:2"><b style="color:var(--wine)">私は</b>〔状況・事実〕　▶　<b style="color:var(--wine)">〜と感じた</b>〔感情・気持ち〕　▶　<b style="color:var(--wine)">だから</b>〔お願い・希望〕</p></div>
+      <div class="wlabel"><span class="num">1</span>最近「言えなかった本音」を一つ思い出す</div>
+      <div class="wline"></div><div class="wline"></div><div class="wline"></div>
+      <div class="wlabel"><span class="num">2</span>Iメッセージに変換して書いてみる</div>
+      <div class="wbox">
+        <div style="font-size:8.33pt;color:var(--wine2);margin-bottom:1mm">私は</div><div class="wline"></div>
+        <div style="font-size:8.33pt;color:var(--wine2);margin:1.6mm 0 1mm">〜と感じた。だから</div><div class="wline"></div>
+        <div style="font-size:8.33pt;color:var(--wine2);margin:1.6mm 0 1mm">〜してほしい。</div><div class="wline"></div>
+      </div>
+      <div class="panel" style="margin-top:2.6mm"><div class="pt">💡 ヒント</div>
+        <p>最初は紙に書くだけでOK。実際に伝えなくていいよ。言葉にするだけで気持ちが整理されて、次に同じ場面が来たとき自然に口から出るようになる。</p></div>
+      <div class="foot-note"><b>💡 知っとくと得</b>「言いたいことを我慢しすぎない人」ほど、関係の満足度が高いという研究があります。あなたの本音も、ちゃんと関係に必要なパーツ。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　24</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A1</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>M&nbsp;A&nbsp;K&nbsp;E&nbsp; &nbsp;U&nbsp;P&nbsp; &nbsp;F&nbsp;L&nbsp;O&nbsp;W</span></div><div class="clabel">M&nbsp;A&nbsp;K&nbsp;E&nbsp; &nbsp;U&nbsp;P&nbsp; &nbsp;F&nbsp;L&nbsp;O&nbsp;W</div><h1 class="ptitle">仲直りフローチャート</h1><hr class="hr-main"><p class="lead">ケンカ直後は、どうしても感情で動いてしまいがちです。この順番どおり進めば、関係を壊さず仲直りまでたどり着けるよ。迷ったら上から指でなぞってみてください。</p>
+      <div class="flow-q" style="background:var(--pink);border-color:var(--pinkbd)">ケンカしてしまった…</div>
+      <div class="flow-ar">▼</div>
+      <div class="flow-q">Q1　あなたの頭は冷えている？</div><div class="flow-2">
+          <div class="flow-b"><span class="fl">N&nbsp;O・まだ感情的</span><p>「6時間ルール」で一旦離れる。落ち着いてからこの図に戻る。</p></div>
+          <div class="flow-b"><span class="fl">Y&nbsp;E&nbsp;S・冷静になれた</span><p>次のステップへ進む。</p></div></div><div class="flow-ar">▼</div>
+      <div class="flow-q">Q2　自分にも非があった？</div><div class="flow-2">
+          <div class="flow-b"><span class="fl">N&nbsp;O・相手が悪い気が</span><p>責める前に<b style='color:var(--wine)'>相手の言い分を最後まで聴く</b>。</p></div>
+          <div class="flow-b"><span class="fl">Y&nbsp;E&nbsp;S</span><p>言い訳の前に<b style='color:var(--wine)'>「ごめんね」</b>から。何に謝るかを具体的に。</p></div></div><div class="flow-ar">▼</div>
+      <div class="flow-q">Q3　相手は今、話せそう？</div><div class="flow-2">
+          <div class="flow-b"><span class="fl">N&nbsp;O・まだ距離がある</span><p>「落ち着いたら話そう」と一言だけ送って待つ。</p></div>
+          <div class="flow-b"><span class="fl">Y&nbsp;E&nbsp;S</span><p>Iメッセージで<b style='color:var(--wine)'>「私は〜と感じた」</b>と本音を伝える。</p></div></div><div class="flow-ar">▼</div>
+      <div class="flow-goal">仲直り　▷　最後は感謝とスキンシップで締める　♡</div>
+      <div class="foot-note"><b>📖 ちょっと理論の話</b>ケンカそのものより「仲直りのうまさ」が長続きを左右するらしい。自分なりの仲直りの型を持っておくのが、最大の保険です。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　25</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A2</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;C&nbsp;O&nbsp;N&nbsp;C&nbsp;I&nbsp;L&nbsp;I&nbsp;A&nbsp;T&nbsp;I&nbsp;O&nbsp;N</span></div><div class="clabel">R&nbsp;E&nbsp;C&nbsp;O&nbsp;N&nbsp;C&nbsp;I&nbsp;L&nbsp;I&nbsp;A&nbsp;T&nbsp;I&nbsp;O&nbsp;N</div><h1 class="ptitle">ヨリを戻す、その前に</h1><hr class="hr-main"><p class="lead">別れたあとに出てくる「もう一度…」の気持ち。大事なのは、寂しさで動かずに<b style="color:var(--wine2)">「本当に戻るべき？」</b>を見極めること。寄り添い型のあなたほど、冷静さが必要です。</p>
+      <div class="grid2">
+        <div class="panel pink"><div class="pt">◎　復縁を考えていいサイン</div><ul class="check">
+          <li>別れの原因が「解決できること」だった</li><li>二人とも変わる気がある</li>
+          <li>感謝できる思い出のほうが多い</li><li>一人になっても相手を尊重できてる</li></ul></div>
+        <div class="panel"><div class="pt">✕　やめておくべきサイン</div><ul class="check ng">
+          <li>ただ「寂しい・一人がこわい」だけ</li><li>原因がモラハラ・浮気とかで根深い</li>
+          <li>戻れば「また尽くせる」と思ってる</li><li>相手ははっきり終わりを望んでる</li></ul></div>
+      </div>
+      <div class="sect-h">🐾 復縁の3ステップ</div>
+      <div class="grid3"><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">1</span><b style="font-size:8.33pt;color:var(--wine)">冷却期間をおく</b></div><p>最低でも1〜3ヶ月は連絡しない。追わないことで、相手に「失った実感」が生まれる。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">2</span><b style="font-size:8.33pt;color:var(--wine)">自分を整える</b></div><p>別れの原因と向き合って、見た目・生活・心を立て直す。“変わった姿”がいちばんの説得力。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">3</span><b style="font-size:8.33pt;color:var(--wine)">さりげなく再接触</b></div><p>重い告白じゃなく「元気にしてる？」から。友達として軽く、焦らず距離を縮めよう。</p></div></div>
+      <div class="sect-h">⚠　🙅 これだけはやっちゃダメ</div>
+      <div class="grid3"><div class="panel"><div class="pt">追いLINE</div><p>未読・既読が気になって連投しちゃう</p></div><div class="panel"><div class="pt">泣き落とし</div><p>同情や罪悪感で引き止めようとする</p></div><div class="panel"><div class="pt">SNS監視</div><p>相手の投稿に一喜一憂し続ける</p></div></div>
+      <div class="foot-note"><b>E&nbsp;N&nbsp;F&nbsp;Jへ</b>あなたは「もっと寄り添えば戻れる」って考えがち。でも復縁に必要なのは尽くす量じゃなくて、二人が変わること。取り戻すより、お互い成長して再会できるかを見てみて🐾</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　26</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A3</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;D&nbsp;E&nbsp;C&nbsp;I&nbsp;S&nbsp;I&nbsp;O&nbsp;N</span></div><div class="clabel">R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;D&nbsp;E&nbsp;C&nbsp;I&nbsp;S&nbsp;I&nbsp;O&nbsp;N</div><h1 class="ptitle">それ、愛情？それとも執着？</h1><hr class="hr-main"><p class="lead">その「戻りたい」は、<b style="color:var(--wine2)">愛情</b>？ それとも<b style="color:var(--wine2)">執着</b>？ 動き出す前に、頭と心をいったん整理しておこう。</p>
+      <div class="panel" style="margin-bottom:2.6mm"><div class="pt">✅ 復縁できそう度チェック</div>
+        <p style="font-size:7.65pt;color:var(--ink3);margin-bottom:1mm">当てはまる□の数を数えてみてください。</p>
+        <div class="grid2" style="gap:0 5mm"><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　別れの原因が「解決できる」ものだ</div><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　一人の時間でも自分を保てている</div><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　相手の幸せを心から願える</div><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　自分が変わる覚悟と行動がある</div><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　感謝できる思い出のほうが多い</div><div style="font-size:7.99pt;color:var(--ink2);padding:.9mm 0">□　相手もまだ完全には終わっていない</div></div></div>
+      <div class="grid3"><div class="panel pink"><div class="pt">5〜6個  →  進んでよい</div><p>条件は十分。次のページの手順で丁寧に。</p></div><div class="panel "><div class="pt">3〜4個  →  保留</div><p>まずは自分を整える期間を。焦らないで。</p></div><div class="panel "><div class="pt">0〜2個  →  やめる勇気</div><p>手放すほうが、あなたの幸せに近いかも。</p></div></div>
+      <div class="sect-h">🤔 執着？　それとも愛情？</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">執着（手放せない）</div>
+          <p>・一人になるのが怖い<br>・相手のSNSが気になって仕方ない<br>・「失うのが怖い」が先に立つ<br>・過去のいい時間に戻りたいだけ</p></div>
+        <div class="panel pink"><div class="pt">愛情（また大切にしたい）</div>
+          <p>・相手の幸せを願える<br>・自分の非を認め、変われる<br>・感謝のほうが多く思い出せる<br>・二人の未来を具体的に描ける</p></div>
+      </div>
+      <div class="sect-h">🔀 戻れた人と、また別れた人の差</div>
+      <table class="cmp"><tr><th></th><th>◎　やり直せた人</th><th>✕　また別れた人</th></tr><tr><td class="lb">別れた直後</td><td>追わず、まず気持ちを落ち着けた</td><td>不安のまま追いLINEで連投した</td></tr><tr><td class="lb">冷却期間</td><td>距離を置き、別れの原因と向き合った</td><td>寂しさに耐えられず、すぐ連絡を再開</td></tr><tr><td class="lb">自分磨き</td><td>自分の課題を一つ変える努力をした</td><td>相手を変えようと説得を続けた</td></tr><tr><td class="lb">再会の仕方</td><td>「変わった自分」で軽く短く会った</td><td>重い空気で「やり直したい」と迫った</td></tr><tr><td class="lb">結果</td><td>前より対等な関係を築き直せた</td><td>同じすれ違いを繰り返し再び別れた</td></tr></table>
+      <div class="foot-note"><b>🌱 手放すという選択</b>諦めるのは、負けでも失敗でもありません。「戻らない」と決めて前に進む勇気も、自分を大事にする愛のかたち。どっちを選んでも、あなたの恋はちゃんと次につながる。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　27</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A4</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;T&nbsp;E&nbsp;C&nbsp;H&nbsp;N&nbsp;I&nbsp;Q&nbsp;U&nbsp;E</span></div><div class="clabel">R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;T&nbsp;E&nbsp;C&nbsp;H&nbsp;N&nbsp;I&nbsp;Q&nbsp;U&nbsp;E</div><h1 class="ptitle">復縁の進め方、順番が9割</h1><hr class="hr-main"><p class="lead">復縁は「気持ち」より<b style="color:var(--wine2)">「順番と間（ま）」</b>。焦って動くほど遠ざかるよ。5つのステップに分けて、具体的な手順とセリフで解説するね。</p>
+      <div class="sect-h">S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;1　冷却期間の正しい過ごし方</div>
+      <div class="grid3"><div class="panel"><div class="pt">連絡は断つ</div><p>1〜3ヶ月。追わないことで、相手に「失った実感」を持たせる。</p></div><div class="panel"><div class="pt">SNSは静かに</div><p>監視も匂わせ投稿もNG。たまに前向きな近況だけでOK。</p></div><div class="panel"><div class="pt">自分を磨く</div><p>見た目・生活・心を立て直そう。“変わった姿”が最大の武器。</p></div></div>
+      <div class="sect-h">S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;2　再接触の最初の1通</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">✕　N&nbsp;Gな切り出し</div>
+          <p>「やり直したい」「会いたい」「まだ好き」<br><span style="color:var(--ink3)">→ 重く、相手の逃げ場を奪う</span></p></div>
+        <div class="panel pink"><div class="pt">◎　O&nbsp;Kな切り出し</div>
+          <p>「久しぶり、元気にしてる？」<br>「これ、あなた好きそうだと思って」<br><span style="color:var(--wine2)">→ 軽く・用件は小さく</span></p></div>
+      </div>
+      <div class="sect-h">S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;3　復縁デートの設計</div>
+      <div class="grid3"><div class="panel"><div class="pt">短く・軽く</div><p>初回はランチかお茶で1時間。重い場所・長時間はナシで。</p></div><div class="panel"><div class="pt">昔話より今</div><p>別れの話は持ち出さない。変わった自分を自然に見せよう。</p></div><div class="panel"><div class="pt">引き際よく</div><p>「楽しかった、またね」で自分から切り上げて、余韻を残す。</p></div></div>
+      <div class="sect-h">S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;4　復縁が近づいたサイン</div>
+      <div class="grid2" style="gap:.4mm 5mm">
+        <div style="font-size:7.88pt;color:var(--ink2);padding:.4mm 0">♢ 返信が早く・長くなってきた</div>
+        <div style="font-size:7.88pt;color:var(--ink2);padding:.4mm 0">♢ 相手から近況や質問を振ってくる</div>
+        <div style="font-size:7.88pt;color:var(--ink2);padding:.4mm 0">♢ 昔の楽しかった思い出に触れてくる</div>
+        <div style="font-size:7.88pt;color:var(--ink2);padding:.4mm 0">♢ 「また会いたい」と言葉や態度に出る</div>
+      </div>
+      <div class="sect-h">S&nbsp;T&nbsp;E&nbsp;P&nbsp; &nbsp;5　やり直しの切り出し方</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">タイミング</div><p>何回か会って空気が戻って、相手から会いたそうな素振りが出た時。帰り際の、余韻が残る瞬間がベスト。</p></div>
+        <div class="panel"><div class="pt">伝え方</div><p>「あの頃と違う自分でいられる。もう一度、一緒にいたい」。過去の謝罪より<b style="color:var(--wine2)">“これからどう変わるか”</b>を一言。</p></div>
+      </div>
+      <div class="panel pink" style="margin-top:2.4mm"><div class="pt">決め手の例</div>
+        <p>「離れてみて、あなたといる時間がいちばん自分らしかったと気づいた。今度はもっと対等に、ちゃんと大事にしたい」<br>
+        <span style="color:var(--ink3);font-size:7.54pt">— 重さや謝罪で押さず、“変わった自分”と“これから”だけを、短く正直に。</span></p></div>
+      <div class="foot-note"><b>🧠 心理のはなし</b>人は別れ際の印象で記憶を上書きするんだって（ピーク・エンドの法則）。最後をいい余韻で終えるほど「もう一度会いたい」が生まれるよ。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　28</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A5</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;B&nbsp;Y&nbsp; &nbsp;T&nbsp;Y&nbsp;P&nbsp;E</span></div><div class="clabel">R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;B&nbsp;Y&nbsp; &nbsp;T&nbsp;Y&nbsp;P&nbsp;E</div><h1 class="ptitle">相手のタイプ別・戻り方</h1><hr class="hr-main"><p class="lead">相手の性格で、響く戻り方は変わるよ。代表的な9タイプ別に「効く一手」をまとめたよ。あと、ENFJが別れやすい原因と、その直し方も。</p>
+      <div class="grid3" style="gap:2.4mm"><div class="panel"><div class="pt">ペルシャ（INFP） には</div><p>価値観に寄り添う。復縁ワードより「あなたの世界を大切にしたい」という本心を静かに。急かさない。</p></div><div class="panel"><div class="pt">ソマリ（ENFP） には</div><p>楽しさで惹き直す。新しい体験に軽く誘い「一緒だと面白い」を再体感させる。重い話は厳禁。</p></div><div class="panel"><div class="pt">ロシアンブルー（INFJ） には</div><p>深い対話で。なぜ別れたかを一緒に内省し、表面でなく本質の理解を示す。誠実さが鍵。</p></div><div class="panel"><div class="pt">シャルトリュー（INTP） には</div><p>感情でなく論理で。別れの原因を冷静に分析し「何をどう変えたか」を具体的に示す。</p></div><div class="panel"><div class="pt">デボンレックス（ENTP） には</div><p>退屈させない。新しい話題と刺激で「一緒だと飽きない」を再認識。軽い議論も楽しんで。</p></div><div class="panel"><div class="pt">ノルウェージャン（INTJ） には</div><p>感情でなく論理で。分析を一旦封じ、変化を事実で示す。追わずに待つ姿勢が効く。</p></div><div class="panel"><div class="pt">ラグドール（ISFJ） には</div><p>焦らせず、穏やかに。安心できる距離から少しずつ。変わらぬ優しさを静かに見せ続ける。</p></div><div class="panel"><div class="pt">バーマン（ESFJ） には</div><p>誠実さと安心感。こまめな連絡と感謝を取り戻し「大切にされる」実感を丁寧に積む。</p></div><div class="panel"><div class="pt">ブリティッシュ（ISTJ） には</div><p>言葉より一貫した行動で。約束を守り、変わった姿を時間をかけて証明する。</p></div></div>
+      <div class="sect-h">E&nbsp;N&nbsp;F&nbsp;Jが別れやすい原因　→　復縁での修正法</div>
+      <div style="display:flex;gap:2.6mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine);width:26mm;flex:none">抱え込みすぎた</b>
+      <span style="font-size:7.88pt;line-height:1.8;color:var(--ink2)">しんどさを見せず、限界で終わらせていた。戻る時は「弱音を先に渡す」ことから始める。</span></div><div style="display:flex;gap:2.6mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine);width:26mm;flex:none">自分を後回しにした</b>
+      <span style="font-size:7.88pt;line-height:1.8;color:var(--ink2)">我慢を溜めて爆発しがち。本音を小出しに伝える練習をしてから再接触する。</span></div><div style="display:flex;gap:2.6mm;padding:1.5mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine);width:26mm;flex:none">甘えられなかった</b>
+      <span style="font-size:7.88pt;line-height:1.8;color:var(--ink2)">頼らなさが距離を生んだ。「あなたに頼りたい」と言える関係を目指す。</span></div>
+      <div class="sect-h">やり直してからの3つの約束</div>
+      <div class="grid3"><div class="panel pink"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">1</span><b style="font-size:8.33pt;color:var(--wine)">我慢を溜めない</b></div><p>不満は小さいうちに言葉に。爆発させない代わりに、こまめに本音を渡す。</p></div><div class="panel pink"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">2</span><b style="font-size:8.33pt;color:var(--wine)">相手の領域を守る</b></div><p>尽くしすぎず、相手の時間・友人・自由を尊重。重さは少し引いて。</p></div><div class="panel pink"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">3</span><b style="font-size:8.33pt;color:var(--wine)">月一の本音タイム</b></div><p>定期的に気持ちをすり合わせる時間を。すれ違いが大きくなる前に整える。</p></div></div>
+      <div class="foot-note"><b>🐾 さいごに</b>復縁のゴールは「元に戻る」ことじゃなくて<b style='color:var(--wine2)'>「前より良い二人になる」</b>こと。同じ別れを繰り返さない自分になれた時、本当の意味でやり直せるよ。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　29</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A6</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;S&nbsp;N&nbsp;S</span></div><div class="clabel">R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;S&nbsp;N&nbsp;S</div><h1 class="ptitle">復縁とSNSのキョリ感</h1><hr class="hr-main"><p class="lead">今どきの復縁は、SNSの使い方で半分決まる。相手の動きを察しやすいあなたほど、つい見すぎ・反応しすぎてしまいます。<b style="color:var(--wine2)">「静けさ」が一番の武器</b>です。</p>
+      <div class="sect-h">①　冷却期間のSNSルール</div>
+      <div class="grid2">
+        <div class="panel pink"><div class="pt">◎　すること</div><p>通知を切って見に行かない ／ 前向きな近況をたまに一つ ／ フォローはそのまま自然に。</p></div>
+        <div class="panel"><div class="pt">✕　しないこと</div><p>投稿の巡回・足跡チェック ／「病んでる・匂わせ」投稿 ／ 衝動的なブロックや削除。</p></div>
+      </div>
+      <div class="sect-h">②　印象をリセットする見せ方</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">残していい投稿</div><p>自分磨き・新しい挑戦・自然な笑顔。「充実してそう」がさりげなく伝わるものだけ。</p></div>
+        <div class="panel"><div class="pt">消したい投稿</div><p>未練・愚痴・意味深なポエム。二人の思い出は今は非公開に。重さは即ブレーキになる。</p></div>
+      </div>
+      <div class="sect-h">③　再接触の3ステップ</div>
+      <div class="grid3"><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">1</span><b style="font-size:8.33pt;color:var(--wine)">いいね</b></div><p>まずは投稿に軽く一つ。「見てるよ」を圧なく伝える最初の合図。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">2</span><b style="font-size:8.33pt;color:var(--wine)">ストーリー反応</b></div><p>スタンプや一言で軽く反応。「それ気になる！」程度の短さで止める。</p></div><div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
+      <span class="num">3</span><b style="font-size:8.33pt;color:var(--wine)">DM再開</b></div><p>反応が返るようになってから。用件は小さく「元気？」の一通で十分。</p></div></div>
+      <div class="sect-h">④　SNS別・距離の取り方</div>
+      <div class="grid3"><div class="panel"><div class="pt">Instagram</div><p>充実をさりげなく一枚。ストーリーの閲覧で毎回先頭に出ない。リアクションは控えめに。</p></div><div class="panel"><div class="pt">LINE</div><p>即レス・連投はしない。用件は短く一往復で。アイコン・ひとことを静かに整える程度に。</p></div><div class="panel"><div class="pt">X（旧Twitter）</div><p>病み・匂わせ厳禁。フォローは外さず、感情の垂れ流しだけを止める。沈黙が余裕に見える。</p></div></div>
+      <div class="sect-h">⑤　相手の心が戻りかけたサイン</div>
+      <div style="font-size:7.88pt;line-height:1.95;color:var(--ink2)">
+        ♢ あなたの投稿へのいいね・閲覧が増える。ストーリーを最後まで見ている。<br>
+        ♢ 過去の思い出に触れてくる。「あの店まだあるかな」など、二人の話題を出してくる。<br>
+        ♢ 相手から近況を共有してくる。返信が早く・長くなったら、対面に移すサイン。</div>
+      <div class="foot-note"><b>S&nbsp;N&nbsp;S&nbsp; &nbsp;N&nbsp;G</b>鍵垢・サブ垢での監視 ／ 共通の友人へのアピール投稿 ／ 既読・オンライン表示への一喜一憂。追うほど遠ざかります。静かに、余裕を見せる人が選ばれます。</div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　30</span></div></div></section><section class="page "><div class="inner"><div class="chapno">A7</div><div class="phead"><span>🐾 サイベリアンの恋愛トリセツ</span>
+        <span>R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;S&nbsp;N&nbsp;S&nbsp; &nbsp;Q&nbsp;&&nbsp;A</span></div><div class="clabel">R&nbsp;E&nbsp;U&nbsp;N&nbsp;I&nbsp;T&nbsp;E&nbsp; &nbsp;·&nbsp; &nbsp;S&nbsp;N&nbsp;S&nbsp; &nbsp;Q&nbsp;&&nbsp;A</div><h1 class="ptitle">SNS、実際どう使う？</h1><hr class="hr-main"><p class="lead">「何を投稿する？」「どう送る？」を、そのまま使える文例で。迷いやすい場面はQ&amp;Aで答えるよ。</p>
+      <div class="sect-h">📸 さりげない近況ストーリー例</div>
+      <div class="grid3"><div class="panel"><div class="pt">挑戦してる感</div><p>資格の勉強・ジム・新しい趣味。「前に進んでる」を一枚で。</p></div><div class="panel"><div class="pt">楽しそうな日常</div><p>友人とのカフェ・旅先の景色。人物を写しすぎず雰囲気だけ。</p></div><div class="panel"><div class="pt">共通の話題</div><p>昔ふたりで好きだったお店や音楽。返信のきっかけを置く。</p></div></div>
+      <div class="sect-h">💬 DM再開のひとこと文例</div>
+      <div class="grid2">
+        <div class="panel"><div class="pt">✕　重い</div><p>「ずっと考えてた」「会えないかな」「まだ好き」<br><span style="color:var(--ink3)">→ 期待が見えて身構えさせる</span></p></div>
+        <div class="panel pink"><div class="pt">◎　軽い</div><p>「この前◯◯行ったよ、懐かしくて笑」<br>「元気にしてる？ふと思い出して」<br><span style="color:var(--wine2)">→ 用件は小さく、返しやすく</span></p></div>
+      </div>
+      <div class="sect-h">🙋 こんな時どうする？ Q&amp;A</div>
+      <div style="padding:1.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine)">Q. ブロックされていたら？</b>
+      <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.6mm">追わない。時間を置けば解除されることも多い。別アカでの接触は逆効果なので絶対にしない。</p></div><div style="padding:1.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine)">Q. 新しい相手がいそうな時は？</b>
+      <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.6mm">詮索も牽制もしない。今は引いて、自分の充実に集中。関係が続くとは限らない。</p></div><div style="padding:1.6mm 0;border-bottom:.35pt dotted var(--rule)">
+      <b style="font-size:8.21pt;color:var(--wine)">Q. 既読スルーされたら？</b>
+      <p style="font-size:7.88pt;line-height:1.8;color:var(--ink2);margin-top:.6mm">追撃しない。1〜2週間あけて、別の軽い話題で一度だけ。それでも無反応なら一旦休む。</p></div>
+      <div class="sect-h">E&nbsp;N&nbsp;F&nbsp;Jならではの3つの一手</div>
+      <div class="grid3"><div class="panel pink"><div class="pt">「見ている」を活かす</div><p>頑張り・挑戦の投稿にだけ短く温かい反応。応援はあなたにしか出せない誠実さ。</p></div><div class="panel pink"><div class="pt">世話焼きを我慢</div><p>「大丈夫？」のDMはこらえる。先回りせず、相手から頼られるまで待つ余裕を。</p></div><div class="panel pink"><div class="pt">聞き役を封印</div><p>尽くす側に戻らず、自分の充実をたまに見せる。温度が戻ったら早めにSNSの外へ。</p></div></div><div class="pfoot"><span>サ&nbsp;イ&nbsp;ベ&nbsp;リ&nbsp;ア&nbsp;ン　·　E&nbsp;N&nbsp;F&nbsp;J</span>
+        <span class="pno">♢　31</span></div></div></section><section class="page back-pg"><div class="inner"><div class="divider">
+      <div class="dq" style="margin-top:0">「人は、自分が愛するものによって<br>形づくられてゆく。」
+        <small>—　J&nbsp;.&nbsp; &nbsp;W&nbsp;.&nbsp; &nbsp;G&nbsp;O&nbsp;E&nbsp;T&nbsp;H&nbsp;E</small></div>
+      <h2 style="font-size:16.88pt;margin-top:14mm;line-height:1.9">あなたが与える愛は、<br>まわりをあたためる才能です。</h2>
+      <p class="dp" style="margin-top:8mm">最後まで読んでくれてありがとう🐾<br>あなたの愛情が、ちゃんと返ってくる恋になりますように。</p>
+      <div style="margin-top:auto;width:100%">
+        <div class="refs"><div class="rh">📚 参考にした主な理論</div><div class="rg" style="text-align:left">
+          <span>Bowlby, J. (1969). Attachment and Loss.</span><span>Hazan, C. &amp; Shaver, P. (1987). Romantic love as attachment.</span>
+          <span>Ainsworth, M. (1978). Patterns of Attachment.</span><span>Chapman, G. (1992). The Five Love Languages.</span>
+          <span>Sternberg, R. (1986). A triangular theory of love.</span><span>Costa, P. &amp; McCrae, R. (1992). NEO-PI-R (Big Five).</span>
+          <span>Jung, C.G. (1921). Psychological Types.</span><span>Myers, I. &amp; Briggs, K. MBTI® framework.</span></div></div>
+        <div style="text-align:center;margin-top:5mm;font-size:7.88pt;letter-spacing:.2em;color:var(--ink2)">
+          16にゃんこ恋愛診断　／　恋愛トリセツ　サイベリアン（ENFJ）版</div>
+        <div style="text-align:center;margin-top:2mm;font-size:7.2pt;letter-spacing:.14em;color:var(--ink3)">
+          発行：Type&amp;Co　／　診断サイト：16lovetypecats.com</div>
+        <div style="text-align:center;margin-top:2.4mm;font-size:6.52pt;color:var(--ink3);line-height:1.7">
+          このトリセツは娯楽目的のコンテンツです。心理学的・医学的診断ではありません。無断複製・転載を禁じます。<br>
+          ©　2026　Type&amp;Co　/　16にゃんこ恋愛診断</div>
+      </div></div></div></section></body></html>
