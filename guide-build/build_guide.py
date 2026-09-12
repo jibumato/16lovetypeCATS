@@ -5,6 +5,7 @@
 相性スコアはサイト index.html の compatScore と完全一致。
 """
 import json, os, sys
+from diagrams import *
 
 ORDER = ["INTJ","INTP","ENTJ","ENTP","INFJ","INFP","ENFJ","ENFP",
          "ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP"]
@@ -202,14 +203,14 @@ C = {
             "静かな思考家との組み合わせ。あなたの愛情表現が、INTPの内に秘めた感情を外に引き出すきっかけになる。",
             "発想が跳ねる相手。あなたの受け止める力と相手の刺激が組み合わさり、飽きのこない関係に。"],
  "top5_line":["「いつも受け止めてくれてありがとう」","「一緒にいると世界が広がる」","「あなたの気持ち、聞かせて」",
-              "「あなたのこと、ちゃんと見てるよ」","「一緒にいると楽しい！」"],
+              "「あなたのこと、ちゃんと見ています」","「一緒にいると楽しい！」"],
  "top5_common":"5タイプに共通するのは「あなたの愛情をきちんと受け取り、お返しできる人」であること。一方的に与えるだけの関係ではなく、循環する愛情こそが、あなたを満たしてくれます。",
  "worst":[("課題","どちらも行動的だが、ESTPはスピードと刺激の人。あなたの心の充電が追いつかず、寄り添う余裕を失いやすい。",
            "対策","「今日は静かに過ごしたい」を早めに宣言。テンポの違いは、先に共有しておけば衝突になりません。"),
           ("課題","安定志向は似ているが、ISTJは感情表現が最小限。あなたの気遣いが言葉で返ってこず、「伝わっているのか」が見えにくい。",
            "対策","気持ちではなく「事実」で伝え合う。「週1で電話したい」など具体的な希望に翻訳すると、誠実に応えてくれます。"),
           ("課題","どちらも面倒見がよく責任感が強いが、ESTJは正論で解決しようとする。あなたの「気持ちを聞いてほしい」とすれ違いやすい。",
-           "対策","話す前に「解決策じゃなくて、ただ聞いてほしい」と一言添える。目的を共有すれば、頼れる味方になります。")],
+           "対策","話す前に「解決策ではなく、ただ聞いてほしい」と一言添える。目的を共有すれば、頼れる味方になります。")],
  "worst_line":[("◎「今日は一緒にのんびりしたい」","✕「ちょっと落ち着いてほしい」"),
                ("◎「あなたの誠実さ、ちゃんと伝わってる」","✕「もっと気持ちを言葉にしてよ」"),
                ("◎「聞いてくれるだけで助かる」","✕「正論はもういいから」")],
@@ -237,7 +238,7 @@ C = {
  "makeup3":[("「実は」から始めてみる","笑顔の下の本当の気持ちを、信頼できる相手にだけは見せてみましょう。完璧でいなくて大丈夫です。"),
             ("まず自分を休ませる","仲直りを急がなくて大丈夫。自分を満たしてから向き合う方が、ずっとうまくいきます。"),
             ("「私のせいじゃないかも」と思ってみる","全部を自分の責任にしないこと。相手にも半分ある、くらいがちょうどいいです。")],
- "kentai":"「寄り添ってるのに満たされない…」って感じたら、それがマンネリのサインです。与えることに疲れているなら、伝えていい合図。自分の希望を言うのは、関係を深める第一歩です。",
+ "kentai":"「寄り添っているのに満たされない…」って感じたら、それがマンネリのサインです。与えることに疲れているなら、伝えていい合図。自分の希望を言うのは、関係を深める第一歩です。",
  "refire":[("「してほしい」を言ってみる","与えるだけでなく、受け取る日をつくりましょう。甘えるのも愛情です。"),
            ("ありがとうを交換する","「ありがとう」を二人で言い合う習慣をつくりましょう。"),
            ("自分を満たす日をつくる","寄り添いはちょっとお休みして、自分のための時間を持ちましょう。")],
@@ -253,15 +254,19 @@ C = {
  "marry_q":["お金の使い方・将来の貯め方は？","家族・親との距離感は？","子ども・暮らしの理想像は？",
             "一人時間と二人時間のバランスは？","ケンカの時、どう仲直りしたい？"],
  # CH10-12
- "attach_main":"基本は安定型。人を信じて、愛情を惜しみなく注げるタイプ。ただ「相手の役に立ててるか」が自信の土台になってるから、寄り添っても反応が薄いと一気に不安型に傾いて、見捨てられ不安が出てきます。",
+ "attach_main":"基本は安定型。人を信じて、愛情を惜しみなく注げるタイプ。ただ「相手の役に立てているか」が自信の土台になっているため、寄り添っても反応が薄いと一気に不安型に傾いて、見捨てられ不安が出てきます。",
  "anx_moment":["既読ついたのに返信がこない","「ありがとう」が返ってこない",
-               "相手が一人の時間を欲しがってる","寄り添ってるのに距離を感じる"],
+               "相手が一人の時間を欲しがっている","寄り添っているのに距離を感じる"],
  "anx_rx":["自分の価値を「役に立つか」で測らない","返信が遅い＝愛が薄い、ではない",
            "与える前に、まず受け取ってみる","相手の「一人時間」は信頼の証だと思う"],
  "give_lang":[("サービス行為","最も強い"),("肯定の言葉","強い"),("クオリティタイム","中"),
               ("スキンシップ","低"),("贈り物","低")],
  "recv_lang":[("肯定の言葉","最も欲しい"),("クオリティタイム","欲しい"),("スキンシップ","中"),
               ("サービス行為","中"),("贈り物","低")],
+ # 図解用：give_langの並び順に対応した [与える強さ, 受け取りたい強さ]（各5段階）
+ "lang_score":[[5,4,3,2,1],[3,5,3,4,1]],
+ # 図解用：愛着スタイル4象限の座標（0〜1／x=回避の強さ, y=不安の強さ）
+ "quad_x":0.30, "quad_y":0.62,
  "aruaru":["好きな人の機嫌をすぐ察してしまう","相手の長所を本気で見つけるのが得意",
   "つい世話を焼きすぎて重いと言われる","自分の弱音は最後まで言えない","恋人の友達にも好かれようとする",
   "頼られると断れない","ケンカの後すぐ自分から謝ってしまう","相手の予定に自分を合わせがち",
@@ -282,7 +287,7 @@ C = {
               "「優しさ」と「情」を分ける。区切りをつけるのも相手への誠実。"),
              ("SNSを見て一喜一憂してしまう","相手の投稿・既読・オンライン表示を深読みして不安になる。",
               "通知をオフに。見る回数を決め、“画面の中の相手”で判断しない。")],
- "pitfall_quote":"恋って、相手をどう変えるかじゃなくて、<br>自分の優しさをどこに向けるか、なんですよね。",
+ "pitfall_quote":"恋とは、相手をどう変えるかではなく、<br>自分の優しさをどこに向けるか、なんですよね。",
  "triangle":[("親密性",90,"とても高い","心を通わせ、深くつながる力は抜群。"),
              ("コミットメント",85,"高い","一度決めた相手に寄り添い続ける責任感。"),
              ("情熱",65,"中","燃え上がりより、穏やかな愛情が長く続く。")],
@@ -291,10 +296,10 @@ C = {
             ("誠実性","Conscientiousness",80,"約束を守るし、関係にちゃんと責任を持つ。記念日も大事。"),
             ("開放性","Openness",70,"理想を描いて、相手の可能性を信じる想像力がある。"),
             ("神経症傾向","Neuroticism",55,"普段は穏やか。でも「嫌われたかも」で揺れやすい一面も。")],
- "cogfn":[("Fe","主導機能","外向的感情","相手の感情を一瞬で察知して、場を整える力。「この人が今なにを求めてるか」が自然にわかる、ENFJ最大の武器。恋愛では究極の気配り上手。"),
-          ("Ni","補助機能","内向的直観","関係の「未来像」を描く力。この人とどうなりたいか、ちゃんと絵が見えてる。一途さと、相手の本質を見抜く洞察力になる。"),
+ "cogfn":[("Fe","主導機能","外向的感情","相手の感情を一瞬で察知して、場を整える力。「この人が今なにを求めているか」が自然にわかる、ENFJ最大の武器。恋愛では究極の気配り上手。"),
+          ("Ni","補助機能","内向的直観","関係の「未来像」を描く力。この人とどうなりたいか、ちゃんと絵が見えています。一途さと、相手の本質を見抜く洞察力になる。"),
           ("Se","第三機能","外向的感覚","今この瞬間を楽しむ力。デートや体験の共有で距離がぐっと縮まる。ここが育つと、恋にメリハリと情熱が出てくる。"),
-          ("Ti","劣等機能","内向的思考","ストレス時の弱点。感情で動くあなたが追い詰められると、急に理屈っぽく相手を分析・批判しちゃうことが。疲れたら一人で休もう。")],
+          ("Ti","劣等機能","内向的思考","ストレス時の弱点。感情で動くあなたが追い詰められると、急に理屈っぽく相手を分析・批判してしまうことが。疲れたら一人で休みましょう。")],
  # APPENDIX
  "reunite_type":[("ペルシャ（INFP）","価値観に寄り添う。復縁ワードより「あなたの世界を大切にしたい」という本心を静かに。急かさない。"),
                  ("ソマリ（ENFP）","楽しさで惹き直す。新しい体験に軽く誘い「一緒だと面白い」を再体感させる。重い話は厳禁。"),
@@ -315,7 +320,7 @@ C = {
          ("世話焼きを我慢","「大丈夫？」のDMはこらえる。先回りせず、相手から頼られるまで待つ余裕を。"),
          ("聞き役を封印","尽くす側に戻らず、自分の充実をたまに見せる。温度が戻ったら早めにSNSの外へ。")],
  "closing":"あなたが与える愛は、<br>まわりをあたためる才能です。",
- "enfj_msg":"あなたは「もっと寄り添えば戻れる」って考えがち。でも復縁に必要なのは尽くす量じゃなくて、二人が変わること。取り戻すより、お互い成長して再会できるかを見てみて🐾",
+ "enfj_msg":"あなたは「もっと寄り添えば戻れる」って考えがち。でも復縁に必要なのは尽くす量ではなく、二人が変わること。取り戻すより、お互い成長して再会できるかを見てみて🐾",
 }
 
 # ══════════════════════════════════════════════════════════════
@@ -567,8 +572,9 @@ def build(code, C, img_b64):
         <div class="panel"><div class="pt">▶　外から見えるあなた</div><p>{C["outside"]}</p></div>
         <div class="panel pink"><div class="pt">▶　内側の本当のあなた</div><p>{C["inside"]}</p></div>
       </div>
-      <div class="grid2" style="grid-template-columns:52mm 1fr;margin-top:3.4mm">
-        <div class="stat"><div class="sh">恋愛ステータス</div>{stat}</div>
+      <div class="grid2" style="grid-template-columns:60mm 1fr;margin-top:3.4mm">
+        <div class="stat"><div class="sh">📊 恋愛ステータス</div>
+          {svg_radar(["一途度","尽くし度","結婚向き","嫉妬深さ","ドキドキ度"], P)}</div>
         <div><div class="pt" style="font-size:7.88pt;font-weight:700;color:var(--wine);letter-spacing:.1em;margin-bottom:1.8mm">💎 あなたの3つの軸</div>
           <dl class="deflist">{core}</dl></div>
       </div>
@@ -595,6 +601,8 @@ def build(code, C, img_b64):
         <span class="it">無料版では「寄り添うタイプ」ってひとこと言っただけ。</span></div>
       <div class="panel" style="margin-bottom:3.2mm"><div class="pt">🔓 この章でわかること</div>
         <p>恋に落ちるまでの5ステップを、心の動きごとに分解。それぞれの落とし穴と強み、恋のスピード感まで解説します。</p></div>
+      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 3.4mm">
+        {svg_flow5([(f"0{{i+1}}", t) for i,(t,_) in enumerate(C["stages"])])}</div>
       <div class="cmap-row" style="grid-template-columns:repeat(5,1fr)">{stg}</div>
       <div class="grid2" style="margin-top:3.4mm">
         <div class="panel"><div class="pt">⚠️ やりすぎ注意ポイント</div><p>{C["stage_warn"]}</p></div>
@@ -604,7 +612,7 @@ def build(code, C, img_b64):
       <div class="cmap-row" style="grid-template-columns:repeat(3,1fr)">{spd}</div>
       <div class="sect-h">💗 寄り添うあなたが愛される理由</div>
       <div class="grid3">{lv}</div>
-      {note("💡 ひとくちメモ","「単純接触効果」といって、人は何度も接する相手を好きになりやすいんだって。あなたの気配りの多さは、知らないうちに相手の好意を育てています。")}''',
+      {note("💡 ひとくちメモ","「単純接触効果」といって、人は何度も接する相手を好きになりやすいとされています。あなたの気配りの多さは、知らないうちに相手の好意を育てています。")}''',
       chapno="02", clabel=f'{sp("CHAPTER")}　0 2', title="恋に落ちるまでの5ステップ", pno="05"))
 
     # ── P6 CH03 罠 ──
@@ -626,7 +634,8 @@ def build(code, C, img_b64):
       <div class="panel" style="margin-bottom:3mm"><div class="pt">🔓 この章でわかること</div>
         <p>3つのクセを「なんで起きる？→どうなる？→どうする？」まで分解。優しさを空回りさせず、ちゃんと魅力にする方法をお伝えします。</p></div>
       <div style="font-size:8.1pt;color:var(--wine);font-weight:700;margin-bottom:1.8mm">💭 でも、クセは「長所の裏返し」です</div>
-      <div class="grid3" style="margin-bottom:3mm">{flip}</div>
+      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 3.4mm">
+        {svg_flip([(a.replace("の罠","").replace("グセ",""), b, c[:22]) for a,b,c in C["trap_flip"]])}</div>
       {tr}
       {note("💡 恋のまめ知識","適度な自己開示は、むしろ親密度を上げるという研究があります。「本音を見せる」ことは、関係を深めるいちばんの近道です。")}''',
       chapno="03", clabel=f'{sp("CHAPTER")}　0 3', title="無意識にやりがちな3つのクセ", pno="06"))
@@ -659,7 +668,13 @@ def build(code, C, img_b64):
       <div class="panel pink" style="margin-bottom:2.8mm"><div class="pt">📏 スコアの読み方</div>
         <p>スコアは「出会った瞬間の合いやすさ」＝スタート地点で、恋の上限ではありません。85↑運命級／75↑good／65↑ふつう／〜64は伸びしろ大。低スコアでも、ちゃんと話せば育つ恋はいくらでもあります。</p></div>
       <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm">{gc}</div>
-      <div class="panel pink" style="margin-top:2.8mm"><div class="pt">💡 NF理想家と相性がいいワケ</div>
+      <div class="grid2" style="margin-top:2.8mm;grid-template-columns:1fr 1fr;gap:4mm">
+        <div><div class="pt" style="font-size:7.6pt;font-weight:800;color:var(--wine2);margin-bottom:1.4mm">📊 相性の高い順（1〜8位）</div>
+          {svg_gauge_row([(BREED[m][:9], m, sc) for sc,m in rk[:8]])}</div>
+        <div><div class="pt" style="font-size:7.6pt;font-weight:800;color:var(--wine2);margin-bottom:1.4mm">📊 相性の高い順（9〜15位）</div>
+          {svg_gauge_row([(BREED[m][:9], m, sc) for sc,m in rk[8:]])}</div>
+      </div>
+      <div class="panel pink" style="margin-top:2.6mm"><div class="pt">💡 NF理想家と相性がいいワケ</div>
         <p>{C["why_high"]}</p></div>
       {note("💡 知っとくと得","相性の研究では「似ているほど安心、違うほど刺激」と言われます。似た者同士は安心ですが、たまに刺激も足すと長続きします。")}''',
       chapno="04", clabel=f'{sp("CHAPTER")}　0 4', title="全16タイプ 相性まるわかり表", pno="07"))
@@ -674,7 +689,10 @@ def build(code, C, img_b64):
     lines = "".join(f'''<div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
       <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">{i+1}</b>　{BREED[rk[i][1]][:10]}　{C["top5_line"][i]}</div>'''
       for i in range(5))
-    A(page(code, f'''<div style="margin-bottom:1mm">{t5}</div>
+    A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 5mm">
+        {svg_hbars([(BREED[rk[i][1]][:11], rk[i][0]) for i in range(5)], unit="%")}
+        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1mm">相性スコア上位5タイプ</div></div>
+      <div style="margin-bottom:1mm">{t5}</div>
       <div class="sect-h">♡　💬 TOP5に効く「最初のひとこと」</div>
       <div class="grid2" style="gap:1mm 5mm">{lines}</div>
       <div class="panel pink" style="margin-top:3mm"><div class="pt">🔑 TOP5に共通していること</div>
@@ -698,11 +716,14 @@ def build(code, C, img_b64):
     wl = "".join(f'''<div style="font-size:8.1pt;line-height:2;color:var(--ink2);padding:2.6mm 0;border-bottom:.35pt dotted var(--rule)">
       <b style="color:var(--wine)">{BREED[rk[-(3-i)][1]][:10]}</b>　{C["worst_line"][i][0]}　<span style="color:var(--ink3)">{C["worst_line"][i][1]}</span></div>'''
       for i in range(3))
-    A(page(code, f'''<p class="lead">スコアが低い＝ダメ、ではありません。相性スコアは「初期設定」であって「運命」ではありません。大事なのは、違いを知ったうえで歩み寄れるかどうか。この3タイプとの恋も、コツさえ知っていれば十分うまくいきます。</p>
+    A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
+        {svg_gauge_row([(BREED[m][:10], m, sc) for sc,m in rk[-3:]])}
+        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1mm">この3タイプとの相性スコア（低いほど“工夫しがい”があります）</div></div>
+      <p class="lead">スコアが低い＝ダメ、ではありません。相性スコアは「初期設定」であって「運命」ではありません。大事なのは、違いを知ったうえで歩み寄れるかどうか。この3タイプとの恋も、コツさえ知っていれば十分うまくいきます。</p>
       {w}
       <div class="sect-h">♡　💬 効くひとこと／NGなひとこと</div>
       {wl}
-      {note("💡 恋のまめ知識","心理学者ゴットマンいわく、別れるカップルの差は「ケンカの有無」じゃなくて「仲直りのうまさ」なのだそうです。あなたの共感力は、そこでとても強い武器になります。")}''',
+      {note("💡 恋のまめ知識","心理学者心理学者ゴットマンによれば、別れるカップルの差は「ケンカの有無」ではなく「仲直りのうまさ」なのだそうです。あなたの共感力は、そこでとても強い武器になります。")}''',
       chapno="06", clabel=f'{sp("CHAPTER")}　0 6', title="ちょっと手ごわいコとの付き合い方", pno="09"))
 
     # ── P10 CH07 LINE ──
@@ -746,6 +767,8 @@ def build(code, C, img_b64):
       <div style="font-size:8.1pt;font-weight:700;color:var(--wine);margin-bottom:1.6mm">{B}のケンカあるある</div>
       <div class="grid3" style="margin-bottom:3.2mm">{fp}</div>
       <div class="sect-h">🤝 3ステップ仲直り法</div>
+      <div class="wbox" style="margin:0 0 2.4mm;padding:2.4mm 4mm">
+        {svg_flow5([("1", C["makeup3"][0][0]), ("2", C["makeup3"][1][0]), ("3", C["makeup3"][2][0])])}</div>
       {mk}
       <div class="grid2" style="margin-top:2.6mm">
         <div class="panel"><div class="pt">倦怠期</div><p>{C["kentai"]}</p></div>
@@ -779,6 +802,11 @@ def build(code, C, img_b64):
           <div style="font-size:9.45pt;color:var(--wine);font-weight:700">家庭的</div><div class="cb-c">結婚像</div></div>
         <div class="panel"><div class="pt">結婚観</div><p>結婚向きは★{P[2]}でかなり高め。愛情深くて家庭的だから、結婚してからも自然と相手や家族のために動けるタイプ。記念日も日々の気遣いも忘れない、あたたかい家庭をつくります。</p></div>
       </div>
+      <div class="grid2" style="grid-template-columns:34mm 1fr;gap:4mm;align-items:center;margin-bottom:1mm">
+        <div class="wbox" style="margin:0;padding:2mm">{svg_donut(P[2]*20, f"★{P[2]}", "結婚向き")}</div>
+        <div class="panel pink"><div class="pt">結婚向き ★{P[2]} の意味</div>
+          <p>5段階中{P[2]}。愛情深く家庭的なので、結婚後も自然と相手や家族のために動けます。記念日も日々の気遣いも忘れない、あたたかい家庭をつくるタイプです。</p></div>
+      </div>
       <div class="sect-h">💗 {B}が幸せになれる相手の条件</div>
       {mc}
       <p style="font-size:7.54pt;color:var(--ink3);line-height:1.8;margin-top:1.6mm">5つ全部そろっていなくて大丈夫です。「3つ以上あるかな？」くらいが目安です。足りないところを相手に変えてもらうより、お互い補い合える関係のほうが理想です。</p>
@@ -807,9 +835,15 @@ def build(code, C, img_b64):
       ("不安型","見捨てられ不安が強い。尽くしすぎ・既読を気にしすぎる。ストレス時に傾く先。","",""),
       ("回避型","親密さを避け、距離を置きたがる。感情を見せるのが苦手。","",""),
       ("恐れ・回避型","近づきたいのに怖い。求めと拒絶が同居する。","","")])
-    A(page(code, f'''<p class="lead">愛着スタイル理論（Bowlby／Ainsworth）は、小さい頃に育った「人との距離の取り方」が恋愛にも出るっていう考え方。あなたの不安やクセの“根っこ”が見えてきます。</p>
-      <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm">{att4}</div>
-      <div class="panel pink" style="margin-top:3mm"><div class="pt">{B}（{code}）の傾向</div><p>{C["attach_main"]}</p></div>
+    A(page(code, f'''<p class="lead">愛着スタイル理論（Bowlby／Ainsworth）は、小さい頃に育った「人との距離の取り方」が恋愛にも表れるという考え方です。あなたの不安やクセの“根っこ”が見えてきます。</p>
+      <div class="grid2" style="grid-template-columns:70mm 1fr;gap:4mm;align-items:start">
+        <div class="wbox" style="margin:0;padding:2.4mm">
+          {svg_quad(C["quad_x"], C["quad_y"], "回避（距離を置きたい）→", "不安（見捨てられ不安）→",
+            ["不安型|尽くしすぎ","恐れ・回避型|求めと拒絶","安定型|ちょうどいい","回避型|一人が好き"])}
+          <div style="font-size:6.6pt;color:var(--ink3);text-align:center;margin-top:1mm">●があなたの位置です</div></div>
+        <div><div class="grid2" style="grid-template-columns:1fr 1fr;gap:2.2mm">{att4}</div>
+          <div class="panel pink" style="margin-top:2.4mm"><div class="pt">{B}（{code}）の傾向</div><p>{C["attach_main"]}</p></div></div>
+      </div>
       <div class="grid2" style="margin-top:3mm">
         <div class="panel"><div class="pt">あなたが不安になる瞬間</div>
           <ul class="check">{"".join(f"<li>{x}</li>" for x in C["anx_moment"])}</ul></div>
@@ -820,7 +854,7 @@ def build(code, C, img_b64):
       <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
         ◇　不安になったら連投せず、「ひと呼吸おいて6時間」ルールを試す。<br>
         ◇　1日1回、小さなお願いをして“受け取る”練習をする。</div>
-      {note("📖 ちょっと理論の話","愛着スタイルは一生固定じゃなくて、安心できる関係を経験すると後から安定型に変われるんだって（獲得安定型）。自分のクセを知るのが、その第一歩。")}''',
+      {note("📖 ちょっと理論の話","愛着スタイルは一生固定ではなく、安心できる関係を経験すると後から安定型に変われるとされています（獲得安定型）。自分のクセを知るのが、その第一歩。")}''',
       chapno="10", clabel=sp("ATTACHMENT STYLE"), title="あなたの甘え方のクセ", pno="14"))
 
     # ── P15 CH11 相手のタイプ別 ──
@@ -832,6 +866,11 @@ def build(code, C, img_b64):
       ("恐れ・回避型","FEARFUL","近づくと逃げ、離れると求める難しい相手。一貫した態度と安全基地になること。あなたの包容力が活きるが、消耗にも注意。","")])
     A(page(code, f'''<p class="lead">相手の愛着スタイルがわかると、すれ違いの9割は防げます。与え上手なあなたが「相手に合わせて愛を届ける」ための実践ガイド。</p>
       <div style="display:grid;gap:2.6mm">{pt4}</div>
+      <div class="wbox" style="margin:2.8mm 0 0;padding:3mm 5mm">
+        {svg_hbars([("安定型", 95, "そのままで◎"),("不安型", 72, "安心の言葉を"),
+                    ("回避型", 45, "追わず待つ"),("恐れ回避型", 55, "一貫した態度")], unit="")}
+        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1mm">
+          バーはあなた（{code}）との相性のラクさ。低いほど“やり方”が必要です。</div></div>
       <div class="sect-h">♡　🔍 相手のタイプを見抜く3つの質問</div>
       <div class="grid3">
         <div class="panel"><p><b style="color:var(--wine2)">Q1</b>　不安なとき、連絡を増やす？減らす？</p></div>
@@ -849,12 +888,14 @@ def build(code, C, img_b64):
     def lang_rows(items):
         return "".join(f'''<div class="strow"><span>{k}</span><span style="color:var(--wine2)">{v}</span></div>''' for k,v in items)
     A(page(code, f'''<p class="lead">人が愛を感じる・伝える方法は5つに分かれるとされています（Chapman）。「伝え方」と「受け取り方」がズレてると、愛があっても届かない。まずは自分の言語を知りましょう。</p>
-      <div class="grid2">
-        <div class="stat"><div class="sh">あなたが「与える」言語</div>{lang_rows(C["give_lang"])}</div>
-        <div class="stat"><div class="sh">あなたが「受け取りたい」言語</div>{lang_rows(C["recv_lang"])}</div>
-      </div>
+      <div class="wbox" style="margin:0 0 3mm;padding:3mm 5mm">
+        {svg_compare([(k, C["lang_score"][0][i]) for i,(k,_) in enumerate(C["give_lang"])],
+                     [(k, C["lang_score"][1][i]) for i,(k,_) in enumerate(C["give_lang"])],
+                     "◀ 与える", "受け取りたい ▶")}
+        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1.4mm">
+          左（紫）＝あなたが愛を伝える手段　／　右（ピンク）＝あなたが愛を感じ取る手段</div></div>
       <div class="panel pink" style="margin-top:3.2mm"><div class="pt">⚠　あなたが陥りやすい「すれ違い」</div>
-        <p>あなたは<b style="color:var(--wine2)">行動</b>で愛を伝えるのに、本当に欲しいのは<b style="color:var(--wine2)">言葉</b>。だから「こんなに寄り添ってるのに、なんで言葉が返ってこないの？」となりがちです。「言葉が欲しい」と素直に伝えるのが、満たされる近道です。</p></div>
+        <p>あなたは<b style="color:var(--wine2)">行動</b>で愛を伝えるのに、本当に欲しいのは<b style="color:var(--wine2)">言葉</b>。だから「こんなに寄り添っているのに、なぜ言葉が返ってこないの？」となりがちです。「言葉が欲しい」と素直に伝えるのが、満たされる近道です。</p></div>
       <div class="grid2" style="margin-top:3mm">
         <div class="panel"><div class="pt">相手に響かせるコツ</div><p>尽くす前に、まず相手の言語を観察してみてください。言葉が欲しい人には言葉を、時間が欲しい人には予定を空けて。</p></div>
         <div class="panel"><div class="pt">自分を満たすコツ</div><p>「ありがとう」「あなたのおかげ」を求めてOK。欲しい言葉は、言わないと届きません。</p></div>
@@ -882,11 +923,13 @@ def build(code, C, img_b64):
       <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　{c}</p>
       <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　{r}</p></div>'''
       for i,(t,c,r) in enumerate(C["pitfalls"]))
-    A(page(code, f'''<p class="lead">CH03が「性格のクセ」なら、こっちは“場面”でやらかすやつ。デート、付き合ったあと、別れ際…シーンごとの落とし穴を、原因と対処法つきで。当てはまるものから手放していこう。</p>
+    A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
+        {svg_flip([(t[:9], "こう変える", r[:24]) for t,_c,r in C["pitfalls"]])}</div>
+      <p class="lead">CH03が「性格のクセ」なら、こっちは“場面”でやらかすやつ。デート、付き合ったあと、別れ際…シーンごとの落とし穴を、原因と対処法つきで。当てはまるものから手放していこう。</p>
       {pf}
       <div style="text-align:center;margin-top:3.4mm;font-size:10.12pt;line-height:2;color:var(--wine2);font-style:italic">
         <span style="font-size:16.88pt;color:var(--wine-l)">“</span><br>{C["pitfall_quote"]}</div>
-      {note("🐾 ひとこと","落とし穴は全部「優しさ」の裏返し。直すべき欠点じゃなくて、向ける方向をちょっと変えるだけ。あなたの愛情は、そのままで十分すぎるくらい魅力です🐾")}''',
+      {note("🐾 ひとこと","落とし穴は全部「優しさ」の裏返し。直すべき欠点ではなく、向ける方向をちょっと変えるだけ。あなたの愛情は、そのままで十分すぎるくらい魅力です🐾")}''',
       chapno="14", clabel=sp("PITFALLS & REMEDY"), title="ハマりがちな落とし穴", pno="18"))
 
     # ── P19 CH15 三角理論 ──
@@ -897,10 +940,14 @@ def build(code, C, img_b64):
       <div class="cb-c">{s}</div></div>''' for n,s,st in [
       ("好意","親密のみ",0),("夢中","情熱のみ",0),("空虚な愛","コミットのみ",0),("ロマンチック","親密＋情熱",0),
       ("友愛的な愛","親密＋コミット",1),("愚かな愛","情熱＋コミット",0),("完全愛 ★","3つすべて",1),("非愛","どれもなし",0)])
-    A(page(code, f'''<p class="lead">Sternbergいわく、愛は「親密性・情熱・コミットメント」の3つでできてるらしい。このバランスで「愛のかたち」が決まるよ。</p>
-      {tri}
+    A(page(code, f'''<p class="lead">Sternbergによれば、愛は「親密性・情熱・コミットメント」の3つでできているとされています。このバランスで「愛のかたち」が決まります。</p>
+      <div class="grid2" style="grid-template-columns:58mm 1fr;gap:4mm;align-items:center">
+        <div class="wbox" style="margin:0;padding:2mm">
+          {svg_triangle(C["triangle"][0][1], C["triangle"][2][1], C["triangle"][1][1], "親密性", "情熱", "コミット")}</div>
+        <div>{tri}</div>
+      </div>
       <div class="panel pink" style="margin-top:2.6mm"><div class="pt">あなたの愛の形　＝　「友愛的な愛」から「完全愛」へ</div>
-        <p>親密性とコミットメントが高いあなたは、<b style="color:var(--wine2)">深く長く続く「友愛的な愛」</b>が得意。あとは情熱をキープする工夫（新しい体験・ときめきの共有）を足せば、3つ揃った<b style="color:var(--wine2)">「完全愛」</b>に届くよ。</p></div>
+        <p>親密性とコミットメントが高いあなたは、<b style="color:var(--wine2)">深く長く続く「友愛的な愛」</b>が得意。あとは情熱をキープする工夫（新しい体験・ときめきの共有）を足せば、3つ揃った<b style="color:var(--wine2)">「完全愛」</b>に届きます。</p></div>
       <div class="sect-h">💞 7つの愛のかたち</div>
       <div class="cmap-row" style="grid-template-columns:repeat(4,1fr);gap:2mm">{seven}</div>
       <div class="sect-h">✨ 今日からできること</div>
@@ -915,7 +962,11 @@ def build(code, C, img_b64):
       <span class="v">{v}</span></div><div class="bar"><i style="width:{v}%"></i></div><p>{d2}</p></div>'''
       for k,e,v,d2 in C["bigfive"])
     A(page(code, f'''<p class="lead">性格を5つの要素で測る、心理学でいちばん信頼されてるモデル。あなたの恋愛での「出方」を要素ごとに見ていきます。</p>
-      {bf}
+      <div class="grid2" style="grid-template-columns:1fr 56mm;gap:4mm;align-items:center">
+        <div>{bf}</div>
+        <div class="wbox" style="margin:0;padding:2mm">
+          {svg_radar([k for k,_,_,_ in C["bigfive"]], [round(v/20) for _,_,v,_ in C["bigfive"]], maxv=5)}</div>
+      </div>
       <div class="grid2" style="margin-top:2.6mm">
         <div class="panel pink"><div class="pt">この組み合わせの強み</div>
           <p>協調性＋外向性の高さ＝<b style="color:var(--wine2)">誰からも好かれる愛され体質</b>。誠実性も高いから、長く続く関係をつくる力がある。</p></div>
@@ -936,7 +987,10 @@ def build(code, C, img_b64):
         <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">{rank}</span>
         <b style="font-size:8.33pt;color:var(--wine2)">{jp}</b></div>
       <p style="margin-top:1mm">{desc}</p></div>''' for i,(fn,rank,jp,desc) in enumerate(C["cogfn"]))
-    A(page(code, f'''<p class="lead">MBTIの奥にある「心の使い方の順番」が認知機能。{code}は Fe → Ni → Se → Ti の順で世界を見てるよ。恋愛でどう働くのか見てみよう。</p>
+    A(page(code, f'''<p class="lead">MBTIの奥にある「心の使い方の順番」が認知機能。{code}は Fe → Ni → Se → Ti の順で世界を見ています。恋愛でどう働くのか見てみましょう。</p>
+      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
+        {svg_stack([(fn, rank, jp) for fn, rank, jp, _d in C["cogfn"]])}
+        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1.2mm">上ほど無意識に使う「得意な心の動き」。下にいくほど疲れたときに暴走しやすい。</div></div>
       {cf}
       <div class="sect-h">✨ 今日からできること</div>
       <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
@@ -976,7 +1030,7 @@ def build(code, C, img_b64):
       <div class="wlabel"><span class="num">3</span>3つに絞った感想・気づきを書く</div>
       {"".join('<div class="wline"></div>' for _ in range(3))}
       <div class="panel pink" style="margin-top:3mm"><div class="pt">💡 ヒント</div>
-        <p>3つに絞れたら、それ以外は「あったら嬉しいボーナス」。完璧な人を探すんじゃなくて、譲れない3つを持ってる人を探す。これだけで恋のハードルがぐっと現実的になります。</p></div>
+        <p>3つに絞れたら、それ以外は「あったら嬉しいボーナス」。完璧な人を探すのではなく、譲れない3つを持ってる人を探す。これだけで恋のハードルがぐっと現実的になります。</p></div>
       {note("💡 ひとくちメモ","目標って「紙に書くと叶いやすくなる」と言われています。誰かのためだけじゃなく、自分のための目標も書いてみてください。")}''',
       chapno="W1", clabel=f'{sp("WORK")}　0 1', title="理想の相手、棚おろし", pno="23"))
 
@@ -1012,7 +1066,7 @@ def build(code, C, img_b64):
       {fq("Q3　相手は今、話せそう？", sp("NO")+"・まだ距離がある","「落ち着いたら話そう」と一言だけ送って待つ。",
           sp("YES"),"Iメッセージで<b style='color:var(--wine)'>「私は〜と感じた」</b>と本音を伝える。")}
       <div class="flow-goal">仲直り　▷　最後は感謝とスキンシップで締める　♡</div>
-      {note("📖 ちょっと理論の話","ケンカそのものより「仲直りのうまさ」が長続きを左右するらしい。自分なりの仲直りの型を持っておくのが、最大の保険です。")}''',
+      {note("📖 ちょっと理論の話","ケンカそのものより「仲直りのうまさ」が長続きを左右するとされています。自分なりの仲直りの型を持っておくのが、最大の保険です。")}''',
       chapno="A1", clabel=sp("MAKE UP FLOW"), title="仲直りフローチャート", pno="25"))
 
     # ── P26 A2 復縁という選択 ──
@@ -1035,6 +1089,8 @@ def build(code, C, img_b64):
           <li>戻れば「また尽くせる」と思ってる</li><li>相手ははっきり終わりを望んでる</li></ul></div>
       </div>
       <div class="sect-h">🐾 復縁の3ステップ</div>
+      <div class="wbox" style="margin:0 0 2.4mm;padding:2.4mm 4mm">
+        {svg_timeline([("0〜3ヶ月","冷却期間","連絡を断つ"),("1〜2ヶ月","自分を整える","変わった姿を"),("3ヶ月〜","さりげなく再接触","軽い一通から")])}</div>
       <div class="grid3">{r3}</div>
       <div class="sect-h">⚠　🙅 これだけはやっちゃダメ</div>
       <div class="grid3">{ng3}</div>
@@ -1061,12 +1117,9 @@ def build(code, C, img_b64):
         <div class="grid2" style="gap:0 5mm">{chk}</div></div>
       <div class="grid3">{judge}</div>
       <div class="sect-h">🤔 執着？　それとも愛情？</div>
-      <div class="grid2">
-        <div class="panel"><div class="pt">執着（手放せない）</div>
-          <p>・一人になるのが怖い<br>・相手のSNSが気になって仕方ない<br>・「失うのが怖い」が先に立つ<br>・過去のいい時間に戻りたいだけ</p></div>
-        <div class="panel pink"><div class="pt">愛情（また大切にしたい）</div>
-          <p>・相手の幸せを願える<br>・自分の非を認め、変われる<br>・感謝のほうが多く思い出せる<br>・二人の未来を具体的に描ける</p></div>
-      </div>
+      <div class="wbox" style="margin:0;padding:3mm 5mm">
+        {svg_vs("執着（手放せない）", ["一人になるのが怖い","相手のSNSが気になって仕方ない","「失うのが怖い」が先に立つ","過去のいい時間に戻りたいだけ"],
+                "愛情（また大切にしたい）", ["相手の幸せを願える","自分の非を認め、変われる","感謝のほうが多く思い出せる","二人の未来を具体的に描ける"])}</div>
       <div class="sect-h">🔀 戻れた人と、また別れた人の差</div>
       <table class="cmp"><tr><th></th><th>◎　やり直せた人</th><th>✕　また別れた人</th></tr>{rows}</table>
       {note("🌱 手放すという選択","諦めるのは、負けでも失敗でもありません。「戻らない」と決めて前に進む勇気も、自分を大事にする愛のかたち。どっちを選んでも、あなたの恋はちゃんと次につながる。")}''',
@@ -1082,6 +1135,9 @@ def build(code, C, img_b64):
       ("昔話より今","別れの話は持ち出さない。変わった自分を自然に見せよう。"),
       ("引き際よく","「楽しかった、またね」で自分から切り上げて、余韻を残す。")])
     A(page(code, f'''<p class="lead">復縁は「気持ち」より<b style="color:var(--wine2)">「順番と間（ま）」</b>。焦って動くほど遠ざかるよ。5つのステップに分けて、具体的な手順とセリフで解説するね。</p>
+      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
+        {svg_timeline([("STEP 1","冷却期間","連絡を断つ"),("STEP 2","再接触","軽い一通"),("STEP 3","復縁デート","短く・軽く"),
+                       ("STEP 4","近づくサイン","返信が早く"),("STEP 5","切り出す","帰り際に")])}</div>
       <div class="sect-h">{sp("STEP 1")}　冷却期間の正しい過ごし方</div>
       <div class="grid3">{s1}</div>
       <div class="sect-h">{sp("STEP 2")}　再接触の最初の1通</div>
@@ -1108,7 +1164,7 @@ def build(code, C, img_b64):
       <div class="panel pink" style="margin-top:2.4mm"><div class="pt">決め手の例</div>
         <p>「離れてみて、あなたといる時間がいちばん自分らしかったと気づいた。今度はもっと対等に、ちゃんと大事にしたい」<br>
         <span style="color:var(--ink3);font-size:7.54pt">— 重さや謝罪で押さず、“変わった自分”と“これから”だけを、短く正直に。</span></p></div>
-      {note("🧠 心理のはなし","人は別れ際の印象で記憶を上書きするんだって（ピーク・エンドの法則）。最後をいい余韻で終えるほど「もう一度会いたい」が生まれるよ。")}''',
+      {note("🧠 心理のはなし","人は別れ際の印象で記憶を上書きします（ピーク・エンドの法則）。最後をいい余韻で終えるほど「もう一度会いたい」が生まれるよ。")}''',
       chapno="A4", clabel=sp("REUNITE · TECHNIQUE"), title="復縁の進め方、順番が9割", pno="28"))
 
     # ── P29 A5 タイプ別復縁 ──
@@ -1125,13 +1181,13 @@ def build(code, C, img_b64):
       {bfix}
       <div class="sect-h">やり直してからの3つの約束</div>
       <div class="grid3">{pr}</div>
-      {note("🐾 さいごに","復縁のゴールは「元に戻る」ことじゃなくて<b style='color:var(--wine2)'>「前より良い二人になる」</b>こと。同じ別れを繰り返さない自分になれた時、本当の意味でやり直せるよ。")}''',
+      {note("🐾 さいごに","復縁のゴールは「元に戻る」ことではなく<b style='color:var(--wine2)'>「前より良い二人になる」</b>こと。同じ別れを繰り返さない自分になれた時、本当の意味でやり直せるよ。")}''',
       chapno="A5", clabel=sp("REUNITE · BY TYPE"), title="相手のタイプ別・戻り方", pno="29"))
 
     # ── P30 A6 復縁とSNS ──
     st3 = "".join(f'''<div class="panel"><div style="display:flex;gap:2mm;align-items:center;margin-bottom:1mm">
       <span class="num">{i+1}</span><b style="font-size:8.33pt;color:var(--wine)">{t}</b></div><p>{s}</p></div>'''
-      for i,(t,s) in enumerate([("いいね","まずは投稿に軽く一つ。「見てるよ」を圧なく伝える最初の合図。"),
+      for i,(t,s) in enumerate([("いいね","まずは投稿に軽く一つ。「見ています」を圧なく伝える最初の合図。"),
         ("ストーリー反応","スタンプや一言で軽く反応。「それ気になる！」程度の短さで止める。"),
         ("DM再開","反応が返るようになってから。用件は小さく「元気？」の一通で十分。")]))
     sns4 = "".join(f'<div class="panel"><div class="pt">{t}</div><p>{s}</p></div>' for t,s in [
@@ -1144,6 +1200,9 @@ def build(code, C, img_b64):
         <div class="panel pink"><div class="pt">◎　すること</div><p>通知を切って見に行かない ／ 前向きな近況をたまに一つ ／ フォローはそのまま自然に。</p></div>
         <div class="panel"><div class="pt">✕　しないこと</div><p>投稿の巡回・足跡チェック ／「病んでる・匂わせ」投稿 ／ 衝動的なブロックや削除。</p></div>
       </div>
+      <div class="wbox" style="margin:2.6mm 0 0;padding:3mm 5mm">
+        {svg_vs("✕ しないこと", ["投稿の巡回・足跡チェック","「病んでる・匂わせ」投稿","衝動的なブロックや削除","既読やオンライン表示の確認"],
+                "◎ すること", ["通知を切って見に行かない","前向きな近況をたまに一つ","フォローはそのまま自然に","静かに余裕を見せる"])}</div>
       <div class="sect-h">②　印象をリセットする見せ方</div>
       <div class="grid2">
         <div class="panel"><div class="pt">残していい投稿</div><p>自分磨き・新しい挑戦・自然な笑顔。「充実してそう」がさりげなく伝わるものだけ。</p></div>
