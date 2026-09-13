@@ -42,7 +42,7 @@ def sp(s):
 #  CSS（犬版デザイン踏襲：クリーム地＋ボルドー＋明朝）
 # ══════════════════════════════════════════════════════════════
 CSS = """
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Baloo+2:wght@600;700;800&display=swap');
+/*FONTFACE*/
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --cream:#fdf6fa; --cream2:#fbeaf2; --paper:#ffffff;
@@ -64,6 +64,7 @@ body{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--in
   border-radius:5mm;pointer-events:none}
 .page::after{display:none}
 .inner{position:relative;height:100%;display:flex;flex-direction:column;padding:3mm 3mm 0}
+.pbody{flex:1;display:flex;flex-direction:column;min-height:0}
 
 /* ── ヘッダ ── */
 .phead{display:flex;justify-content:space-between;align-items:center;
@@ -145,7 +146,7 @@ def page(code, body, chapno="", clabel="", title="", pno="", cls=""):
     if pno:
         foot = f'''<div class="pfoot"><span>{sp(d["breed"][:6])}　·　{sp(code)}</span>
         <span class="pno">♢　{pno}</span></div>'''
-    return f'<section class="page {cls}"><div class="inner">{chap}{head}{ttl}{body}{foot}</div></section>'
+    return f'<section class="page {cls}"><div class="inner">{chap}{head}{ttl}<div class="pbody">{body}</div>{foot}</div></section>'
 
 def note(label, text):
     return f'<div class="foot-note"><b>{label}</b>{text}</div>'
@@ -635,7 +636,7 @@ def build(code, C, img_b64):
         <p>3つのクセを「なんで起きる？→どうなる？→どうする？」まで分解。優しさを空回りさせず、ちゃんと魅力にする方法をお伝えします。</p></div>
       <div style="font-size:8.1pt;color:var(--wine);font-weight:700;margin-bottom:1.8mm">💭 でも、クセは「長所の裏返し」です</div>
       <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 3.4mm">
-        {svg_flip([(a.replace("の罠","").replace("グセ",""), b, c[:22]) for a,b,c in C["trap_flip"]])}</div>
+        {svg_flip([(a, b, "") for a,b,c in C["trap_flip"]])}</div>
       {tr}
       {note("💡 恋のまめ知識","適度な自己開示は、むしろ親密度を上げるという研究があります。「本音を見せる」ことは、関係を深めるいちばんの近道です。")}''',
       chapno="03", clabel=f'{sp("CHAPTER")}　0 3', title="無意識にやりがちな3つのクセ", pno="06"))
@@ -667,13 +668,6 @@ def build(code, C, img_b64):
         <span><i>65〜74</i> 普通</span><span><i>〜64</i> 要工夫</span></div>
       <div class="panel pink" style="margin-bottom:2.8mm"><div class="pt">📏 スコアの読み方</div>
         <p>スコアは「出会った瞬間の合いやすさ」＝スタート地点で、恋の上限ではありません。85↑運命級／75↑good／65↑ふつう／〜64は伸びしろ大。低スコアでも、ちゃんと話せば育つ恋はいくらでもあります。</p></div>
-      <div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:2.4mm">{gc}</div>
-      <div class="grid2" style="margin-top:2.8mm;grid-template-columns:1fr 1fr;gap:4mm">
-        <div><div class="pt" style="font-size:7.6pt;font-weight:800;color:var(--wine2);margin-bottom:1.4mm">📊 相性の高い順（1〜8位）</div>
-          {svg_gauge_row([(BREED[m][:9], m, sc) for sc,m in rk[:8]])}</div>
-        <div><div class="pt" style="font-size:7.6pt;font-weight:800;color:var(--wine2);margin-bottom:1.4mm">📊 相性の高い順（9〜15位）</div>
-          {svg_gauge_row([(BREED[m][:9], m, sc) for sc,m in rk[8:]])}</div>
-      </div>
       <div class="panel pink" style="margin-top:2.6mm"><div class="pt">💡 NF理想家と相性がいいワケ</div>
         <p>{C["why_high"]}</p></div>
       {note("💡 知っとくと得","相性の研究では「似ているほど安心、違うほど刺激」と言われます。似た者同士は安心ですが、たまに刺激も足すと長続きします。")}''',
@@ -695,10 +689,9 @@ def build(code, C, img_b64):
       <div style="margin-bottom:1mm">{t5}</div>
       <div class="sect-h">♡　💬 TOP5に効く「最初のひとこと」</div>
       <div class="grid2" style="gap:1mm 5mm">{lines}</div>
-      <div class="panel pink" style="margin-top:3mm"><div class="pt">🔑 TOP5に共通していること</div>
-        <p>{C["top5_common"]}</p></div>
-      <div class="panel" style="margin-top:2.6mm"><div class="pt">🔎 この共通点の活かし方</div>
-        <p>“内面まで話せる人”かを見極める質問を。「最近ハマってることは？ なんで好き？」「一人の時間って何してる？」「将来こうなりたい、ってある？」——答えの深さで相性が見えます。</p></div>
+      <div class="panel pink" style="margin-top:2.6mm"><div class="pt">🔑 TOP5に共通していること</div>
+        <p>{C["top5_common"]}</p>
+        <p style="margin-top:1.4mm;padding-top:1.4mm;border-top:1.4pt dotted var(--rule)"><b style="color:var(--wine2)">見極める質問</b>　「最近ハマってることは？ なんで好き？」「一人の時間って何してる？」——答えの深さで相性が見えます。</p></div>
       {note("💡 ひとくちメモ","「ピグマリオン効果」では、期待された人はその通りに成長しやすいとされます。あなたの励ましは、相手の可能性を本当に開花させます。")}''',
       chapno="05", clabel=f'{sp("CHAPTER")}　0 5', title="相性いいコ TOP5", pno="08"))
 
@@ -767,16 +760,14 @@ def build(code, C, img_b64):
       <div style="font-size:8.1pt;font-weight:700;color:var(--wine);margin-bottom:1.6mm">{B}のケンカあるある</div>
       <div class="grid3" style="margin-bottom:3.2mm">{fp}</div>
       <div class="sect-h">🤝 3ステップ仲直り法</div>
-      <div class="wbox" style="margin:0 0 2.4mm;padding:2.4mm 4mm">
+      <div class="wbox" style="margin:0 0 2mm;padding:1.8mm 4mm">
         {svg_flow5([("1", C["makeup3"][0][0]), ("2", C["makeup3"][1][0]), ("3", C["makeup3"][2][0])])}</div>
       {mk}
       <div class="grid2" style="margin-top:2.6mm">
         <div class="panel"><div class="pt">倦怠期</div><p>{C["kentai"]}</p></div>
-        <div class="panel pink"><div class="pt">🌈 ケンカは本音を見せるチャンス</div>
-          <p>表面的な笑顔より、本音を見せ合えた関係のほうが長く続きます。仲直りのあとは「助けてくれて嬉しかった」と具体的に伝えてみてください。</p></div>
+        <div class="panel pink"><div class="pt">🫣 笑顔の裏ルール</div>
+          <p>「大丈夫」と笑う前の30秒、本当の気持ちを確かめてみてください。「実は、ちょっと寂しかった」のひとことで十分。完璧な笑顔より、弱さを見せた方が相手はあなたを大切にできます。</p></div>
       </div>
-      <div class="panel" style="margin-top:2.6mm"><div class="pt">🫣 笑顔の裏ルール</div>
-        <p>「大丈夫」って笑う前の30秒、本当の気持ちを確かめてみてください。「実は、ちょっと寂しかった」のひとことで十分です。完璧な笑顔より、弱さを見せた方が、相手はあなたを大切にできます。</p></div>
       <div class="sect-h">♡　🔥 マンネリ脱出アクション</div>
       <div class="grid3">{rf}</div>
       {note("💡 ひとくちメモ","「Iメッセージ」は心理学者ゴードンが提唱した伝え方。「私は」で始めるだけで、責める感じにならずに気持ちが伝わります。")}''',
@@ -801,11 +792,6 @@ def build(code, C, img_b64):
           <hr style="border:0;border-top:.4pt solid var(--gold-l);margin:2.2mm 0">
           <div style="font-size:9.45pt;color:var(--wine);font-weight:700">家庭的</div><div class="cb-c">結婚像</div></div>
         <div class="panel"><div class="pt">結婚観</div><p>結婚向きは★{P[2]}でかなり高め。愛情深くて家庭的だから、結婚してからも自然と相手や家族のために動けるタイプ。記念日も日々の気遣いも忘れない、あたたかい家庭をつくります。</p></div>
-      </div>
-      <div class="grid2" style="grid-template-columns:34mm 1fr;gap:4mm;align-items:center;margin-bottom:1mm">
-        <div class="wbox" style="margin:0;padding:2mm">{svg_donut(P[2]*20, f"★{P[2]}", "結婚向き")}</div>
-        <div class="panel pink"><div class="pt">結婚向き ★{P[2]} の意味</div>
-          <p>5段階中{P[2]}。愛情深く家庭的なので、結婚後も自然と相手や家族のために動けます。記念日も日々の気遣いも忘れない、あたたかい家庭をつくるタイプです。</p></div>
       </div>
       <div class="sect-h">💗 {B}が幸せになれる相手の条件</div>
       {mc}
@@ -924,8 +910,8 @@ def build(code, C, img_b64):
       <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　{r}</p></div>'''
       for i,(t,c,r) in enumerate(C["pitfalls"]))
     A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
-        {svg_flip([(t[:9], "こう変える", r[:24]) for t,_c,r in C["pitfalls"]])}</div>
-      <p class="lead">CH03が「性格のクセ」なら、こっちは“場面”でやらかすやつ。デート、付き合ったあと、別れ際…シーンごとの落とし穴を、原因と対処法つきで。当てはまるものから手放していこう。</p>
+        {svg_flip([(t, r.split("。")[0], "") for t,_c,r in C["pitfalls"]])}</div>
+      <p class="lead" style="margin-bottom:2.4mm">CH03が「性格のクセ」なら、こちらは“場面”で起きるつまずき。シーンごとの落とし穴を、原因と処方箋つきで整理しました。</p>
       {pf}
       <div style="text-align:center;margin-top:3.4mm;font-size:10.12pt;line-height:2;color:var(--wine2);font-style:italic">
         <span style="font-size:16.88pt;color:var(--wine-l)">“</span><br>{C["pitfall_quote"]}</div>
@@ -988,9 +974,8 @@ def build(code, C, img_b64):
         <b style="font-size:8.33pt;color:var(--wine2)">{jp}</b></div>
       <p style="margin-top:1mm">{desc}</p></div>''' for i,(fn,rank,jp,desc) in enumerate(C["cogfn"]))
     A(page(code, f'''<p class="lead">MBTIの奥にある「心の使い方の順番」が認知機能。{code}は Fe → Ni → Se → Ti の順で世界を見ています。恋愛でどう働くのか見てみましょう。</p>
-      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
-        {svg_stack([(fn, rank, jp) for fn, rank, jp, _d in C["cogfn"]])}
-        <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1.2mm">上ほど無意識に使う「得意な心の動き」。下にいくほど疲れたときに暴走しやすい。</div></div>
+      <div class="wbox" style="margin:0 0 2.4mm;padding:1.8mm 4mm">
+        {svg_stack([(fn, rank, jp) for fn, rank, jp, _d in C["cogfn"]])}</div>
       {cf}
       <div class="sect-h">✨ 今日からできること</div>
       <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
@@ -1135,7 +1120,7 @@ def build(code, C, img_b64):
       ("昔話より今","別れの話は持ち出さない。変わった自分を自然に見せよう。"),
       ("引き際よく","「楽しかった、またね」で自分から切り上げて、余韻を残す。")])
     A(page(code, f'''<p class="lead">復縁は「気持ち」より<b style="color:var(--wine2)">「順番と間（ま）」</b>。焦って動くほど遠ざかるよ。5つのステップに分けて、具体的な手順とセリフで解説するね。</p>
-      <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
+      <div class="wbox" style="margin:0 0 2mm;padding:1.6mm 4mm">
         {svg_timeline([("STEP 1","冷却期間","連絡を断つ"),("STEP 2","再接触","軽い一通"),("STEP 3","復縁デート","短く・軽く"),
                        ("STEP 4","近づくサイン","返信が早く"),("STEP 5","切り出す","帰り際に")])}</div>
       <div class="sect-h">{sp("STEP 1")}　冷却期間の正しい過ごし方</div>
@@ -1196,11 +1181,7 @@ def build(code, C, img_b64):
       ("X（旧Twitter）","病み・匂わせ厳禁。フォローは外さず、感情の垂れ流しだけを止める。沈黙が余裕に見える。")])
     A(page(code, f'''<p class="lead">今どきの復縁は、SNSの使い方で半分決まる。相手の動きを察しやすいあなたほど、つい見すぎ・反応しすぎてしまいます。<b style="color:var(--wine2)">「静けさ」が一番の武器</b>です。</p>
       <div class="sect-h">①　冷却期間のSNSルール</div>
-      <div class="grid2">
-        <div class="panel pink"><div class="pt">◎　すること</div><p>通知を切って見に行かない ／ 前向きな近況をたまに一つ ／ フォローはそのまま自然に。</p></div>
-        <div class="panel"><div class="pt">✕　しないこと</div><p>投稿の巡回・足跡チェック ／「病んでる・匂わせ」投稿 ／ 衝動的なブロックや削除。</p></div>
-      </div>
-      <div class="wbox" style="margin:2.6mm 0 0;padding:3mm 5mm">
+      <div class="wbox" style="margin:0;padding:3mm 5mm">
         {svg_vs("✕ しないこと", ["投稿の巡回・足跡チェック","「病んでる・匂わせ」投稿","衝動的なブロックや削除","既読やオンライン表示の確認"],
                 "◎ すること", ["通知を切って見に行かない","前向きな近況をたまに一つ","フォローはそのまま自然に","静かに余裕を見せる"])}</div>
       <div class="sect-h">②　印象をリセットする見せ方</div>
@@ -1271,6 +1252,27 @@ def build(code, C, img_b64):
 
 
 # ══════════════════════════════════════════════════════════════
+
+def font_face_css():
+    """使用文字だけにサブセット化した woff2 を data URI で埋め込む。
+    Playwright の Chromium はプロキシを通らず Google Fonts を取得できないため、
+    ネットワークに依存しないこの方式にしている（未取得なら空を返しフォールバック）。"""
+    import base64, glob
+    css = []
+    fdir = os.path.join(SCRATCH, "fonts")
+    for weight, fn in ((400, "mpr-400.woff2"), (700, "mpr-700.woff2"), (800, "mpr-800.woff2")):
+        path = os.path.join(fdir, fn)
+        if not os.path.exists(path):
+            continue
+        b64 = base64.b64encode(open(path, "rb").read()).decode()
+        css.append("@font-face{font-family:'M PLUS Rounded 1c';font-style:normal;"
+                   "font-weight:%d;font-display:block;"
+                   "src:url(data:font/woff2;base64,%s) format('woff2');}" % (weight, b64))
+    if not css:
+        print("  ! フォント未取得のためシステムフォントで描画されます")
+    return "\n".join(css)
+
+
 def main():
     import base64, io
     from PIL import Image
@@ -1280,8 +1282,9 @@ def main():
     buf = io.BytesIO(); im.save(buf, "WEBP", quality=92)
     b64 = base64.b64encode(buf.getvalue()).decode()
     pages = build(code, C, b64)
+    css = CSS.replace("/*FONTFACE*/", font_face_css())
     html = (f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">'
-            f'<title>恋愛攻略書 — {BREED[code]}（{code}）</title><style>{CSS}</style></head><body>'
+            f'<title>恋愛攻略書 — {BREED[code]}（{code}）</title><style>{css}</style></head><body>'
             + "".join(pages) + "</body></html>")
     out = os.path.join(SCRATCH, f"guide_{code.lower()}.html")
     open(out, "w", encoding="utf-8").write(html)

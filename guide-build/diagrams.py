@@ -39,7 +39,9 @@ def svg_radar(labels, vals, maxv=5, size=158):
                    % (lx, ly, K, anc, lb))
         out.append('<text x="%.1f" y="%.1f" font-size="8.2" font-weight="800" fill="%s" text-anchor="%s">%s</text>'
                    % (lx, ly + 9, W, anc, "★" * v))
-    return '<svg viewBox="0 0 %d %d" style="width:100%%;height:auto">%s</svg>' % (size, size, "".join(out))
+    PAD = 40
+    return ('<svg viewBox="%d %d %d %d" style="width:100%%;height:auto">%s</svg>'
+            % (-PAD, -10, size + PAD * 2, size + 24, "".join(out)))
 
 
 def svg_hbars(rows, maxv=100, h=14, unit=""):
@@ -176,45 +178,72 @@ def svg_stack(items):
     return '<svg viewBox="0 0 236 %d" style="width:100%%;height:auto">%s</svg>' % (H, "".join(out))
 
 
+def _fit_lines(text, max_chars, max_lines=2):
+    """全角前提で max_chars 文字ずつに折り返す。溢れる分は末尾を…で丸める。"""
+    lines = [text[i:i + max_chars] for i in range(0, len(text), max_chars)]
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        lines[-1] = lines[-1][:max(1, max_chars - 1)] + "…"
+    return lines
+
+
 def svg_flow5(steps):
-    """5段ステップの矢印フロー steps=[(番号, 見出し)]"""
+    """横並びステップの矢印フロー steps=[(番号, 見出し)]"""
     n = len(steps)
     W_ = 250
     bw = (W_ - (n - 1) * 8) / n
+    fs = 7.2 if n > 3 else 7.6
+    max_chars = max(4, int((bw - 5) / fs))
+    # 全ボックスの行数を揃える
+    wrapped = [_fit_lines(t, max_chars) for _, t in steps]
+    rows = max(len(w) for w in wrapped)
+    H = 26 + rows * (fs + 2.4)
     out = []
-    for i, (num, ttl) in enumerate(steps):
+    for i, ((num, _t), lines) in enumerate(zip(steps, wrapped)):
         x = i * (bw + 8)
-        out.append('<rect x="%.1f" y="6" width="%.1f" height="34" rx="6" fill="#fff" stroke="%s" stroke-width="1.6"/>'
-                   % (x, bw, K))
-        out.append('<circle cx="%.1f" cy="15" r="7" fill="%s" stroke="%s" stroke-width="1.2"/>' % (x + bw / 2, W, K))
-        out.append('<text x="%.1f" y="17.6" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">%s</text>'
+        out.append('<rect x="%.1f" y="4" width="%.1f" height="%.1f" rx="6" fill="#fff" stroke="%s" stroke-width="1.6"/>'
+                   % (x, bw, H - 8, K))
+        out.append('<circle cx="%.1f" cy="14" r="7" fill="%s" stroke="%s" stroke-width="1.2"/>' % (x + bw / 2, W, K))
+        out.append('<text x="%.1f" y="16.6" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">%s</text>'
                    % (x + bw / 2, num))
-        out.append('<text x="%.1f" y="33" font-size="7.2" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
-                   % (x + bw / 2, K, ttl))
+        for j, ln in enumerate(lines):
+            out.append('<text x="%.1f" y="%.1f" font-size="%.1f" font-weight="800" fill="%s" '
+                       'text-anchor="middle">%s</text>'
+                       % (x + bw / 2, 27 + j * (fs + 2.4), fs, K, ln))
         if i < n - 1:
-            out.append('<text x="%.1f" y="27" font-size="8" font-weight="800" fill="%s" text-anchor="middle">▶</text>'
-                       % (x + bw + 4, L))
-    return '<svg viewBox="0 0 %d 46" style="width:100%%;height:auto">%s</svg>' % (W_, "".join(out))
+            out.append('<text x="%.1f" y="%.1f" font-size="8" font-weight="800" fill="%s" text-anchor="middle">▶</text>'
+                       % (x + bw + 4, H / 2 + 2, L))
+    return '<svg viewBox="0 0 %d %.1f" style="width:100%%;height:auto">%s</svg>' % (W_, H, "".join(out))
 
 
 def svg_flip(pairs):
-    """クセ → 長所 の変換図 pairs=[(クセ, 長所, 説明)]"""
-    H = len(pairs) * 30 + 4
+    """「◯◯ ➜ こう変える」の変換図 pairs=[(左ラベル, 右ラベル, 補足)]"""
+    LW, RW = 92, 116
+    rowsL = [_fit_lines(a, 11) for a, _b, _c in pairs]
+    rowsR = [_fit_lines(b, 14) for _a, b, _c in pairs]
+    lines = max(max(len(x) for x in rowsL), max(len(x) for x in rowsR))
+    bh = 15 + (lines - 1) * 9
+    gap = 7
+    H = len(pairs) * (bh + gap) + 4
     out = []
-    for i, (bad, good, desc) in enumerate(pairs):
-        y = i * 30 + 2
-        out.append('<rect x="0" y="%.1f" width="76" height="24" rx="5" fill="%s" fill-opacity=".22" '
-                   'stroke="%s" stroke-width="1.3"/>' % (y, L, K))
-        out.append('<text x="38" y="%.1f" font-size="7.4" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
-                   % (y + 15, K, bad))
-        out.append('<text x="86" y="%.1f" font-size="10" font-weight="800" fill="%s" text-anchor="middle">➜</text>'
-                   % (y + 16, W))
-        out.append('<rect x="96" y="%.1f" width="86" height="24" rx="5" fill="%s" fill-opacity=".18" '
-                   'stroke="%s" stroke-width="1.3"/>' % (y, W, K))
-        out.append('<text x="139" y="%.1f" font-size="7.4" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
-                   % (y + 15, K, good))
-        out.append('<text x="190" y="%.1f" font-size="6.3" fill="%s">%s</text>' % (y + 15, SUB, desc))
-    return '<svg viewBox="0 0 300 %d" style="width:100%%;height:auto">%s</svg>' % (H, "".join(out))
+    for i, ((_a, _b, desc), la, ra) in enumerate(zip(pairs, rowsL, rowsR)):
+        y = i * (bh + gap) + 2
+        out.append('<rect x="0" y="%.1f" width="%d" height="%.1f" rx="5" fill="%s" fill-opacity=".22" '
+                   'stroke="%s" stroke-width="1.3"/>' % (y, LW, bh, L, K))
+        for j, ln in enumerate(la):
+            out.append('<text x="%.1f" y="%.1f" font-size="7" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
+                       % (LW / 2, y + bh / 2 - (len(la) - 1) * 4.5 + j * 9 + 2.4, K, ln))
+        out.append('<text x="%.1f" y="%.1f" font-size="10" font-weight="800" fill="%s" text-anchor="middle">➜</text>'
+                   % (LW + 8, y + bh / 2 + 3.4, W))
+        out.append('<rect x="%d" y="%.1f" width="%d" height="%.1f" rx="5" fill="%s" fill-opacity=".18" '
+                   'stroke="%s" stroke-width="1.3"/>' % (LW + 18, y, RW, bh, W, K))
+        for j, ln in enumerate(ra):
+            out.append('<text x="%.1f" y="%.1f" font-size="7" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
+                       % (LW + 18 + RW / 2, y + bh / 2 - (len(ra) - 1) * 4.5 + j * 9 + 2.4, K, ln))
+        if desc:
+            out.append('<text x="%d" y="%.1f" font-size="6.3" fill="%s">%s</text>'
+                       % (LW + RW + 24, y + bh / 2 + 2.4, SUB, desc[:14] + ("…" if len(desc) > 14 else "")))
+    return '<svg viewBox="0 0 %d %.1f" style="width:100%%;height:auto">%s</svg>' % (LW + RW + 24, H, "".join(out))
 
 
 def svg_gauge_row(rows):
@@ -247,8 +276,9 @@ def svg_timeline(items):
         out.append('<circle cx="%.1f" cy="26" r="7.5" fill="%s" stroke="%s" stroke-width="1.6"/>' % (cx, "#fff", K))
         out.append('<text x="%.1f" y="28.8" font-size="7" font-weight="800" fill="%s" text-anchor="middle">%d</text>'
                    % (cx, K, i + 1))
-        out.append('<text x="%.1f" y="43" font-size="7.4" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
-                   % (cx, K, ttl))
+        for j, ln in enumerate(_fit_lines(ttl, 7)):
+            out.append('<text x="%.1f" y="%.1f" font-size="7.2" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
+                       % (cx, 43 + j * 8, K, ln))
         out.append('<text x="%.1f" y="52" font-size="6.2" fill="%s" text-anchor="middle">%s</text>'
                    % (cx, SUB, note_))
     return '<svg viewBox="0 0 %d 58" style="width:100%%;height:auto">%s</svg>' % (W_, "".join(out))
