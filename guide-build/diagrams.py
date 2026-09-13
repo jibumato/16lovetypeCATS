@@ -141,21 +141,31 @@ def svg_donut(pct, label, sub=""):
 
 
 def svg_compare(left, right, llab, rlab):
-    """左右対比バー（愛の言語：与える／受け取りたい）"""
+    """左右対比バー（愛の言語：与える／受け取りたい）
+    中央にラベル列を確保し、バーはその外側にだけ伸ばす。"""
+    VW = 250          # viewBox幅
+    LABW = 76         # 中央ラベル列の幅
+    cx = VW / 2
+    lend = cx - LABW / 2      # 左バーの右端
+    rstart = cx + LABW / 2    # 右バーの左端
+    maxw = lend - 6           # バーの最大長
     n = len(left)
-    H = n * 16 + 20
-    out = ['<text x="82" y="9" font-size="7" font-weight="800" fill="%s" text-anchor="end">%s</text>' % (L, llab),
-           '<text x="118" y="9" font-size="7" font-weight="800" fill="%s">%s</text>' % (W, rlab)]
-    for i, ((ln, lv), (rn, rv)) in enumerate(zip(left, right)):
-        y = 18 + i * 16
-        lw, rw = 72 * (lv / 5), 72 * (rv / 5)
-        out.append('<text x="100" y="%.1f" font-size="6.6" font-weight="700" fill="%s" text-anchor="middle">%s</text>'
-                   % (y + 8, K, ln))
-        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="9.5" rx="2.5" fill="%s" stroke="%s" stroke-width=".7"/>'
-                   % (82 - lw, y + 1, lw, L, K))
-        out.append('<rect x="118" y="%.1f" width="%.1f" height="9.5" rx="2.5" fill="%s" stroke="%s" stroke-width=".7"/>'
-                   % (y + 1, rw, W, K))
-    return '<svg viewBox="0 0 200 %d" style="width:100%%;height:auto">%s</svg>' % (H, "".join(out))
+    H = n * 16 + 22
+    out = ['<text x="%.1f" y="10" font-size="7.4" font-weight="800" fill="%s" text-anchor="end">%s</text>'
+           % (lend, L, llab),
+           '<text x="%.1f" y="10" font-size="7.4" font-weight="800" fill="%s">%s</text>' % (rstart, W, rlab)]
+    for i, ((ln, lv), (_rn, rv)) in enumerate(zip(left, right)):
+        y = 19 + i * 16
+        lw, rw = maxw * (lv / 5), maxw * (rv / 5)
+        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="10" rx="2.5" fill="%s" stroke="%s" '
+                   'stroke-width=".8"/>' % (lend - lw, y, lw, L, K))
+        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="10" rx="2.5" fill="%s" stroke="%s" '
+                   'stroke-width=".8"/>' % (rstart, y, rw, W, K))
+        # ラベルは中央列に収める（長ければ縮小）
+        fs = 6.8 if len(ln) <= 7 else 6.0 if len(ln) <= 9 else 5.4
+        out.append('<text x="%.1f" y="%.1f" font-size="%.1f" font-weight="800" fill="%s" '
+                   'text-anchor="middle">%s</text>' % (cx, y + 7.4, fs, K, ln))
+    return '<svg viewBox="0 0 %d %d" style="width:100%%;height:auto">%s</svg>' % (VW, H, "".join(out))
 
 
 def svg_stack(items):

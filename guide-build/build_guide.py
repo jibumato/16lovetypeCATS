@@ -136,8 +136,7 @@ def page(code, body, chapno="", clabel="", title="", pno="", cls=""):
     d = LOC[code]
     head = ""
     if pno:
-        head = f'''<div class="phead"><span>🐾 {d["breed"]}の恋愛トリセツ</span>
-        <span>{clabel.split("・")[0] if clabel else ""}</span></div>'''
+        head = f'''<div class="phead"><span>🐾 {d["breed"]}の恋愛トリセツ</span></div>'''
     chap = f'<div class="chapno">{chapno}</div>' if chapno else ""
     ttl = ""
     if title:
@@ -603,7 +602,7 @@ def build(code, C, img_b64):
       <div class="panel" style="margin-bottom:3.2mm"><div class="pt">🔓 この章でわかること</div>
         <p>恋に落ちるまでの5ステップを、心の動きごとに分解。それぞれの落とし穴と強み、恋のスピード感まで解説します。</p></div>
       <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 3.4mm">
-        {svg_flow5([(f"0{{i+1}}", t) for i,(t,_) in enumerate(C["stages"])])}</div>
+        {svg_flow5([(str(i+1).zfill(2), t) for i,(t,_) in enumerate(C["stages"])])}</div>
       <div class="cmap-row" style="grid-template-columns:repeat(5,1fr)">{stg}</div>
       <div class="grid2" style="margin-top:3.4mm">
         <div class="panel"><div class="pt">⚠️ やりすぎ注意ポイント</div><p>{C["stage_warn"]}</p></div>
