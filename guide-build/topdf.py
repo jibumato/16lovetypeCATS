@@ -21,7 +21,7 @@ FIT_JS = """() => {
       z -= 0.01;
       body.style.zoom = z.toFixed(2);
     }
-    const rest = body.scrollHeight - body.clientHeight;
+    const rest = body.scrollHeight - (body.clientHeight);
     if (z < 1.0 || rest > 1) log.push({page: i + 1, zoom: +z.toFixed(2), rest});
   });
   return log;

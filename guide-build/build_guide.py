@@ -64,7 +64,7 @@ body{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--in
   border-radius:5mm;pointer-events:none}
 .page::after{display:none}
 .inner{position:relative;height:100%;display:flex;flex-direction:column;padding:3mm 3mm 0}
-.pbody{flex:1;display:flex;flex-direction:column;min-height:0}
+.pbody{flex:1;display:flex;flex-direction:column;min-height:0;padding-bottom:1.6mm}
 
 /* ── ヘッダ ── */
 .phead{display:flex;justify-content:space-between;align-items:center;
@@ -966,12 +966,10 @@ def build(code, C, img_b64):
       chapno="16", clabel=sp("BIG FIVE PROFILE"), title="性格5factorで見る恋愛", pno="20"))
 
     # ── P21 CH17 認知機能 ──
-    cf = "".join(f'''<div class="panel {"pink" if i==0 else ""}" style="margin-bottom:2.4mm">
-      <div style="display:flex;gap:2.6mm;align-items:baseline">
-        <span style="font-family:Cormorant Garamond,serif;font-size:16.88pt;color:var(--wine);line-height:1">{fn}</span>
-        <span style="font-size:6.98pt;letter-spacing:.16em;color:var(--wine-l)">{rank}</span>
-        <b style="font-size:8.33pt;color:var(--wine2)">{jp}</b></div>
-      <p style="margin-top:1mm">{desc}</p></div>''' for i,(fn,rank,jp,desc) in enumerate(C["cogfn"]))
+    # スタック図が記号・役割・和名を示すので、下の解説は説明文だけに絞る
+    cf = "".join(f'''<div class="panel {"pink" if i==0 else ""}" style="margin-bottom:2mm;padding:2.2mm 3.4mm">
+      <p><b style="color:var(--wine2);font-size:8.4pt">{fn}</b>　{desc}</p></div>'''
+      for i,(fn,rank,jp,desc) in enumerate(C["cogfn"]))
     A(page(code, f'''<p class="lead">MBTIの奥にある「心の使い方の順番」が認知機能。{code}は Fe → Ni → Se → Ti の順で世界を見ています。恋愛でどう働くのか見てみましょう。</p>
       <div class="wbox" style="margin:0 0 2.4mm;padding:1.8mm 4mm">
         {svg_stack([(fn, rank, jp) for fn, rank, jp, _d in C["cogfn"]])}</div>

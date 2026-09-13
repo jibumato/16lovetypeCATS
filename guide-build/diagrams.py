@@ -185,7 +185,9 @@ def svg_stack(items):
                    % (x0 + 30, y + 17, K, role))
         out.append('<text x="%.1f" y="%.1f" font-size="6.4" fill="#4a3f52" text-anchor="end">%s</text>'
                    % (x0 + w - 8, y + 17, desc))
-    return '<svg viewBox="0 0 236 %d" style="width:100%%;height:auto">%s</svg>' % (H, "".join(out))
+    PADX = 3
+    return ('<svg viewBox="%d 0 %d %d" style="width:100%%;height:auto">%s</svg>'
+            % (-PADX, 236 + PADX * 2, H, "".join(out)))
 
 
 def _fit_lines(text, max_chars, max_lines=2):
@@ -223,7 +225,9 @@ def svg_flow5(steps):
         if i < n - 1:
             out.append('<text x="%.1f" y="%.1f" font-size="8" font-weight="800" fill="%s" text-anchor="middle">▶</text>'
                        % (x + bw + 4, H / 2 + 2, L))
-    return '<svg viewBox="0 0 %d %.1f" style="width:100%%;height:auto">%s</svg>' % (W_, H, "".join(out))
+    PADX = 3
+    return ('<svg viewBox="%d 0 %d %.1f" style="width:100%%;height:auto">%s</svg>'
+            % (-PADX, W_ + PADX * 2, H, "".join(out)))
 
 
 def svg_flip(pairs):
@@ -253,7 +257,9 @@ def svg_flip(pairs):
         if desc:
             out.append('<text x="%d" y="%.1f" font-size="6.3" fill="%s">%s</text>'
                        % (LW + RW + 24, y + bh / 2 + 2.4, SUB, desc[:14] + ("…" if len(desc) > 14 else "")))
-    return '<svg viewBox="0 0 %d %.1f" style="width:100%%;height:auto">%s</svg>' % (LW + RW + 24, H, "".join(out))
+    PADX = 3
+    return ('<svg viewBox="%d 0 %d %.1f" style="width:100%%;height:auto">%s</svg>'
+            % (-PADX, LW + RW + 24 + PADX * 2, H, "".join(out)))
 
 
 def svg_gauge_row(rows):
@@ -308,4 +314,6 @@ def svg_vs(left_title, left_items, right_title, right_items):
         out.append('<text x="8" y="%.1f" font-size="6.6" fill="#4a3f52">・%s</text>' % (26 + i * 13, t))
     for i, t in enumerate(right_items):
         out.append('<text x="140" y="%.1f" font-size="6.6" fill="#4a3f52">・%s</text>' % (26 + i * 13, t))
-    return '<svg viewBox="0 0 254 %d" style="width:100%%;height:auto">%s</svg>' % (H, "".join(out))
+    PADX = 3
+    return ('<svg viewBox="%d 0 %d %d" style="width:100%%;height:auto">%s</svg>'
+            % (-PADX, 254 + PADX * 2, H, "".join(out)))
