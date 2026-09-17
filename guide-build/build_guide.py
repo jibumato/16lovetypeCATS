@@ -684,7 +684,7 @@ def build(code, C, img_b64):
 
     # ── P14 CH10 愛着スタイル ──
     att4 = "".join(f'''<div class="panel {c}"><div class="pt">{t}{y}</div><p>{s}</p></div>''' for t,s,c,y in [
-      ("安定型","自分も相手も信頼できる。素直に甘え、素直に与えられる。ENFJの理想的な状態。","pink",'<span style="font-size:6.52pt;color:var(--wine2);margin-left:2mm">YOU寄り</span>'),
+      ("安定型",f"自分も相手も信頼できる。素直に甘え、素直に与えられる。{code}の理想的な状態。","pink",'<span style="font-size:6.52pt;color:var(--wine2);margin-left:2mm">YOU寄り</span>'),
       ("不安型","見捨てられ不安が強い。尽くしすぎ・既読を気にしすぎる。ストレス時に傾く先。","",""),
       ("回避型","親密さを避け、距離を置きたがる。感情を見せるのが苦手。","",""),
       ("恐れ・回避型","近づきたいのに怖い。求めと拒絶が同居する。","","")])
