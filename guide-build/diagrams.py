@@ -233,12 +233,12 @@ def svg_flow5(steps):
 
 def svg_flip(pairs):
     """「◯◯ ➜ こう変える」の変換図 pairs=[(左ラベル, 右ラベル, 補足)]"""
-    LW, RW = 92, 116
-    rowsL = [_fit_lines(a, 11) for a, _b, _c in pairs]
-    rowsR = [_fit_lines(b, 14) for _a, b, _c in pairs]
+    LW, RW = 104, 128
+    rowsL = [_fit_lines(a, 13) for a, _b, _c in pairs]
+    rowsR = [_fit_lines(b, 16) for _a, b, _c in pairs]
     lines = max(max(len(x) for x in rowsL), max(len(x) for x in rowsR))
     bh = 15 + (lines - 1) * 9
-    gap = 7
+    gap = 6
     H = len(pairs) * (bh + gap) + 4
     out = []
     for i, ((_a, _b, desc), la, ra) in enumerate(zip(pairs, rowsL, rowsR)):

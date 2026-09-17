@@ -39,6 +39,18 @@ def compat(a, b):
     return (51 + (26 if a[1]==b[1] else 0) + (8 if a[2]==b[2] else 0)
             + (6 if a[0]!=b[0] else 0) + (7 if a[3]!=b[3] else 0))
 
+
+GROUP_JP = {"NT": "思考家", "NF": "理想家", "SJ": "堅実家", "SP": "行動家"}
+
+
+def top_group(code, rk):
+    """TOP5に最も多く入っている群。相性解説の見出しに使う。"""
+    from collections import Counter
+    g_of = {m: g for g, ms in GROUPS.items() for m in ms}
+    cnt = Counter(g_of[m] for _s, m in rk[:5])
+    return cnt.most_common(1)[0][0]
+
+
 def ranking(code):
     return sorted(((compat(code,b), b) for b in ORDER if b != code), reverse=True)
 
@@ -518,7 +530,7 @@ def build(code, C, img_b64):
         <span><i>65〜74</i> 普通</span><span><i>〜64</i> 要工夫</span></div>
       <div class="panel pink" style="margin-bottom:2.8mm"><div class="pt">📏 スコアの読み方</div>
         <p>スコアは「出会った瞬間の合いやすさ」＝スタート地点で、恋の上限ではありません。85↑運命級／75↑good／65↑ふつう／〜64は伸びしろ大。低スコアでも、ちゃんと話せば育つ恋はいくらでもあります。</p></div>
-      <div class="panel pink" style="margin-top:2.6mm"><div class="pt">💡 NF理想家と相性がいいワケ</div>
+      <div class="panel pink" style="margin-top:2.6mm"><div class="pt">💡 {top_group(code, rk)}{GROUP_JP[top_group(code, rk)]}と相性がいいワケ</div>
         <p>{C["why_high"]}</p></div>
       {note("💡 知っとくと得","相性の研究では「似ているほど安心、違うほど刺激」と言われます。似た者同士は安心ですが、たまに刺激も足すと長続きします。")}''',
       chapno="04", clabel=f'{sp("CHAPTER")}　0 4', title="全16タイプ 相性まるわかり表", pno="07"))

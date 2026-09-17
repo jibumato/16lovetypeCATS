@@ -14,10 +14,20 @@ import pymupdf
 SP = "/tmp/claude-0/-home-user-16lovetypeCATS/ca9b5b1a-5375-5908-aa61-ec0aeb6a5928/scratchpad/"
 
 # 丁寧語から外れる語尾（本文で使ってはいけないもの）
-CASUAL = [r'だよ。', r'だよ<', r'なんだ。', r'ないよ', r'じゃん', r'してね。', r'しよう。',
+# 「〜ないように」等に誤爆しないよう、後続文字まで見て判定する
+CASUAL = [r'だよ。', r'だよ<', r'なんだ。', r'ないよ(?![うに])', r'じゃん', r'してね。', r'しよう。',
           r'するよ。', r'あるよ。', r'くるよ。', r'なるよ。', r'いくよ。', r'見てるよ',
           r'らしい。', r'んだって', r'てるから', r'てるのに', r'じゃなくて', r'教えるよ',
           r'答えるよ', r'育ててね', r'見られるよ', r'ズレてると', r'されてるモデル']
+
+# セリフ・文例は口語で当然なので、判定対象から外す
+QUOTED = re.compile(r'[「『][^」』]{0,80}[」』]')
+
+
+def strip_quotes(text):
+    """会話例やテンプレ文（「」で囲まれた部分）を伏せ字にして本文だけ残す。"""
+    return QUOTED.sub(lambda m: "〓" * len(m.group(0)), text)
+
 
 # 展開されずに残ったテンプレート変数
 TEMPLATE = r'\{[a-zA-Z_][\w\+\-\.\[\]\'\"]*\}|\{\{|\}\}'
@@ -51,7 +61,7 @@ def check(path):
     # 2) 丁寧語の崩れ
     for pat in CASUAL:
         for i, t in enumerate(text_all):
-            m = re.search(pat, t.replace("\n", ""))
+            m = re.search(pat, strip_quotes(t.replace("\n", "")))
             if m:
                 ctx = t.replace("\n", "")[max(0, m.start() - 20):m.end() + 2]
                 issues.append(f"p{i+1}: 丁寧語の崩れ …{ctx}")
