@@ -79,8 +79,9 @@ def svg_quad(x, y, xlab, ylab, quads, you="YOU"):
                % (m, m + inner / 2, m + inner, m + inner / 2, K))
     out.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="1" stroke-dasharray="3,2"/>'
                % (m + inner / 2, m, m + inner / 2, m + inner, K))
-    pos = [(m + inner * .25, m + inner * .25), (m + inner * .75, m + inner * .25),
-           (m + inner * .25, m + inner * .75), (m + inner * .75, m + inner * .75)]
+    # 中央付近は YOU マーカーが入るので、ラベルは各象限の外寄りに置く
+    pos = [(m + inner * .25, m + inner * .13), (m + inner * .75, m + inner * .13),
+           (m + inner * .25, m + inner * .87), (m + inner * .75, m + inner * .87)]
     for (qx, qy), lab in zip(pos, quads):
         parts = lab.split("|")
         out.append('<text x="%.1f" y="%.1f" font-size="8.2" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
@@ -280,24 +281,31 @@ def svg_gauge_row(rows):
 
 
 def svg_timeline(items):
-    """横向きタイムライン items=[(期間, 見出し, 一言)]"""
+    """横向きタイムライン items=[(期間, 見出し, 一言)]
+    見出しが折り返した分だけ補足の位置と全体の高さを下げ、文字が重ならないようにする。"""
     n = len(items)
     W_ = 260
     seg = W_ / n
+    wrapped = [_fit_lines(t, 7) for _p, t, _n in items]
+    rows = max(len(w) for w in wrapped)
+    note_y = 43 + rows * 9          # 見出しの行数ぶん下げる
+    H = note_y + 8
     out = ['<line x1="10" y1="26" x2="%d" y2="26" stroke="%s" stroke-width="2"/>' % (W_ - 10, L)]
-    for i, (per, ttl, note_) in enumerate(items):
+    for i, ((per, _ttl, note_), lines) in enumerate(zip(items, wrapped)):
         cx = seg * i + seg / 2
         out.append('<text x="%.1f" y="12" font-size="6.6" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
                    % (cx, W, per))
-        out.append('<circle cx="%.1f" cy="26" r="7.5" fill="%s" stroke="%s" stroke-width="1.6"/>' % (cx, "#fff", K))
+        out.append('<circle cx="%.1f" cy="26" r="7.5" fill="#fff" stroke="%s" stroke-width="1.6"/>' % (cx, K))
         out.append('<text x="%.1f" y="28.8" font-size="7" font-weight="800" fill="%s" text-anchor="middle">%d</text>'
                    % (cx, K, i + 1))
-        for j, ln in enumerate(_fit_lines(ttl, 7)):
-            out.append('<text x="%.1f" y="%.1f" font-size="7.2" font-weight="800" fill="%s" text-anchor="middle">%s</text>'
-                       % (cx, 43 + j * 8, K, ln))
-        out.append('<text x="%.1f" y="52" font-size="6.2" fill="%s" text-anchor="middle">%s</text>'
-                   % (cx, SUB, note_))
-    return '<svg viewBox="0 0 %d 58" style="width:100%%;height:auto">%s</svg>' % (W_, "".join(out))
+        for j, ln in enumerate(lines):
+            out.append('<text x="%.1f" y="%.1f" font-size="7.2" font-weight="800" fill="%s" '
+                       'text-anchor="middle">%s</text>' % (cx, 43 + j * 9, K, ln))
+        out.append('<text x="%.1f" y="%.1f" font-size="6.2" fill="%s" text-anchor="middle">%s</text>'
+                   % (cx, note_y, SUB, note_))
+    PADX = 3
+    return ('<svg viewBox="%d 0 %d %d" style="width:100%%;height:auto">%s</svg>'
+            % (-PADX, W_ + PADX * 2, H, "".join(out)))
 
 
 def svg_vs(left_title, left_items, right_title, right_items):

@@ -23,6 +23,17 @@ RARITY = {"INTJ":2.1,"INTP":3.3,"ENTJ":1.8,"ENTP":3.2,"INFJ":1.5,"INFP":4.4,"ENF
 GROUPS = {"NT":["INTJ","INTP","ENTJ","ENTP"], "NF":["INFJ","INFP","ENFJ","ENFP"],
           "SJ":["ISTJ","ISFJ","ESTJ","ESFJ"], "SP":["ISTP","ISFP","ESTP","ESFP"]}
 
+# 図表の狭い枠に入れるための短縮名（途中で切れて意味不明にならないようにする）
+BREED_SHORT = {
+    "INTJ": "ノルウェージャン", "ISTJ": "ブリティッシュSH",
+    "ISTP": "アメリカンSH",   "ISFP": "スコティッシュ",
+}
+
+
+def bshort(code, limit=99):
+    return BREED_SHORT.get(code, BREED[code])
+
+
 def compat(a, b):
     if a == b: return 70
     return (51 + (26 if a[1]==b[1] else 0) + (8 if a[2]==b[2] else 0)
@@ -65,6 +76,8 @@ body{font-family:'M PLUS Rounded 1c','Zen Maru Gothic',sans-serif;color:var(--in
 .page::after{display:none}
 .inner{position:relative;height:100%;display:flex;flex-direction:column;padding:3mm 3mm 0}
 .pbody{flex:1;display:flex;flex-direction:column;min-height:0;padding-bottom:1.6mm}
+.stgnote{display:grid;grid-template-columns:repeat(5,1fr);gap:2mm;margin-top:2mm}
+.stgnote span{font-size:7pt;line-height:1.6;color:var(--ink2);text-align:center}
 
 /* ── ヘッダ ── */
 .phead{display:flex;justify-content:space-between;align-items:center;
@@ -159,12 +172,12 @@ C = {
  "cover_lead":"みんなの安らぎ担当。だけど本命の前では、ちょっと不器用。<br>そんなあなたの恋を、ぜんぶ解説するトリセツです🐾",
  "pedigree":"2891",
  "free_tags":["タイプはサイベリアン（ENFJ）","恋は寄り添い・献身タイプ","包容力・聞き上手・献身"],
- "outside":"あったかくて、誰からも頼られる聞き上手。落ち込んでる人のそばにいつのまにか座ってる、みんなの安らぎ担当。恋愛でもモテるけど、「誰にでも優しい人」に見られがち。",
- "inside":"でも本命には、誰よりまっすぐで一途。頼られ役の顔の裏では、好きな人の幸せだけをひたすら願ってる。「みんなに優しい」と「本当に大事な人」は、自分の中では完全に別ものなんです。",
+ "outside":"あったかくて、誰からも頼られる聞き上手。落ち込んでいる人のそばにいつのまにか座っている、みんなの安らぎ担当。恋愛でもモテるけど、「誰にでも優しい人」に見られがち。",
+ "inside":"でも本命には、誰よりまっすぐで一途。頼られ役の顔の裏では、好きな人の幸せだけをひたすら願っています。「みんなに優しい」と「本当に大事な人」は、自分の中では完全に別ものなんです。",
  "core":[("包容力","相手の幸せ＝自分の幸せ。寄り添うのに迷いがない。"),
-         ("共感","察する力が高すぎる。だから一人で抱え込んじゃう。"),
+         ("共感","察する力が高すぎて、だから一人で抱え込みがちです。"),
          ("献身","誰とでも心を通わせられる。でも本命への一途さは別格。")],
- "core_lead":"サイベリアンの恋は「包み込む」ことから始まる。相手の幸せを願う気持ちが先に出ちゃうから、自分のことはどうしても後回し。でもね、本当に大事な関係って、支え合ってはじめて長続きします。",
+ "core_lead":"サイベリアンの恋は「包み込む」ことから始まる。相手の幸せを願う気持ちが先に立つので、自分のことはどうしても後回しになります。でもね、本当に大事な関係って、支え合ってはじめて長続きします。",
  "keywords":["愛情深い","寄り添い型","聞き上手","一途","頼られ役","癒し系","世話好き","本命主義"],
  "tokimeki":["ちゃんと「ありがとう」と言ってくれた時","気遣いを当たり前にせず受け取ってくれた時","「無理しないでね」と言われた時"],
  "jirai":["優しさを「当たり前」に扱われた時","「誰にでも優しいだけでしょ」と言われた時","感謝がない一方通行がずっと続いた時"],
@@ -172,7 +185,7 @@ C = {
  "stages":[("気配り","相手の様子を自然と気にかける"),("お世話","気づいたら支えている"),
            ("特別扱い","この人だけ特別かも"),("告白","まっすぐ気持ちを伝える"),
            ("全力愛情","惜しみなく愛を注ぐ")],
- "stage_warn":"Stage2の「お世話」が行きすぎると、相手が求める前から与えちゃって、つい見返りを期待しがち。「これ、相手は望んでる？」と一度確認するクセをつけましょう。",
+ "stage_warn":"Stage2の「お世話」が行きすぎると、相手が求める前から与えてしまい、つい見返りを期待しがちです。「これ、相手は望んでる？」と一度確認するクセをつけましょう。",
  "stage_str":"気持ちをまっすぐ言えるのは、とても大きな強みです。尽くし度★5・一途度★4の通り、一度伝えた気持ちはブレずに続くタイプです。",
  "speed":[("早め","アプローチまで"),("穏やか","表現の質"),("安定","気持ちの持続力")],
  "loved":[("とにかく安心感がすごい","そばにいてくれるだけで、相手は「自分は大切にされている」と確信できます。"),
@@ -180,7 +193,7 @@ C = {
           ("裏表がまったくない","誰にでも優しく見えても、本命への態度は誰より誠実。そのブレなさが信頼になります。")],
  # CH03 罠（サイトのcons＝無料版で見えている3つ）
  "traps":[("抱え込みがち","弱音を見せられず、一人で抱える",
-           "頼られるのは慣れてても、頼るのは全然慣れてない。しんどさを一人で処理し続けて、限界がくるまで誰にも気づかれない。相手からは「何も困っていない人」に見えてしまいます。",
+           "頼られるのは慣れていても、頼るのは全然慣れていません。しんどさを一人で処理し続けて、限界がくるまで誰にも気づかれない。相手からは「何も困っていない人」に見えてしまいます。",
            "週に一度でかまいません。「実はちょっと疲れてて」って、オチのない話を渡してみてください。弱さの共有は、実は距離をいちばん縮めます。"),
           ("自分を後回しにする","相手を優先するあまり、自分の希望が消える",
            "相手を優先しすぎて、自分がどうしたいのか分からなくなる。気づいたらヘトヘトで、急に距離を置きたくなることもあります。",
@@ -266,7 +279,7 @@ C = {
  # 図解用：give_langの並び順に対応した [与える強さ, 受け取りたい強さ]（各5段階）
  "lang_score":[[5,4,3,2,1],[3,5,3,4,1]],
  # 図解用：愛着スタイル4象限の座標（0〜1／x=回避の強さ, y=不安の強さ）
- "quad_x":0.30, "quad_y":0.62,
+ "quad_x":0.30, "quad_y":0.40,
  "aruaru":["好きな人の機嫌をすぐ察してしまう","相手の長所を本気で見つけるのが得意",
   "つい世話を焼きすぎて重いと言われる","自分の弱音は最後まで言えない","恋人の友達にも好かれようとする",
   "頼られると断れない","ケンカの後すぐ自分から謝ってしまう","相手の予定に自分を合わせがち",
@@ -320,7 +333,7 @@ C = {
          ("世話焼きを我慢","「大丈夫？」のDMはこらえる。先回りせず、相手から頼られるまで待つ余裕を。"),
          ("聞き役を封印","尽くす側に戻らず、自分の充実をたまに見せる。温度が戻ったら早めにSNSの外へ。")],
  "closing":"あなたが与える愛は、<br>まわりをあたためる才能です。",
- "enfj_msg":"あなたは「もっと寄り添えば戻れる」って考えがち。でも復縁に必要なのは尽くす量ではなく、二人が変わること。取り戻すより、お互い成長して再会できるかを見てみて🐾",
+ "enfj_msg":"あなたは「もっと寄り添えば戻れる」って考えがち。でも復縁に必要なのは尽くす量ではなく、二人が変わること。取り戻すより、お互い成長して再会できるかを見てみてください🐾",
 }
 
 # ══════════════════════════════════════════════════════════════
@@ -602,8 +615,8 @@ def build(code, C, img_b64):
       <div class="panel" style="margin-bottom:3.2mm"><div class="pt">🔓 この章でわかること</div>
         <p>恋に落ちるまでの5ステップを、心の動きごとに分解。それぞれの落とし穴と強み、恋のスピード感まで解説します。</p></div>
       <div class="wbox" style="margin:0 0 3mm;padding:2.6mm 3.4mm">
-        {svg_flow5([(str(i+1).zfill(2), t) for i,(t,_) in enumerate(C["stages"])])}</div>
-      <div class="cmap-row" style="grid-template-columns:repeat(5,1fr)">{stg}</div>
+        {svg_flow5([(str(i+1).zfill(2), t) for i,(t,_) in enumerate(C["stages"])])}
+        <div class="stgnote">{"".join(f'<span>{d}</span>' for _t,d in C["stages"])}</div></div>
       <div class="grid2" style="margin-top:3.4mm">
         <div class="panel"><div class="pt">⚠️ やりすぎ注意ポイント</div><p>{C["stage_warn"]}</p></div>
         <div class="panel pink"><div class="pt">💪 Stage4のまっすぐさが強み</div><p>{C["stage_str"]}</p></div>
@@ -680,10 +693,10 @@ def build(code, C, img_b64):
           <div class="t5n">{BREED[m]}<small>{sp(m)}</small></div>
           <div class="t5c">{C["top5_cm"][i]}</div></div><div class="t5s">{s}%</div></div>'''
     lines = "".join(f'''<div style="font-size:7.76pt;line-height:1.8;color:var(--ink2);padding:.5mm 0">
-      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">{i+1}</b>　{BREED[rk[i][1]][:10]}　{C["top5_line"][i]}</div>'''
+      <b style="color:var(--wine2);font-family:Cormorant Garamond,serif">{i+1}</b>　{bshort(rk[i][1])}　{C["top5_line"][i]}</div>'''
       for i in range(5))
     A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 5mm">
-        {svg_hbars([(BREED[rk[i][1]][:11], rk[i][0]) for i in range(5)], unit="%")}
+        {svg_hbars([(bshort(rk[i][1]), rk[i][0]) for i in range(5)], unit="%")}
         <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1mm">相性スコア上位5タイプ</div></div>
       <div style="margin-bottom:1mm">{t5}</div>
       <div class="sect-h">♡　💬 TOP5に効く「最初のひとこと」</div>
@@ -709,13 +722,13 @@ def build(code, C, img_b64):
       <b style="color:var(--wine)">{BREED[rk[-(3-i)][1]][:10]}</b>　{C["worst_line"][i][0]}　<span style="color:var(--ink3)">{C["worst_line"][i][1]}</span></div>'''
       for i in range(3))
     A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
-        {svg_gauge_row([(BREED[m][:10], m, sc) for sc,m in rk[-3:]])}
+        {svg_gauge_row([(bshort(m), m, sc) for sc,m in rk[-3:]])}
         <div style="font-size:6.8pt;color:var(--ink3);text-align:center;margin-top:1mm">この3タイプとの相性スコア（低いほど“工夫しがい”があります）</div></div>
       <p class="lead">スコアが低い＝ダメ、ではありません。相性スコアは「初期設定」であって「運命」ではありません。大事なのは、違いを知ったうえで歩み寄れるかどうか。この3タイプとの恋も、コツさえ知っていれば十分うまくいきます。</p>
       {w}
       <div class="sect-h">♡　💬 効くひとこと／NGなひとこと</div>
       {wl}
-      {note("💡 恋のまめ知識","心理学者心理学者ゴットマンによれば、別れるカップルの差は「ケンカの有無」ではなく「仲直りのうまさ」なのだそうです。あなたの共感力は、そこでとても強い武器になります。")}''',
+      {note("💡 恋のまめ知識","心理学者ゴットマンによれば、別れるカップルの差は「ケンカの有無」ではなく「仲直りのうまさ」なのだそうです。あなたの共感力は、そこでとても強い武器になります。")}''',
       chapno="06", clabel=f'{sp("CHAPTER")}　0 6', title="ちょっと手ごわいコとの付き合い方", pno="09"))
 
     # ── P10 CH07 LINE ──
@@ -790,7 +803,12 @@ def build(code, C, img_b64):
           <div style="font-size:9.45pt;color:var(--wine);font-weight:700">穏やか</div><div class="cb-c">絆の質</div>
           <hr style="border:0;border-top:.4pt solid var(--gold-l);margin:2.2mm 0">
           <div style="font-size:9.45pt;color:var(--wine);font-weight:700">家庭的</div><div class="cb-c">結婚像</div></div>
-        <div class="panel"><div class="pt">結婚観</div><p>結婚向きは★{P[2]}でかなり高め。愛情深くて家庭的だから、結婚してからも自然と相手や家族のために動けるタイプ。記念日も日々の気遣いも忘れない、あたたかい家庭をつくります。</p></div>
+        <div class="panel"><div class="pt">結婚観</div>
+          <p>結婚向きは★{P[2]}でかなり高め。愛情深くて家庭的なので、結婚してからも自然と相手や家族のために動けるタイプです。記念日も日々の気遣いも忘れない、あたたかい家庭をつくります。</p>
+          <p style="margin-top:1.6mm;padding-top:1.6mm;border-top:1.4pt dotted var(--rule)">
+            <b style="color:var(--wine2)">絆の質は「穏やか」</b>　燃え上がる恋より、日々の安心を積み重ねる愛し方。派手さはなくても、一緒にいる時間がそのまま信頼になります。</p>
+          <p style="margin-top:1.6mm">
+            <b style="color:var(--wine2)">結婚像は「家庭的」</b>　二人の生活を整えることに喜びを感じるタイプ。相手の家族や友人まで大切にできるのが、あなたの強みです。</p></div>
       </div>
       <div class="sect-h">💗 {B}が幸せになれる相手の条件</div>
       {mc}
@@ -872,7 +890,7 @@ def build(code, C, img_b64):
     # ── P16 CH12 愛の言語 ──
     def lang_rows(items):
         return "".join(f'''<div class="strow"><span>{k}</span><span style="color:var(--wine2)">{v}</span></div>''' for k,v in items)
-    A(page(code, f'''<p class="lead">人が愛を感じる・伝える方法は5つに分かれるとされています（Chapman）。「伝え方」と「受け取り方」がズレてると、愛があっても届かない。まずは自分の言語を知りましょう。</p>
+    A(page(code, f'''<p class="lead">人が愛を感じる・伝える方法は5つに分かれるとされています（Chapman）。「伝え方」と「受け取り方」がズレていると、愛があっても届かない。まずは自分の言語を知りましょう。</p>
       <div class="wbox" style="margin:0 0 3mm;padding:3mm 5mm">
         {svg_compare([(k, C["lang_score"][0][i]) for i,(k,_) in enumerate(C["give_lang"])],
                      [(k, C["lang_score"][1][i]) for i,(k,_) in enumerate(C["give_lang"])],
@@ -905,15 +923,14 @@ def build(code, C, img_b64):
     # ── P18 CH14 落とし穴 ──
     pf = "".join(f'''<div class="panel {"pink" if i%2==0 else ""}" style="margin-bottom:2.4mm">
       <div class="pt">落とし穴 {"①②③④"[i]}　{t}</div>
-      <p><b style="color:var(--wine2);font-size:7.42pt">原因</b>　{c}</p>
-      <p style="margin-top:.8mm"><b style="color:var(--wine2);font-size:7.42pt">処方箋</b>　{r}</p></div>'''
+      <p><b style="color:var(--wine2);font-size:7.42pt">なぜ起きる？</b>　{c}</p></div>'''
       for i,(t,c,r) in enumerate(C["pitfalls"]))
     A(page(code, f'''<div class="wbox" style="margin:0 0 3mm;padding:2.6mm 4mm">
         {svg_flip([(t, r.split("。")[0], "") for t,_c,r in C["pitfalls"]])}</div>
       <p class="lead" style="margin-bottom:2.4mm">CH03が「性格のクセ」なら、こちらは“場面”で起きるつまずき。シーンごとの落とし穴を、原因と処方箋つきで整理しました。</p>
-      {pf}
-      <div style="text-align:center;margin-top:3.4mm;font-size:10.12pt;line-height:2;color:var(--wine2);font-style:italic">
-        <span style="font-size:16.88pt;color:var(--wine-l)">“</span><br>{C["pitfall_quote"]}</div>
+      <div class="grid2" style="gap:2.4mm">{pf}</div>
+      <div style="text-align:center;margin-top:2.6mm;font-size:9.4pt;line-height:1.9;color:var(--wine2)">
+        {C["pitfall_quote"]}</div>
       {note("🐾 ひとこと","落とし穴は全部「優しさ」の裏返し。直すべき欠点ではなく、向ける方向をちょっと変えるだけ。あなたの愛情は、そのままで十分すぎるくらい魅力です🐾")}''',
       chapno="14", clabel=sp("PITFALLS & REMEDY"), title="ハマりがちな落とし穴", pno="18"))
 
@@ -946,7 +963,7 @@ def build(code, C, img_b64):
     bf = "".join(f'''<div class="brow"><div class="bh"><b>{k}　<span style="font-size:6.75pt;letter-spacing:.12em;color:var(--ink3)">{e}</span></b>
       <span class="v">{v}</span></div><div class="bar"><i style="width:{v}%"></i></div><p>{d2}</p></div>'''
       for k,e,v,d2 in C["bigfive"])
-    A(page(code, f'''<p class="lead">性格を5つの要素で測る、心理学でいちばん信頼されてるモデル。あなたの恋愛での「出方」を要素ごとに見ていきます。</p>
+    A(page(code, f'''<p class="lead">性格を5つの要素で測る、心理学でいちばん信頼されているモデルです。あなたの恋愛での「出方」を要素ごとに見ていきます。</p>
       <div class="grid2" style="grid-template-columns:1fr 56mm;gap:4mm;align-items:center">
         <div>{bf}</div>
         <div class="wbox" style="margin:0;padding:2mm">
@@ -978,7 +995,7 @@ def build(code, C, img_b64):
       <div style="font-size:8.1pt;line-height:2;color:var(--ink2)">
         ◇　疲れを感じたら抱え込まず、一人で休む時間をとる。<br>
         ◇　責めたくなったら“事実→自分の気持ち”の順で伝える。</div>
-      {note("📖 ちょっと理論の話","Feで尽くして、Tiが暴走すると理屈で責める。この振れ幅を知っておくと、ケンカのときの自分を一歩引いて見られるよ。")}''',
+      {note("📖 ちょっと理論の話","Feで尽くして、Tiが暴走すると理屈で責める。この振れ幅を知っておくと、ケンカのときの自分を一歩引いて見られます。")}''',
       chapno="17", clabel=sp("COGNITIVE FUNCTIONS"), title="頭の使い方でみる恋愛", pno="21"))
 
     # ── P22 W3 理論で自己分析 ──
@@ -991,12 +1008,12 @@ def build(code, C, img_b64):
     def wq(n, q, lines=2):
         return f'''<div class="wlabel"><span class="num">{n}</span>{q}</div>''' + \
                "".join('<div class="wline"></div>' for _ in range(lines))
-    A(page(code, f'''<p class="lead">ここまでの理論を、自分の恋にあてはめて書き出してみよう。書くと、知識がちゃんと「自分のもの」になります。</p>
+    A(page(code, f'''<p class="lead">ここまでの理論を、自分の恋にあてはめて書き出してみましょう。書くと、知識がちゃんと「自分のもの」になります。</p>
       {wq(1,"私の愛着スタイルは？　それが出た具体的な場面は？",2)}
       {wq(2,"私が「受け取りたい」愛の言語を、相手にどう伝える？",2)}
       {wq(3,"「完全愛」に近づくため、情熱を育てる工夫を一つ。",2)}
       {refs}
-      {note("🐾 さいごに","理論はあくまで「地図」。実際に歩くのはあなた。知った自分を手がかりに、あなたらしい恋を育ててね🐾")}''',
+      {note("🐾 さいごに","理論はあくまで「地図」。実際に歩くのはあなた。知った自分を手がかりに、あなたらしい恋を育ててください🐾")}''',
       chapno="W3", clabel=sp("THEORY WORKSHEET"), title="書いて整理する自己分析", pno="22"))
 
     # ── P23 W1 棚卸し ──
@@ -1038,7 +1055,7 @@ def build(code, C, img_b64):
         return f'''<div class="flow-q">{q}</div><div class="flow-2">
           <div class="flow-b"><span class="fl">{no_l}</span><p>{no_t}</p></div>
           <div class="flow-b"><span class="fl">{yes_l}</span><p>{yes_t}</p></div></div><div class="flow-ar">▼</div>'''
-    A(page(code, f'''<p class="lead">ケンカ直後は、どうしても感情で動いてしまいがちです。この順番どおり進めば、関係を壊さず仲直りまでたどり着けるよ。迷ったら上から指でなぞってみてください。</p>
+    A(page(code, f'''<p class="lead">ケンカ直後は、どうしても感情で動いてしまいがちです。この順番どおり進めば、関係を壊さず仲直りまでたどり着けます。迷ったら上から指でなぞってみてください。</p>
       <div class="flow-q" style="background:var(--pink);border-color:var(--pinkbd)">ケンカしてしまった…</div>
       <div class="flow-ar">▼</div>
       {fq("Q1　あなたの頭は冷えている？", sp("NO")+"・まだ感情的","「6時間ルール」で一旦離れる。落ち着いてからこの図に戻る。",
@@ -1057,7 +1074,7 @@ def build(code, C, img_b64):
       for i,(t,s) in enumerate([
         ("冷却期間をおく","最低でも1〜3ヶ月は連絡しない。追わないことで、相手に「失った実感」が生まれる。"),
         ("自分を整える","別れの原因と向き合って、見た目・生活・心を立て直す。“変わった姿”がいちばんの説得力。"),
-        ("さりげなく再接触","重い告白じゃなく「元気にしてる？」から。友達として軽く、焦らず距離を縮めよう。")]))
+        ("さりげなく再接触","重い告白じゃなく「元気にしてる？」から。友達として軽く、焦らず距離を縮めましょう。")]))
     ng3 = "".join(f'''<div class="panel"><div class="pt">{t}</div><p>{s}</p></div>' ''' .strip().rstrip("'")
       for t,s in [("追いLINE","未読・既読が気になって連投しちゃう"),("泣き落とし","同情や罪悪感で引き止めようとする"),
                   ("SNS監視","相手の投稿に一喜一憂し続ける")])
@@ -1210,7 +1227,7 @@ def build(code, C, img_b64):
       ("新しい相手がいそうな時は？","詮索も牽制もしない。今は引いて、自分の充実に集中。関係が続くとは限らない。"),
       ("既読スルーされたら？","追撃しない。1〜2週間あけて、別の軽い話題で一度だけ。それでも無反応なら一旦休む。")])
     s3c = "".join(f'<div class="panel pink"><div class="pt">{t}</div><p>{s}</p></div>' for t,s in C["sns3"])
-    A(page(code, f'''<p class="lead">「何を投稿する？」「どう送る？」を、そのまま使える文例で。迷いやすい場面はQ&amp;Aで答えるよ。</p>
+    A(page(code, f'''<p class="lead">「何を投稿する？」「どう送る？」を、そのまま使える文例で。迷いやすい場面はQ&amp;Aでお答えします。</p>
       <div class="sect-h">📸 さりげない近況ストーリー例</div>
       <div class="grid3">{stry}</div>
       <div class="sect-h">💬 DM再開のひとこと文例</div>
